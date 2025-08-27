@@ -14,7 +14,9 @@ func main() {
 	// Define routes
 	router.HandleFunc("/products", handler.GetProducts).Methods("GET")
 	router.HandleFunc("/products", handler.CreateProduct).Methods("POST")
-
+	router.HandleFunc("/products/{id}", handler.GetProduct).Methods("GET")
+	router.HandleFunc("/products/{id}", handler.UpdateProduct).Methods("PUT")
+	router.HandleFunc("/products/{id}", handler.DeleteProduct).Methods("DELETE")
 	// Start HTTP server
 	log.Printf("Product service starting on port 8080...")
 	if err := http.ListenAndServe(":8080", router); err != nil {
