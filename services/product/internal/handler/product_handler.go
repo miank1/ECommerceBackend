@@ -23,6 +23,53 @@ var (
 	nextID   = 1 // For auto-incrementing IDs
 )
 
+// Validation constants
+const (
+	minNameLength        = 3
+	maxNameLength        = 100
+	maxDescriptionLength = 500
+	minPrice             = 0.01
+	maxPrice             = 999999.99
+	maxStock             = 999999
+)
+
+// validateProduct performs all validation checks on a product
+func validateProduct(p Product) error {
+	// Name validation
+	if p.Name == "" {
+		return fmt.Errorf("product name is required")
+	}
+	if len(p.Name) < minNameLength {
+		return fmt.Errorf("product name must be at least %d characters", minNameLength)
+	}
+	if len(p.Name) > maxNameLength {
+		return fmt.Errorf("product name cannot exceed %d characters", maxNameLength)
+	}
+
+	// Description validation
+	if len(p.Description) > maxDescriptionLength {
+		return fmt.Errorf("description cannot exceed %d characters", maxDescriptionLength)
+	}
+
+	// Price validation
+	if p.Price < minPrice {
+		return fmt.Errorf("price must be at least %.2f", minPrice)
+	}
+	if p.Price > maxPrice {
+		return fmt.Errorf("price cannot exceed %.2f", maxPrice)
+	}
+
+	// Stock validation
+	if p.Stock < 0 {
+		return fmt.Errorf("stock cannot be negative")
+	}
+	if p.Stock > maxStock {
+		return fmt.Errorf("stock cannot exceed %d", maxStock)
+	}
+
+	return nil
+}
+
 // GetProducts returns all products
 func GetProducts(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
@@ -49,15 +96,18 @@ func CreateProduct(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Simple validation
-	if product.Name == "" {
-		http.Error(w, "Product name is required", http.StatusBadRequest)
+	// Comprehensive validation
+	if err := validateProduct(product); err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	if product.Price <= 0 {
-		http.Error(w, "Price must be greater than 0", http.StatusBadRequest)
-		return
+	// Check for unique name
+	for _, p := range products {
+		if p.Name == product.Name {
+			http.Error(w, "Product with this name already exists", http.StatusConflict)
+			return
+		}
 	}
 
 	// Set auto-incrementing ID
@@ -111,14 +161,17 @@ func UpdateProduct(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Validate updated product
-	if updatedProduct.Name == "" {
-		http.Error(w, "Product name is required", http.StatusBadRequest)
+	if err := validateProduct(updatedProduct); err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
-	if updatedProduct.Price <= 0 {
-		http.Error(w, "Price must be greater than 0", http.StatusBadRequest)
-		return
+	// Check for unique name, excluding the current product
+	for pid, p := range products {
+		if p.Name == updatedProduct.Name && pid != id {
+			http.Error(w, "Product with this name already exists", http.StatusConflict)
+			return
+		}
 	}
 
 	// Keep the same ID, update other fields
