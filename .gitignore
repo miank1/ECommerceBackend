@@ -1,0 +1,8 @@
+.fetch-client/fetch-client.log
+
+
+.fetch-client/fetchClient.json
+.fetch-client/fetchClientCollection.json
+.fetch-client/fetchClientCookies.json
+.fetch-client/fetchClientHistory.json
+.fetch-client/fetchClientVariable.json
