@@ -1,13 +1,29 @@
-http://localhost:8081/users/login
-http://localhost:8081/users/register
-http://localhost:8080/products/1
+# Authentication & API Flow Example
+
+## User Service Endpoints
+
+- **Login**:  
+  `POST http://localhost:8081/users/login`
+
+- **Register**:  
+  `POST http://localhost:8081/users/register`
+
+- **Products Service**:  
+  `GET http://localhost:8080/products/1`
+
+---
+
+## Example Product Payload
+
+```json
 {
-    "name": "Test Product 22",
-    "description": "A test product",
-    "price": 30.99,
-    "stock": 100
+  "name": "Test Product 22",
+  "description": "A test product",
+  "price": 30.99,
+  "stock": 100
 }
 
+USER LOGIN FLOW
 
 User                    User Service
   |                          |
@@ -18,8 +34,9 @@ User                    User Service
   |<-- Token Response -------|
   |   (JWT token)            |
 
+API GATEWAY
 
-  User                    API Gateway/Service
+User                    API Gateway/Service
   |                          |
   |--- API Request --------->|
   | + JWT in Header          |
@@ -28,22 +45,24 @@ User                    User Service
   |                          |--- Process Request
   |<-- API Response ---------|
 
+Example Login request
 
-  POST http://localhost:8081/users/login
+POST http://localhost:8081/users/login
+Content-Type: application/json
+
 {
     "email": "user@example.com",
     "password": "securepassword123"
 }
-
 {
     "message": "Login successful",
     "user_id": "1",
     "token": "eyJhbGciOiJIUzI1..."
 }
-
 GET http://localhost:8080/products
-Header: Authorization: Bearer eyJhbGciOiJIUzI1...
+Authorization: Bearer eyJhbGciOiJIUzI1...
 
+Profile Request with middleware
 
 Client              AuthMiddleware           GetProfile Handler
    |                      |                        |
@@ -54,3 +73,4 @@ Client              AuthMiddleware           GetProfile Handler
    |                      |                        |-- Get user data
    |                      |                        |-- Return profile
    |<---- Profile Data ---|------------------------|
+
