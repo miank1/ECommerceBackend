@@ -86,10 +86,18 @@ func LoginUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Return success response
+	// Generate JWT token
+	token, err := generateToken(user)
+	if err != nil {
+		http.Error(w, "Error generating token", http.StatusInternalServerError)
+		return
+	}
+
+	// Return success response with token
 	response := map[string]string{
 		"message": "Login successful",
 		"user_id": user.ID,
+		"token":   token,
 	}
 	json.NewEncoder(w).Encode(response)
 }
