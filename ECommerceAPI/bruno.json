@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "ECommerceAPI",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
