@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: ecommerce
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "root"]
+      interval: 5s
+      retries: 5
+
+  userservice:
+    build:
+      context: ../
+      dockerfile: services/userservice/Dockerfile
+    environment:
+      - "DATABASE_DSN=host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable"
+      - "JWT_SECRET=supersecret"
+      - "PORT=8081"
+      - TOKEN_TTL_MIN=60
+    ports:
+      - "8081:8081"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # productservice:
+  #   build:
+  #     context: ../
+  #     dockerfile: services/productservice/Dockerfile
+  #   ports:
+  #     - "8082:8082"
+  #   environment:
+  #     - DATABASE_DSN=host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable
+  #     - "JWT_SECRET=supersecret"
+  #     - PORT=8082
+  #     - TOKEN_TTL_MIN=60
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
