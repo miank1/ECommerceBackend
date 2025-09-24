@@ -8,7 +8,6 @@ import (
 	"ecommerce-backend/services/orderservice/internal/repository"
 	"ecommerce-backend/services/orderservice/internal/service"
 	"log"
-	"time"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/driver/postgres"
@@ -25,18 +24,10 @@ func main() {
 
 	// Retry DB connect
 	var db *gorm.DB
-	var err error
-	for i := 0; i < 10; i++ {
-		db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
-		if err == nil {
-			log.Println("✅ Connected to DB Order Service ")
-			break
-		}
-		log.Println("DB not ready, retrying in 3s...", err)
-		time.Sleep(3 * time.Second)
-	}
+
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
-		log.Fatalf("❌ failed to connect db after retries: %v", err)
+		log.Fatalf("failed to connect db: %v", err)
 	}
 
 	// AutoMigrate Order + OrderItem
@@ -46,7 +37,7 @@ func main() {
 
 	// Gin setup
 	r := gin.Default()
-	r.GET("/health", func(c *gin.Context) {
+	r.GET("/orderhealth", func(c *gin.Context) {
 		c.JSON(200, gin.H{"status": "orderservice up"})
 	})
 
@@ -55,14 +46,12 @@ func main() {
 	orderSvc := service.NewOrderService(orderRepo)
 	orderHandler := handler.NewOrderHandler(orderSvc)
 
-	// TODO: add order routes
 	// routes
 
 	api := r.Group("/api/v1")
 	api.POST("/orders", orderHandler.Create)
 	api.GET("/orders", orderHandler.List)
 	api.GET("/orders/:id", orderHandler.GetByID)
-	api.POST("/orders", orderHandler.Create)
 
 	port := config.GetEnv("PORT", "8083")
 	log.Println("✅ OrderService running on port", port)

@@ -11,7 +11,6 @@ import (
 	"fmt"
 	"log"
 	"strconv"
-	"time"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/driver/postgres"
@@ -29,22 +28,12 @@ func main() {
 
 	// --- DB connection with retry ---
 	var db *gorm.DB
-	var err error
-	for i := 0; i < 10; i++ {
-		db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{}) // use "=" not ":="
-		fmt.Println("Hello World !!!!!!!!!")
-		if err == nil {
-			log.Println("✅ Connected to DB")
-			break
-		}
-		log.Println("DB not ready, retrying in 3s...", err)
-		time.Sleep(3 * time.Second)
-	}
+
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{}) // use "=" not ":="
+	fmt.Println("Hello World !!!!!!!!!")
 	if err != nil {
-		log.Fatalf("❌ failed to connect db after retries: %v", err)
-	}
-	if db == nil {
-		log.Fatal("❌ db is nil after retries")
+		log.Fatalf("failed to connect db: %v", err)
+
 	}
 
 	// migrate User model
@@ -64,7 +53,7 @@ func main() {
 	r := gin.Default()
 
 	// health
-	r.GET("/health", func(c *gin.Context) {
+	r.GET("/userhealth", func(c *gin.Context) {
 		c.JSON(200, gin.H{"status": "userservice up"})
 	})
 
