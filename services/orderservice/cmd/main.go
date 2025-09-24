@@ -52,6 +52,8 @@ func main() {
 	api.POST("/orders", orderHandler.Create)
 	api.GET("/orders", orderHandler.List)
 	api.GET("/orders/:id", orderHandler.GetByID)
+	api.PUT("/orders/:id", orderHandler.Update)
+	api.DELETE("/orders/:id", orderHandler.Delete)
 
 	port := config.GetEnv("PORT", "8083")
 	log.Println("✅ OrderService running on port", port)

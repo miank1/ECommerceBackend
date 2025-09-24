@@ -11,6 +11,10 @@ type OrderHandler struct {
 	Svc *service.OrderService
 }
 
+type updateOrderReq struct {
+	Status string `json:"status" binding:"required"`
+}
+
 func NewOrderHandler(s *service.OrderService) *OrderHandler {
 	return &OrderHandler{Svc: s}
 }
@@ -78,4 +82,33 @@ func (h *OrderHandler) GetByID(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"order": order})
+}
+
+// Update order status
+func (h *OrderHandler) Update(c *gin.Context) {
+	id := c.Param("id")
+	var req updateOrderReq
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	order, err := h.Svc.UpdateOrderStatus(id, req.Status)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"order": order})
+}
+
+// Delete order
+func (h *OrderHandler) Delete(c *gin.Context) {
+	id := c.Param("id")
+	if err := h.Svc.DeleteOrder(id); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "order deleted"})
 }

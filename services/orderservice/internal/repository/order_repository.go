@@ -34,3 +34,18 @@ func (r *OrderRepository) GetByUser(userID string) ([]model.Order, error) {
 	}
 	return orders, nil
 }
+
+// Update order
+func (r *OrderRepository) Update(order *model.Order) error {
+	return r.DB.Save(order).Error
+}
+
+// Delete order
+func (r *OrderRepository) Delete(id string) error {
+	// Delete items first
+	if err := r.DB.Delete(&model.OrderItem{}, "order_id = ?", id).Error; err != nil {
+		return err
+	}
+	// Then delete the order
+	return r.DB.Delete(&model.Order{}, "id = ?", id).Error
+}

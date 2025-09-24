@@ -7,7 +7,7 @@ type Order struct {
 	UserID     string      `gorm:"not null" json:"user_id"`
 	Status     string      `gorm:"default:'pending'" json:"status"`
 	TotalPrice float64     `gorm:"not null" json:"total_price"`
-	Items      []OrderItem `gorm:"foreignKey:OrderID" json:"items"`
+	Items      []OrderItem `gorm:"foreignKey:OrderID;constraint:OnDelete:CASCADE;" json:"items"`
 	CreatedAt  time.Time   `gorm:"autoCreateTime" json:"created_at"`
 	UpdatedAt  time.Time   `gorm:"autoUpdateTime" json:"updated_at"`
 }

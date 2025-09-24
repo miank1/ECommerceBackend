@@ -62,3 +62,25 @@ func (s *OrderService) GetOrdersByUser(userID string) ([]model.Order, error) {
 func (s *OrderService) GetOrderByID(orderID string) (*model.Order, error) {
 	return s.Repo.GetByID(orderID)
 }
+
+// Update order status
+func (s *OrderService) UpdateOrderStatus(orderID, status string) (*model.Order, error) {
+	order, err := s.Repo.GetByID(orderID)
+	if err != nil {
+		return nil, err
+	}
+	if order == nil {
+		return nil, errors.New("order not found")
+	}
+
+	order.Status = status
+	if err := s.Repo.Update(order); err != nil {
+		return nil, err
+	}
+	return order, nil
+}
+
+// Delete order
+func (s *OrderService) DeleteOrder(orderID string) error {
+	return s.Repo.Delete(orderID)
+}
