@@ -2,7 +2,6 @@ package handler
 
 import (
 	"ecommerce-backend/services/productservice/internal/service"
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -23,9 +22,15 @@ type createProductReq struct {
 	Stock       int     `json:"stock" binding:"required"`
 }
 
+type updateProductReq struct {
+	Name        string  `json:"name"`
+	Description string  `json:"description"`
+	Price       float64 `json:"price"`
+	Stock       int     `json:"stock"`
+}
+
 func (h *ProductHandler) Create(c *gin.Context) {
 
-	fmt.Println(" ✅ Hello World Product Service ✅")
 	var req createProductReq
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"status": "error", "message": err.Error()})
@@ -70,4 +75,33 @@ func (h *ProductHandler) GetByID(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"status": "success", "product": product})
+}
+
+// Update product
+func (h *ProductHandler) Update(c *gin.Context) {
+	id := c.Param("id")
+	var req updateProductReq
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"status": "error", "message": err.Error()})
+		return
+	}
+
+	product, err := h.Svc.UpdateProduct(id, req.Name, req.Description, req.Price, req.Stock)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"status": "error", "message": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"status": "success", "product": product})
+}
+
+// Delete product
+func (h *ProductHandler) Delete(c *gin.Context) {
+	id := c.Param("id")
+	if err := h.Svc.DeleteProduct(id); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"status": "error", "message": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"status": "success", "message": "product deleted"})
 }

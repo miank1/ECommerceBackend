@@ -33,3 +33,13 @@ func (r *ProductRepository) GetByID(id string) (*model.Product, error) {
 	}
 	return &product, nil
 }
+
+// Update product
+func (r *ProductRepository) Update(p *model.Product) error {
+	return r.DB.Save(p).Error
+}
+
+// Delete product
+func (r *ProductRepository) Delete(id string) error {
+	return r.DB.Delete(&model.Product{}, "id = ?", id).Error
+}

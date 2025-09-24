@@ -8,7 +8,6 @@ import (
 	"ecommerce-backend/services/userservice/internal/model"
 	"ecommerce-backend/services/userservice/internal/repository"
 	"ecommerce-backend/services/userservice/internal/service"
-	"fmt"
 	"log"
 	"strconv"
 
@@ -30,7 +29,6 @@ func main() {
 	var db *gorm.DB
 
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{}) // use "=" not ":="
-	fmt.Println("Hello World !!!!!!!!!")
 	if err != nil {
 		log.Fatalf("failed to connect db: %v", err)
 
