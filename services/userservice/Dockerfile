@@ -8,7 +8,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 # Copy everything
-COPY . .
+COPY . . 
 
 # Build only userservice
 WORKDIR /app/services/userservice

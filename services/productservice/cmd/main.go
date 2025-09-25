@@ -42,7 +42,7 @@ func main() {
 	r := gin.Default()
 
 	// Health check endpoint
-	r.GET("/producthealth", func(c *gin.Context) {
+	r.GET("/health", func(c *gin.Context) {
 		c.JSON(200, gin.H{"status": "productservice up"})
 	})
 

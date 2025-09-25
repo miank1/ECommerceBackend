@@ -37,7 +37,7 @@ func main() {
 
 	// Gin setup
 	r := gin.Default()
-	r.GET("/orderhealth", func(c *gin.Context) {
+	r.GET("/health", func(c *gin.Context) {
 		c.JSON(200, gin.H{"status": "orderservice up"})
 	})
 
