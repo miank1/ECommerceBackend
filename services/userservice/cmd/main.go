@@ -22,8 +22,7 @@ func main() {
 	logger.Init()
 	defer logger.Sync()
 
-	dsn := config.GetEnv("DATABASE_DSN", "")
-	log.Println("Using DSN:", dsn)
+	dsn := "host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable"
 
 	// --- DB connection with retry ---
 	var db *gorm.DB

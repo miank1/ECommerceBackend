@@ -8,7 +8,6 @@ import (
 	repository "ecommerce-backend/services/productservice/internal/reposotory"
 	"ecommerce-backend/services/productservice/internal/service"
 	"log"
-	"os"
 
 	"github.com/gin-gonic/gin"
 
@@ -21,10 +20,16 @@ func main() {
 	logger.Init()
 	defer logger.Sync()
 
-	dsn := os.Getenv("DATABASE_DSN")
-	if dsn == "" {
-		log.Fatal("DATABASE_DSN environment variable is required")
-	}
+	// _ = godotenv.Load()
+
+	// dsn := os.Getenv("DATABASE_DSN")
+	// if dsn == "" {
+	// 	log.Fatal("DATABASE_DSN environment variable is required")
+	// }
+
+	// Hardcoded values
+	dsn := "host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable"
+	//port := "8082"
 
 	log.Printf("Connecting to database with DSN: %s\n", dsn)
 

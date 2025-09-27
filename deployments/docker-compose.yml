@@ -10,7 +10,7 @@ services:
     ports:
       - "5432:5432"
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "root" ]
+      test: ["CMD", "pg_isready", "-U", "root"]
       interval: 5s
       retries: 5
 
@@ -20,9 +20,8 @@ services:
       dockerfile: services/productservice/Dockerfile
     ports:
       - "8082:8082"
-    environment:
-      - DATABASE_DSN=host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable
-      - PORT=8082
+    env_file:
+      - ../services/productservice/.env
     depends_on:
       postgres:
         condition: service_healthy
@@ -31,11 +30,10 @@ services:
     build:
       context: ../
       dockerfile: services/userservice/Dockerfile
-    environment:
-      - DATABASE_DSN=host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable
-      - PORT=8081
     ports:
       - "8081:8081"
+    env_file:
+      - ../services/userservice/.env
     depends_on:
       postgres:
         condition: service_healthy
@@ -44,11 +42,10 @@ services:
     build:
       context: ../
       dockerfile: services/orderservice/Dockerfile
-    environment:
-      - DATABASE_DSN=host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable
-      - PORT=8083
     ports:
       - "8083:8083"
+    env_file:
+      - ../services/orderservice/.env
     depends_on:
       postgres:
         condition: service_healthy
