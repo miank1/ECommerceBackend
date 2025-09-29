@@ -49,3 +49,17 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+
+  cartservice:
+    build:
+      context: ../
+      dockerfile: services/cartservice/Dockerfile
+    ports:
+      - "8084:8084"
+    env_file:
+      - ../services/cartservice/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      orderservice:
+        condition: service_started

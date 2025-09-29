@@ -2,17 +2,17 @@ package main
 
 import (
 	"ecommerce-backend/pkg/config"
+	"ecommerce-backend/pkg/db"
 	"ecommerce-backend/pkg/logger"
 	"ecommerce-backend/services/productservice/internal/handler"
 	model "ecommerce-backend/services/productservice/internal/models"
 	repository "ecommerce-backend/services/productservice/internal/reposotory"
 	"ecommerce-backend/services/productservice/internal/service"
 	"log"
+	"os"
+	"time"
 
 	"github.com/gin-gonic/gin"
-
-	"gorm.io/driver/postgres"
-	"gorm.io/gorm"
 )
 
 func main() {
@@ -22,24 +22,19 @@ func main() {
 
 	// _ = godotenv.Load()
 
-	// dsn := os.Getenv("DATABASE_DSN")
-	// if dsn == "" {
-	// 	log.Fatal("DATABASE_DSN environment variable is required")
-	// }
-
-	// Hardcoded values
-	dsn := "host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable"
-	//port := "8082"
-
-	log.Printf("Connecting to database with DSN: %s\n", dsn)
-
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
-	if err != nil {
-		log.Fatalf("failed to connect db: %v", err)
+	cfg := db.Config{
+		DSN:         os.Getenv("DATABASE_DSN"),
+		MaxRetries:  6,
+		RetryDelay:  2 * time.Second,
+		ConnTimeout: 5 * time.Second,
 	}
 
-	// Auto migrate Product model
-	if err = db.AutoMigrate(&model.Product{}); err != nil {
+	gormDB, err := db.InitPostgres(cfg)
+	if err != nil {
+		log.Fatalf("could not initialize database: %v", err)
+	}
+
+	if err = gormDB.AutoMigrate(&model.Product{}); err != nil {
 		log.Fatalf("auto migrate failed: %v", err)
 	}
 
@@ -52,9 +47,8 @@ func main() {
 	})
 
 	// Wire dependencies (repo → service → handler)
-	// TODO: add ProductService + ProductHandler when we build APIs
 
-	productRepo := repository.NewProductRepository(db)
+	productRepo := repository.NewProductRepository(gormDB)
 	productSvc := service.NewProductService(productRepo)
 	productHandler := handler.NewProductHandler(productSvc)
 

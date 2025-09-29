@@ -2,35 +2,38 @@ package main
 
 import (
 	"ecommerce-backend/pkg/config"
+	"ecommerce-backend/pkg/db"
 	"ecommerce-backend/pkg/logger"
 	"ecommerce-backend/services/orderservice/internal/handler"
 	model "ecommerce-backend/services/orderservice/internal/models"
 	"ecommerce-backend/services/orderservice/internal/repository"
 	"ecommerce-backend/services/orderservice/internal/service"
 	"log"
+	"os"
+	"time"
 
 	"github.com/gin-gonic/gin"
-	"gorm.io/driver/postgres"
-	"gorm.io/gorm"
 )
 
 func main() {
-	//config.LoadEnv()
+	config.LoadEnv()
 	logger.Init()
 	defer logger.Sync()
 
-	dsn := "host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable"
+	cfg := db.Config{
+		DSN:         os.Getenv("DATABASE_DSN"),
+		MaxRetries:  6,
+		RetryDelay:  2 * time.Second,
+		ConnTimeout: 5 * time.Second,
+	}
 
-	// Retry DB connect
-	var db *gorm.DB
-
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	gormDB, err := db.InitPostgres(cfg)
 	if err != nil {
-		log.Fatalf("failed to connect db: %v", err)
+		log.Fatalf("could not initialize database: %v", err)
 	}
 
 	// AutoMigrate Order + OrderItem
-	if err := db.AutoMigrate(&model.Order{}, &model.OrderItem{}); err != nil {
+	if err := gormDB.AutoMigrate(&model.Order{}, &model.OrderItem{}); err != nil {
 		log.Fatalf("❌ auto migrate failed: %v", err)
 	}
 
@@ -40,8 +43,16 @@ func main() {
 		c.JSON(200, gin.H{"status": "orderservice up"})
 	})
 
+	r.GET("/health1", func(c *gin.Context) {
+		c.JSON(200, gin.H{"status": "Hello World !!"})
+	})
+
+	r.GET("/hello", func(c *gin.Context) {
+		c.JSON(200, gin.H{"status": "Hello World !!!!"})
+	})
+
 	// after AutoMigrate
-	orderRepo := repository.NewOrderRepository(db)
+	orderRepo := repository.NewOrderRepository(gormDB)
 	orderSvc := service.NewOrderService(orderRepo)
 	orderHandler := handler.NewOrderHandler(orderSvc)
 

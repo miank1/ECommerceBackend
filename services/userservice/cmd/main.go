@@ -2,6 +2,7 @@ package main
 
 import (
 	"ecommerce-backend/pkg/config"
+	"ecommerce-backend/pkg/db"
 	"ecommerce-backend/pkg/logger"
 	"ecommerce-backend/pkg/middleware"
 	"ecommerce-backend/services/userservice/internal/handler"
@@ -9,37 +10,39 @@ import (
 	"ecommerce-backend/services/userservice/internal/repository"
 	"ecommerce-backend/services/userservice/internal/service"
 	"log"
+	"os"
 	"strconv"
+	"time"
 
 	"github.com/gin-gonic/gin"
-	"gorm.io/driver/postgres"
-	"gorm.io/gorm"
 )
 
 func main() {
-	// load env + logger
-	//config.LoadEnv()
+
 	logger.Init()
 	defer logger.Sync()
 
-	dsn := "host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable"
-
 	// --- DB connection with retry ---
-	var db *gorm.DB
 
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{}) // use "=" not ":="
+	cfg := db.Config{
+		DSN:         os.Getenv("DATABASE_DSN"),
+		MaxRetries:  6,
+		RetryDelay:  2 * time.Second,
+		ConnTimeout: 5 * time.Second,
+	}
+
+	gormDB, err := db.InitPostgres(cfg)
 	if err != nil {
-		log.Fatalf("failed to connect db: %v", err)
-
+		log.Fatalf("could not initialize database: %v", err)
 	}
 
 	// migrate User model
-	if err := db.AutoMigrate(&model.User{}); err != nil {
+	if err := gormDB.AutoMigrate(&model.User{}); err != nil {
 		log.Fatalf("❌ auto migrate failed: %v", err)
 	}
 
 	// wire layers
-	repo := repository.NewUserRepository(db)
+	repo := repository.NewUserRepository(gormDB)
 	ttlStr := config.GetEnv("TOKEN_TTL_MIN", "60")
 	ttl, _ := strconv.Atoi(ttlStr)
 	secret := config.GetEnv("JWT_SECRET", "changeme")
