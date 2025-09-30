@@ -1,0 +1,1202 @@
+[
+    {
+        "name": "iPhone 14 1",
+        "category": "Electronics",
+        "price": 500,
+        "stock": 1
+    },
+    {
+        "name": "Samsung Galaxy S22 2",
+        "category": "Electronics",
+        "price": 1000,
+        "stock": 4
+    },
+    {
+        "name": "MacBook Pro 14 3",
+        "category": "Electronics",
+        "price": 1500,
+        "stock": 7
+    },
+    {
+        "name": "Dell XPS 13 4",
+        "category": "Electronics",
+        "price": 2000,
+        "stock": 10
+    },
+    {
+        "name": "Sony WH-1000XM4 5",
+        "category": "Electronics",
+        "price": 2500,
+        "stock": 13
+    },
+    {
+        "name": "LG OLED TV 55 6",
+        "category": "Electronics",
+        "price": 3000,
+        "stock": 16
+    },
+    {
+        "name": "Canon DSLR 90D 7",
+        "category": "Electronics",
+        "price": 3500,
+        "stock": 19
+    },
+    {
+        "name": "GoPro Hero 11 8",
+        "category": "Electronics",
+        "price": 4000,
+        "stock": 22
+    },
+    {
+        "name": "Amazon Echo Dot 9",
+        "category": "Electronics",
+        "price": 4500,
+        "stock": 25
+    },
+    {
+        "name": "Apple Watch Series 8 10",
+        "category": "Electronics",
+        "price": 5000,
+        "stock": 28
+    },
+    {
+        "name": "iPhone 14 11",
+        "category": "Electronics",
+        "price": 5500,
+        "stock": 31
+    },
+    {
+        "name": "Samsung Galaxy S22 12",
+        "category": "Electronics",
+        "price": 6000,
+        "stock": 34
+    },
+    {
+        "name": "MacBook Pro 14 13",
+        "category": "Electronics",
+        "price": 6500,
+        "stock": 37
+    },
+    {
+        "name": "Dell XPS 13 14",
+        "category": "Electronics",
+        "price": 7000,
+        "stock": 40
+    },
+    {
+        "name": "Sony WH-1000XM4 15",
+        "category": "Electronics",
+        "price": 7500,
+        "stock": 43
+    },
+    {
+        "name": "LG OLED TV 55 16",
+        "category": "Electronics",
+        "price": 8000,
+        "stock": 46
+    },
+    {
+        "name": "Canon DSLR 90D 17",
+        "category": "Electronics",
+        "price": 8500,
+        "stock": 49
+    },
+    {
+        "name": "GoPro Hero 11 18",
+        "category": "Electronics",
+        "price": 9000,
+        "stock": 2
+    },
+    {
+        "name": "Amazon Echo Dot 19",
+        "category": "Electronics",
+        "price": 9500,
+        "stock": 5
+    },
+    {
+        "name": "Apple Watch Series 8 20",
+        "category": "Electronics",
+        "price": 10000,
+        "stock": 8
+    },
+    {
+        "name": "iPhone 14 21",
+        "category": "Electronics",
+        "price": 10500,
+        "stock": 11
+    },
+    {
+        "name": "Samsung Galaxy S22 22",
+        "category": "Electronics",
+        "price": 11000,
+        "stock": 14
+    },
+    {
+        "name": "MacBook Pro 14 23",
+        "category": "Electronics",
+        "price": 11500,
+        "stock": 17
+    },
+    {
+        "name": "Dell XPS 13 24",
+        "category": "Electronics",
+        "price": 12000,
+        "stock": 20
+    },
+    {
+        "name": "Sony WH-1000XM4 25",
+        "category": "Electronics",
+        "price": 12500,
+        "stock": 23
+    },
+    {
+        "name": "LG OLED TV 55 26",
+        "category": "Electronics",
+        "price": 13000,
+        "stock": 26
+    },
+    {
+        "name": "Canon DSLR 90D 27",
+        "category": "Electronics",
+        "price": 13500,
+        "stock": 29
+    },
+    {
+        "name": "GoPro Hero 11 28",
+        "category": "Electronics",
+        "price": 14000,
+        "stock": 32
+    },
+    {
+        "name": "Amazon Echo Dot 29",
+        "category": "Electronics",
+        "price": 14500,
+        "stock": 35
+    },
+    {
+        "name": "Apple Watch Series 8 30",
+        "category": "Electronics",
+        "price": 15000,
+        "stock": 38
+    },
+    {
+        "name": "iPhone 14 31",
+        "category": "Electronics",
+        "price": 15500,
+        "stock": 41
+    },
+    {
+        "name": "Samsung Galaxy S22 32",
+        "category": "Electronics",
+        "price": 16000,
+        "stock": 44
+    },
+    {
+        "name": "MacBook Pro 14 33",
+        "category": "Electronics",
+        "price": 16500,
+        "stock": 47
+    },
+    {
+        "name": "Dell XPS 13 34",
+        "category": "Electronics",
+        "price": 17000,
+        "stock": 50
+    },
+    {
+        "name": "Sony WH-1000XM4 35",
+        "category": "Electronics",
+        "price": 17500,
+        "stock": 3
+    },
+    {
+        "name": "LG OLED TV 55 36",
+        "category": "Electronics",
+        "price": 18000,
+        "stock": 6
+    },
+    {
+        "name": "Canon DSLR 90D 37",
+        "category": "Electronics",
+        "price": 18500,
+        "stock": 9
+    },
+    {
+        "name": "GoPro Hero 11 38",
+        "category": "Electronics",
+        "price": 19000,
+        "stock": 12
+    },
+    {
+        "name": "Amazon Echo Dot 39",
+        "category": "Electronics",
+        "price": 19500,
+        "stock": 15
+    },
+    {
+        "name": "Apple Watch Series 8 40",
+        "category": "Electronics",
+        "price": 20000,
+        "stock": 18
+    },
+    {
+        "name": "Levis Jeans 1",
+        "category": "Fashion",
+        "price": 500,
+        "stock": 1
+    },
+    {
+        "name": "Nike Air Max 2",
+        "category": "Fashion",
+        "price": 1000,
+        "stock": 4
+    },
+    {
+        "name": "Adidas Ultraboost 3",
+        "category": "Fashion",
+        "price": 1500,
+        "stock": 7
+    },
+    {
+        "name": "Zara T-Shirt 4",
+        "category": "Fashion",
+        "price": 2000,
+        "stock": 10
+    },
+    {
+        "name": "H&M Hoodie 5",
+        "category": "Fashion",
+        "price": 2500,
+        "stock": 13
+    },
+    {
+        "name": "Puma Sneakers 6",
+        "category": "Fashion",
+        "price": 3000,
+        "stock": 16
+    },
+    {
+        "name": "Ray-Ban Aviators 7",
+        "category": "Fashion",
+        "price": 3500,
+        "stock": 19
+    },
+    {
+        "name": "Gucci Handbag 8",
+        "category": "Fashion",
+        "price": 4000,
+        "stock": 22
+    },
+    {
+        "name": "Armani Suit 9",
+        "category": "Fashion",
+        "price": 4500,
+        "stock": 25
+    },
+    {
+        "name": "Rolex Submariner 10",
+        "category": "Fashion",
+        "price": 5000,
+        "stock": 28
+    },
+    {
+        "name": "Levis Jeans 11",
+        "category": "Fashion",
+        "price": 5500,
+        "stock": 31
+    },
+    {
+        "name": "Nike Air Max 12",
+        "category": "Fashion",
+        "price": 6000,
+        "stock": 34
+    },
+    {
+        "name": "Adidas Ultraboost 13",
+        "category": "Fashion",
+        "price": 6500,
+        "stock": 37
+    },
+    {
+        "name": "Zara T-Shirt 14",
+        "category": "Fashion",
+        "price": 7000,
+        "stock": 40
+    },
+    {
+        "name": "H&M Hoodie 15",
+        "category": "Fashion",
+        "price": 7500,
+        "stock": 43
+    },
+    {
+        "name": "Puma Sneakers 16",
+        "category": "Fashion",
+        "price": 8000,
+        "stock": 46
+    },
+    {
+        "name": "Ray-Ban Aviators 17",
+        "category": "Fashion",
+        "price": 8500,
+        "stock": 49
+    },
+    {
+        "name": "Gucci Handbag 18",
+        "category": "Fashion",
+        "price": 9000,
+        "stock": 2
+    },
+    {
+        "name": "Armani Suit 19",
+        "category": "Fashion",
+        "price": 9500,
+        "stock": 5
+    },
+    {
+        "name": "Rolex Submariner 20",
+        "category": "Fashion",
+        "price": 10000,
+        "stock": 8
+    },
+    {
+        "name": "Levis Jeans 21",
+        "category": "Fashion",
+        "price": 10500,
+        "stock": 11
+    },
+    {
+        "name": "Nike Air Max 22",
+        "category": "Fashion",
+        "price": 11000,
+        "stock": 14
+    },
+    {
+        "name": "Adidas Ultraboost 23",
+        "category": "Fashion",
+        "price": 11500,
+        "stock": 17
+    },
+    {
+        "name": "Zara T-Shirt 24",
+        "category": "Fashion",
+        "price": 12000,
+        "stock": 20
+    },
+    {
+        "name": "H&M Hoodie 25",
+        "category": "Fashion",
+        "price": 12500,
+        "stock": 23
+    },
+    {
+        "name": "Puma Sneakers 26",
+        "category": "Fashion",
+        "price": 13000,
+        "stock": 26
+    },
+    {
+        "name": "Ray-Ban Aviators 27",
+        "category": "Fashion",
+        "price": 13500,
+        "stock": 29
+    },
+    {
+        "name": "Gucci Handbag 28",
+        "category": "Fashion",
+        "price": 14000,
+        "stock": 32
+    },
+    {
+        "name": "Armani Suit 29",
+        "category": "Fashion",
+        "price": 14500,
+        "stock": 35
+    },
+    {
+        "name": "Rolex Submariner 30",
+        "category": "Fashion",
+        "price": 15000,
+        "stock": 38
+    },
+    {
+        "name": "Levis Jeans 31",
+        "category": "Fashion",
+        "price": 15500,
+        "stock": 41
+    },
+    {
+        "name": "Nike Air Max 32",
+        "category": "Fashion",
+        "price": 16000,
+        "stock": 44
+    },
+    {
+        "name": "Adidas Ultraboost 33",
+        "category": "Fashion",
+        "price": 16500,
+        "stock": 47
+    },
+    {
+        "name": "Zara T-Shirt 34",
+        "category": "Fashion",
+        "price": 17000,
+        "stock": 50
+    },
+    {
+        "name": "H&M Hoodie 35",
+        "category": "Fashion",
+        "price": 17500,
+        "stock": 3
+    },
+    {
+        "name": "Puma Sneakers 36",
+        "category": "Fashion",
+        "price": 18000,
+        "stock": 6
+    },
+    {
+        "name": "Ray-Ban Aviators 37",
+        "category": "Fashion",
+        "price": 18500,
+        "stock": 9
+    },
+    {
+        "name": "Gucci Handbag 38",
+        "category": "Fashion",
+        "price": 19000,
+        "stock": 12
+    },
+    {
+        "name": "Armani Suit 39",
+        "category": "Fashion",
+        "price": 19500,
+        "stock": 15
+    },
+    {
+        "name": "Rolex Submariner 40",
+        "category": "Fashion",
+        "price": 20000,
+        "stock": 18
+    },
+    {
+        "name": "Prestige Pressure Cooker 1",
+        "category": "Home & Kitchen",
+        "price": 500,
+        "stock": 1
+    },
+    {
+        "name": "Philips Mixer Grinder 2",
+        "category": "Home & Kitchen",
+        "price": 1000,
+        "stock": 4
+    },
+    {
+        "name": "IKEA Dining Table 3",
+        "category": "Home & Kitchen",
+        "price": 1500,
+        "stock": 7
+    },
+    {
+        "name": "LG Refrigerator 4",
+        "category": "Home & Kitchen",
+        "price": 2000,
+        "stock": 10
+    },
+    {
+        "name": "Samsung Washing Machine 5",
+        "category": "Home & Kitchen",
+        "price": 2500,
+        "stock": 13
+    },
+    {
+        "name": "Havells Ceiling Fan 6",
+        "category": "Home & Kitchen",
+        "price": 3000,
+        "stock": 16
+    },
+    {
+        "name": "Whirlpool Microwave 7",
+        "category": "Home & Kitchen",
+        "price": 3500,
+        "stock": 19
+    },
+    {
+        "name": "Cello Plastic Chair 8",
+        "category": "Home & Kitchen",
+        "price": 4000,
+        "stock": 22
+    },
+    {
+        "name": "Nilkamal Sofa Set 9",
+        "category": "Home & Kitchen",
+        "price": 4500,
+        "stock": 25
+    },
+    {
+        "name": "Prestige Gas Stove 10",
+        "category": "Home & Kitchen",
+        "price": 5000,
+        "stock": 28
+    },
+    {
+        "name": "Prestige Pressure Cooker 11",
+        "category": "Home & Kitchen",
+        "price": 5500,
+        "stock": 31
+    },
+    {
+        "name": "Philips Mixer Grinder 12",
+        "category": "Home & Kitchen",
+        "price": 6000,
+        "stock": 34
+    },
+    {
+        "name": "IKEA Dining Table 13",
+        "category": "Home & Kitchen",
+        "price": 6500,
+        "stock": 37
+    },
+    {
+        "name": "LG Refrigerator 14",
+        "category": "Home & Kitchen",
+        "price": 7000,
+        "stock": 40
+    },
+    {
+        "name": "Samsung Washing Machine 15",
+        "category": "Home & Kitchen",
+        "price": 7500,
+        "stock": 43
+    },
+    {
+        "name": "Havells Ceiling Fan 16",
+        "category": "Home & Kitchen",
+        "price": 8000,
+        "stock": 46
+    },
+    {
+        "name": "Whirlpool Microwave 17",
+        "category": "Home & Kitchen",
+        "price": 8500,
+        "stock": 49
+    },
+    {
+        "name": "Cello Plastic Chair 18",
+        "category": "Home & Kitchen",
+        "price": 9000,
+        "stock": 2
+    },
+    {
+        "name": "Nilkamal Sofa Set 19",
+        "category": "Home & Kitchen",
+        "price": 9500,
+        "stock": 5
+    },
+    {
+        "name": "Prestige Gas Stove 20",
+        "category": "Home & Kitchen",
+        "price": 10000,
+        "stock": 8
+    },
+    {
+        "name": "Prestige Pressure Cooker 21",
+        "category": "Home & Kitchen",
+        "price": 10500,
+        "stock": 11
+    },
+    {
+        "name": "Philips Mixer Grinder 22",
+        "category": "Home & Kitchen",
+        "price": 11000,
+        "stock": 14
+    },
+    {
+        "name": "IKEA Dining Table 23",
+        "category": "Home & Kitchen",
+        "price": 11500,
+        "stock": 17
+    },
+    {
+        "name": "LG Refrigerator 24",
+        "category": "Home & Kitchen",
+        "price": 12000,
+        "stock": 20
+    },
+    {
+        "name": "Samsung Washing Machine 25",
+        "category": "Home & Kitchen",
+        "price": 12500,
+        "stock": 23
+    },
+    {
+        "name": "Havells Ceiling Fan 26",
+        "category": "Home & Kitchen",
+        "price": 13000,
+        "stock": 26
+    },
+    {
+        "name": "Whirlpool Microwave 27",
+        "category": "Home & Kitchen",
+        "price": 13500,
+        "stock": 29
+    },
+    {
+        "name": "Cello Plastic Chair 28",
+        "category": "Home & Kitchen",
+        "price": 14000,
+        "stock": 32
+    },
+    {
+        "name": "Nilkamal Sofa Set 29",
+        "category": "Home & Kitchen",
+        "price": 14500,
+        "stock": 35
+    },
+    {
+        "name": "Prestige Gas Stove 30",
+        "category": "Home & Kitchen",
+        "price": 15000,
+        "stock": 38
+    },
+    {
+        "name": "Prestige Pressure Cooker 31",
+        "category": "Home & Kitchen",
+        "price": 15500,
+        "stock": 41
+    },
+    {
+        "name": "Philips Mixer Grinder 32",
+        "category": "Home & Kitchen",
+        "price": 16000,
+        "stock": 44
+    },
+    {
+        "name": "IKEA Dining Table 33",
+        "category": "Home & Kitchen",
+        "price": 16500,
+        "stock": 47
+    },
+    {
+        "name": "LG Refrigerator 34",
+        "category": "Home & Kitchen",
+        "price": 17000,
+        "stock": 50
+    },
+    {
+        "name": "Samsung Washing Machine 35",
+        "category": "Home & Kitchen",
+        "price": 17500,
+        "stock": 3
+    },
+    {
+        "name": "Havells Ceiling Fan 36",
+        "category": "Home & Kitchen",
+        "price": 18000,
+        "stock": 6
+    },
+    {
+        "name": "Whirlpool Microwave 37",
+        "category": "Home & Kitchen",
+        "price": 18500,
+        "stock": 9
+    },
+    {
+        "name": "Cello Plastic Chair 38",
+        "category": "Home & Kitchen",
+        "price": 19000,
+        "stock": 12
+    },
+    {
+        "name": "Nilkamal Sofa Set 39",
+        "category": "Home & Kitchen",
+        "price": 19500,
+        "stock": 15
+    },
+    {
+        "name": "Prestige Gas Stove 40",
+        "category": "Home & Kitchen",
+        "price": 20000,
+        "stock": 18
+    },
+    {
+        "name": "Harry Potter and the Sorcerer's Stone 1",
+        "category": "Books",
+        "price": 500,
+        "stock": 1
+    },
+    {
+        "name": "The Alchemist 2",
+        "category": "Books",
+        "price": 1000,
+        "stock": 4
+    },
+    {
+        "name": "Atomic Habits 3",
+        "category": "Books",
+        "price": 1500,
+        "stock": 7
+    },
+    {
+        "name": "Sapiens 4",
+        "category": "Books",
+        "price": 2000,
+        "stock": 10
+    },
+    {
+        "name": "Clean Code 5",
+        "category": "Books",
+        "price": 2500,
+        "stock": 13
+    },
+    {
+        "name": "Design Patterns 6",
+        "category": "Books",
+        "price": 3000,
+        "stock": 16
+    },
+    {
+        "name": "Rich Dad Poor Dad 7",
+        "category": "Books",
+        "price": 3500,
+        "stock": 19
+    },
+    {
+        "name": "Deep Work 8",
+        "category": "Books",
+        "price": 4000,
+        "stock": 22
+    },
+    {
+        "name": "Educated 9",
+        "category": "Books",
+        "price": 4500,
+        "stock": 25
+    },
+    {
+        "name": "The Psychology of Money 10",
+        "category": "Books",
+        "price": 5000,
+        "stock": 28
+    },
+    {
+        "name": "Harry Potter and the Sorcerer's Stone 11",
+        "category": "Books",
+        "price": 5500,
+        "stock": 31
+    },
+    {
+        "name": "The Alchemist 12",
+        "category": "Books",
+        "price": 6000,
+        "stock": 34
+    },
+    {
+        "name": "Atomic Habits 13",
+        "category": "Books",
+        "price": 6500,
+        "stock": 37
+    },
+    {
+        "name": "Sapiens 14",
+        "category": "Books",
+        "price": 7000,
+        "stock": 40
+    },
+    {
+        "name": "Clean Code 15",
+        "category": "Books",
+        "price": 7500,
+        "stock": 43
+    },
+    {
+        "name": "Design Patterns 16",
+        "category": "Books",
+        "price": 8000,
+        "stock": 46
+    },
+    {
+        "name": "Rich Dad Poor Dad 17",
+        "category": "Books",
+        "price": 8500,
+        "stock": 49
+    },
+    {
+        "name": "Deep Work 18",
+        "category": "Books",
+        "price": 9000,
+        "stock": 2
+    },
+    {
+        "name": "Educated 19",
+        "category": "Books",
+        "price": 9500,
+        "stock": 5
+    },
+    {
+        "name": "The Psychology of Money 20",
+        "category": "Books",
+        "price": 10000,
+        "stock": 8
+    },
+    {
+        "name": "Harry Potter and the Sorcerer's Stone 21",
+        "category": "Books",
+        "price": 10500,
+        "stock": 11
+    },
+    {
+        "name": "The Alchemist 22",
+        "category": "Books",
+        "price": 11000,
+        "stock": 14
+    },
+    {
+        "name": "Atomic Habits 23",
+        "category": "Books",
+        "price": 11500,
+        "stock": 17
+    },
+    {
+        "name": "Sapiens 24",
+        "category": "Books",
+        "price": 12000,
+        "stock": 20
+    },
+    {
+        "name": "Clean Code 25",
+        "category": "Books",
+        "price": 12500,
+        "stock": 23
+    },
+    {
+        "name": "Design Patterns 26",
+        "category": "Books",
+        "price": 13000,
+        "stock": 26
+    },
+    {
+        "name": "Rich Dad Poor Dad 27",
+        "category": "Books",
+        "price": 13500,
+        "stock": 29
+    },
+    {
+        "name": "Deep Work 28",
+        "category": "Books",
+        "price": 14000,
+        "stock": 32
+    },
+    {
+        "name": "Educated 29",
+        "category": "Books",
+        "price": 14500,
+        "stock": 35
+    },
+    {
+        "name": "The Psychology of Money 30",
+        "category": "Books",
+        "price": 15000,
+        "stock": 38
+    },
+    {
+        "name": "Harry Potter and the Sorcerer's Stone 31",
+        "category": "Books",
+        "price": 15500,
+        "stock": 41
+    },
+    {
+        "name": "The Alchemist 32",
+        "category": "Books",
+        "price": 16000,
+        "stock": 44
+    },
+    {
+        "name": "Atomic Habits 33",
+        "category": "Books",
+        "price": 16500,
+        "stock": 47
+    },
+    {
+        "name": "Sapiens 34",
+        "category": "Books",
+        "price": 17000,
+        "stock": 50
+    },
+    {
+        "name": "Clean Code 35",
+        "category": "Books",
+        "price": 17500,
+        "stock": 3
+    },
+    {
+        "name": "Design Patterns 36",
+        "category": "Books",
+        "price": 18000,
+        "stock": 6
+    },
+    {
+        "name": "Rich Dad Poor Dad 37",
+        "category": "Books",
+        "price": 18500,
+        "stock": 9
+    },
+    {
+        "name": "Deep Work 38",
+        "category": "Books",
+        "price": 19000,
+        "stock": 12
+    },
+    {
+        "name": "Educated 39",
+        "category": "Books",
+        "price": 19500,
+        "stock": 15
+    },
+    {
+        "name": "The Psychology of Money 40",
+        "category": "Books",
+        "price": 20000,
+        "stock": 18
+    },
+    {
+        "name": "Yonex Badminton Racket 1",
+        "category": "Sports & Outdoors",
+        "price": 500,
+        "stock": 1
+    },
+    {
+        "name": "Nivia Football 2",
+        "category": "Sports & Outdoors",
+        "price": 1000,
+        "stock": 4
+    },
+    {
+        "name": "SS Cricket Bat 3",
+        "category": "Sports & Outdoors",
+        "price": 1500,
+        "stock": 7
+    },
+    {
+        "name": "Spalding Basketball 4",
+        "category": "Sports & Outdoors",
+        "price": 2000,
+        "stock": 10
+    },
+    {
+        "name": "Quechua Tent 5",
+        "category": "Sports & Outdoors",
+        "price": 2500,
+        "stock": 13
+    },
+    {
+        "name": "Wildcraft Backpack 6",
+        "category": "Sports & Outdoors",
+        "price": 3000,
+        "stock": 16
+    },
+    {
+        "name": "Cosco Volleyball 7",
+        "category": "Sports & Outdoors",
+        "price": 3500,
+        "stock": 19
+    },
+    {
+        "name": "Nike Running Shorts 8",
+        "category": "Sports & Outdoors",
+        "price": 4000,
+        "stock": 22
+    },
+    {
+        "name": "Adidas Tracksuit 9",
+        "category": "Sports & Outdoors",
+        "price": 4500,
+        "stock": 25
+    },
+    {
+        "name": "Puma Sports Shoes 10",
+        "category": "Sports & Outdoors",
+        "price": 5000,
+        "stock": 28
+    },
+    {
+        "name": "Yonex Badminton Racket 11",
+        "category": "Sports & Outdoors",
+        "price": 5500,
+        "stock": 31
+    },
+    {
+        "name": "Nivia Football 12",
+        "category": "Sports & Outdoors",
+        "price": 6000,
+        "stock": 34
+    },
+    {
+        "name": "SS Cricket Bat 13",
+        "category": "Sports & Outdoors",
+        "price": 6500,
+        "stock": 37
+    },
+    {
+        "name": "Spalding Basketball 14",
+        "category": "Sports & Outdoors",
+        "price": 7000,
+        "stock": 40
+    },
+    {
+        "name": "Quechua Tent 15",
+        "category": "Sports & Outdoors",
+        "price": 7500,
+        "stock": 43
+    },
+    {
+        "name": "Wildcraft Backpack 16",
+        "category": "Sports & Outdoors",
+        "price": 8000,
+        "stock": 46
+    },
+    {
+        "name": "Cosco Volleyball 17",
+        "category": "Sports & Outdoors",
+        "price": 8500,
+        "stock": 49
+    },
+    {
+        "name": "Nike Running Shorts 18",
+        "category": "Sports & Outdoors",
+        "price": 9000,
+        "stock": 2
+    },
+    {
+        "name": "Adidas Tracksuit 19",
+        "category": "Sports & Outdoors",
+        "price": 9500,
+        "stock": 5
+    },
+    {
+        "name": "Puma Sports Shoes 20",
+        "category": "Sports & Outdoors",
+        "price": 10000,
+        "stock": 8
+    },
+    {
+        "name": "Yonex Badminton Racket 21",
+        "category": "Sports & Outdoors",
+        "price": 10500,
+        "stock": 11
+    },
+    {
+        "name": "Nivia Football 22",
+        "category": "Sports & Outdoors",
+        "price": 11000,
+        "stock": 14
+    },
+    {
+        "name": "SS Cricket Bat 23",
+        "category": "Sports & Outdoors",
+        "price": 11500,
+        "stock": 17
+    },
+    {
+        "name": "Spalding Basketball 24",
+        "category": "Sports & Outdoors",
+        "price": 12000,
+        "stock": 20
+    },
+    {
+        "name": "Quechua Tent 25",
+        "category": "Sports & Outdoors",
+        "price": 12500,
+        "stock": 23
+    },
+    {
+        "name": "Wildcraft Backpack 26",
+        "category": "Sports & Outdoors",
+        "price": 13000,
+        "stock": 26
+    },
+    {
+        "name": "Cosco Volleyball 27",
+        "category": "Sports & Outdoors",
+        "price": 13500,
+        "stock": 29
+    },
+    {
+        "name": "Nike Running Shorts 28",
+        "category": "Sports & Outdoors",
+        "price": 14000,
+        "stock": 32
+    },
+    {
+        "name": "Adidas Tracksuit 29",
+        "category": "Sports & Outdoors",
+        "price": 14500,
+        "stock": 35
+    },
+    {
+        "name": "Puma Sports Shoes 30",
+        "category": "Sports & Outdoors",
+        "price": 15000,
+        "stock": 38
+    },
+    {
+        "name": "Yonex Badminton Racket 31",
+        "category": "Sports & Outdoors",
+        "price": 15500,
+        "stock": 41
+    },
+    {
+        "name": "Nivia Football 32",
+        "category": "Sports & Outdoors",
+        "price": 16000,
+        "stock": 44
+    },
+    {
+        "name": "SS Cricket Bat 33",
+        "category": "Sports & Outdoors",
+        "price": 16500,
+        "stock": 47
+    },
+    {
+        "name": "Spalding Basketball 34",
+        "category": "Sports & Outdoors",
+        "price": 17000,
+        "stock": 50
+    },
+    {
+        "name": "Quechua Tent 35",
+        "category": "Sports & Outdoors",
+        "price": 17500,
+        "stock": 3
+    },
+    {
+        "name": "Wildcraft Backpack 36",
+        "category": "Sports & Outdoors",
+        "price": 18000,
+        "stock": 6
+    },
+    {
+        "name": "Cosco Volleyball 37",
+        "category": "Sports & Outdoors",
+        "price": 18500,
+        "stock": 9
+    },
+    {
+        "name": "Nike Running Shorts 38",
+        "category": "Sports & Outdoors",
+        "price": 19000,
+        "stock": 12
+    },
+    {
+        "name": "Adidas Tracksuit 39",
+        "category": "Sports & Outdoors",
+        "price": 19500,
+        "stock": 15
+    },
+    {
+        "name": "Puma Sports Shoes 40",
+        "category": "Sports & Outdoors",
+        "price": 20000,
+        "stock": 18
+    }
+]

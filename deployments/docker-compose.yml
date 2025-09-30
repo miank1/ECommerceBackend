@@ -38,6 +38,17 @@ services:
       postgres:
         condition: service_healthy
 
+  userseeder:
+    build:
+      context: ../
+      dockerfile: services/userservice/Dockerfile.seed
+    environment:
+      - DATABASE_DSN=host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "on-failure"
+
   orderservice:
     build:
       context: ../
@@ -58,6 +69,22 @@ services:
       - "8084:8084"
     env_file:
       - ../services/cartservice/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      orderservice:
+        condition: service_started
+
+  searchservice:
+    build:
+      context: ../
+      dockerfile: services/searchservice/Dockerfile
+    ports:
+      - "8085:8085"
+    env_file:
+      - ../services/searchservice/.env
+    environment:
+      - DATABASE_DSN=host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable
     depends_on:
       postgres:
         condition: service_healthy
