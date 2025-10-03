@@ -26,6 +26,17 @@ services:
       postgres:
         condition: service_healthy
 
+  productseeder:
+    build:
+      context: ../
+      dockerfile: services/productservice/Dockerfile.seed
+    env_file:
+      - ../services/productservice/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "on-failure"
+
   userservice:
     build:
       context: ../

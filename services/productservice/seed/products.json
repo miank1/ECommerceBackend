@@ -1,1202 +1,6062 @@
 [
     {
-        "name": "iPhone 14 1",
+        "name": "iPhone 14",
         "category": "Electronics",
-        "price": 500,
-        "stock": 1
-    },
-    {
-        "name": "Samsung Galaxy S22 2",
-        "category": "Electronics",
-        "price": 1000,
-        "stock": 4
-    },
-    {
-        "name": "MacBook Pro 14 3",
-        "category": "Electronics",
-        "price": 1500,
-        "stock": 7
-    },
-    {
-        "name": "Dell XPS 13 4",
-        "category": "Electronics",
-        "price": 2000,
-        "stock": 10
-    },
-    {
-        "name": "Sony WH-1000XM4 5",
-        "category": "Electronics",
-        "price": 2500,
-        "stock": 13
-    },
-    {
-        "name": "LG OLED TV 55 6",
-        "category": "Electronics",
-        "price": 3000,
-        "stock": 16
-    },
-    {
-        "name": "Canon DSLR 90D 7",
-        "category": "Electronics",
-        "price": 3500,
-        "stock": 19
-    },
-    {
-        "name": "GoPro Hero 11 8",
-        "category": "Electronics",
-        "price": 4000,
-        "stock": 22
-    },
-    {
-        "name": "Amazon Echo Dot 9",
-        "category": "Electronics",
-        "price": 4500,
-        "stock": 25
-    },
-    {
-        "name": "Apple Watch Series 8 10",
-        "category": "Electronics",
-        "price": 5000,
-        "stock": 28
-    },
-    {
-        "name": "iPhone 14 11",
-        "category": "Electronics",
-        "price": 5500,
-        "stock": 31
-    },
-    {
-        "name": "Samsung Galaxy S22 12",
-        "category": "Electronics",
-        "price": 6000,
-        "stock": 34
-    },
-    {
-        "name": "MacBook Pro 14 13",
-        "category": "Electronics",
-        "price": 6500,
-        "stock": 37
-    },
-    {
-        "name": "Dell XPS 13 14",
-        "category": "Electronics",
-        "price": 7000,
-        "stock": 40
-    },
-    {
-        "name": "Sony WH-1000XM4 15",
-        "category": "Electronics",
-        "price": 7500,
-        "stock": 43
-    },
-    {
-        "name": "LG OLED TV 55 16",
-        "category": "Electronics",
-        "price": 8000,
-        "stock": 46
-    },
-    {
-        "name": "Canon DSLR 90D 17",
-        "category": "Electronics",
-        "price": 8500,
-        "stock": 49
-    },
-    {
-        "name": "GoPro Hero 11 18",
-        "category": "Electronics",
-        "price": 9000,
-        "stock": 2
-    },
-    {
-        "name": "Amazon Echo Dot 19",
-        "category": "Electronics",
-        "price": 9500,
-        "stock": 5
-    },
-    {
-        "name": "Apple Watch Series 8 20",
-        "category": "Electronics",
-        "price": 10000,
-        "stock": 8
-    },
-    {
-        "name": "iPhone 14 21",
-        "category": "Electronics",
-        "price": 10500,
-        "stock": 11
-    },
-    {
-        "name": "Samsung Galaxy S22 22",
-        "category": "Electronics",
-        "price": 11000,
-        "stock": 14
-    },
-    {
-        "name": "MacBook Pro 14 23",
-        "category": "Electronics",
-        "price": 11500,
-        "stock": 17
-    },
-    {
-        "name": "Dell XPS 13 24",
-        "category": "Electronics",
-        "price": 12000,
-        "stock": 20
-    },
-    {
-        "name": "Sony WH-1000XM4 25",
-        "category": "Electronics",
-        "price": 12500,
-        "stock": 23
-    },
-    {
-        "name": "LG OLED TV 55 26",
-        "category": "Electronics",
-        "price": 13000,
-        "stock": 26
-    },
-    {
-        "name": "Canon DSLR 90D 27",
-        "category": "Electronics",
-        "price": 13500,
-        "stock": 29
-    },
-    {
-        "name": "GoPro Hero 11 28",
-        "category": "Electronics",
-        "price": 14000,
-        "stock": 32
-    },
-    {
-        "name": "Amazon Echo Dot 29",
-        "category": "Electronics",
-        "price": 14500,
-        "stock": 35
-    },
-    {
-        "name": "Apple Watch Series 8 30",
-        "category": "Electronics",
-        "price": 15000,
-        "stock": 38
-    },
-    {
-        "name": "iPhone 14 31",
-        "category": "Electronics",
-        "price": 15500,
-        "stock": 41
-    },
-    {
-        "name": "Samsung Galaxy S22 32",
-        "category": "Electronics",
-        "price": 16000,
-        "stock": 44
-    },
-    {
-        "name": "MacBook Pro 14 33",
-        "category": "Electronics",
-        "price": 16500,
-        "stock": 47
-    },
-    {
-        "name": "Dell XPS 13 34",
-        "category": "Electronics",
-        "price": 17000,
-        "stock": 50
-    },
-    {
-        "name": "Sony WH-1000XM4 35",
-        "category": "Electronics",
-        "price": 17500,
-        "stock": 3
-    },
-    {
-        "name": "LG OLED TV 55 36",
-        "category": "Electronics",
-        "price": 18000,
-        "stock": 6
-    },
-    {
-        "name": "Canon DSLR 90D 37",
-        "category": "Electronics",
-        "price": 18500,
-        "stock": 9
-    },
-    {
-        "name": "GoPro Hero 11 38",
-        "category": "Electronics",
-        "price": 19000,
-        "stock": 12
-    },
-    {
-        "name": "Amazon Echo Dot 39",
-        "category": "Electronics",
-        "price": 19500,
+        "price": 70000,
         "stock": 15
     },
     {
-        "name": "Apple Watch Series 8 40",
+        "name": "Samsung Galaxy S22",
         "category": "Electronics",
-        "price": 20000,
-        "stock": 18
-    },
-    {
-        "name": "Levis Jeans 1",
-        "category": "Fashion",
-        "price": 500,
-        "stock": 1
-    },
-    {
-        "name": "Nike Air Max 2",
-        "category": "Fashion",
-        "price": 1000,
-        "stock": 4
-    },
-    {
-        "name": "Adidas Ultraboost 3",
-        "category": "Fashion",
-        "price": 1500,
-        "stock": 7
-    },
-    {
-        "name": "Zara T-Shirt 4",
-        "category": "Fashion",
-        "price": 2000,
-        "stock": 10
-    },
-    {
-        "name": "H&M Hoodie 5",
-        "category": "Fashion",
-        "price": 2500,
-        "stock": 13
-    },
-    {
-        "name": "Puma Sneakers 6",
-        "category": "Fashion",
-        "price": 3000,
-        "stock": 16
-    },
-    {
-        "name": "Ray-Ban Aviators 7",
-        "category": "Fashion",
-        "price": 3500,
-        "stock": 19
-    },
-    {
-        "name": "Gucci Handbag 8",
-        "category": "Fashion",
-        "price": 4000,
-        "stock": 22
-    },
-    {
-        "name": "Armani Suit 9",
-        "category": "Fashion",
-        "price": 4500,
-        "stock": 25
-    },
-    {
-        "name": "Rolex Submariner 10",
-        "category": "Fashion",
-        "price": 5000,
-        "stock": 28
-    },
-    {
-        "name": "Levis Jeans 11",
-        "category": "Fashion",
-        "price": 5500,
-        "stock": 31
-    },
-    {
-        "name": "Nike Air Max 12",
-        "category": "Fashion",
-        "price": 6000,
-        "stock": 34
-    },
-    {
-        "name": "Adidas Ultraboost 13",
-        "category": "Fashion",
-        "price": 6500,
-        "stock": 37
-    },
-    {
-        "name": "Zara T-Shirt 14",
-        "category": "Fashion",
-        "price": 7000,
-        "stock": 40
-    },
-    {
-        "name": "H&M Hoodie 15",
-        "category": "Fashion",
-        "price": 7500,
-        "stock": 43
-    },
-    {
-        "name": "Puma Sneakers 16",
-        "category": "Fashion",
-        "price": 8000,
-        "stock": 46
-    },
-    {
-        "name": "Ray-Ban Aviators 17",
-        "category": "Fashion",
-        "price": 8500,
-        "stock": 49
-    },
-    {
-        "name": "Gucci Handbag 18",
-        "category": "Fashion",
-        "price": 9000,
-        "stock": 2
-    },
-    {
-        "name": "Armani Suit 19",
-        "category": "Fashion",
-        "price": 9500,
-        "stock": 5
-    },
-    {
-        "name": "Rolex Submariner 20",
-        "category": "Fashion",
-        "price": 10000,
-        "stock": 8
-    },
-    {
-        "name": "Levis Jeans 21",
-        "category": "Fashion",
-        "price": 10500,
-        "stock": 11
-    },
-    {
-        "name": "Nike Air Max 22",
-        "category": "Fashion",
-        "price": 11000,
-        "stock": 14
-    },
-    {
-        "name": "Adidas Ultraboost 23",
-        "category": "Fashion",
-        "price": 11500,
-        "stock": 17
-    },
-    {
-        "name": "Zara T-Shirt 24",
-        "category": "Fashion",
-        "price": 12000,
+        "price": 60000,
         "stock": 20
     },
     {
-        "name": "H&M Hoodie 25",
-        "category": "Fashion",
-        "price": 12500,
-        "stock": 23
-    },
-    {
-        "name": "Puma Sneakers 26",
-        "category": "Fashion",
-        "price": 13000,
-        "stock": 26
-    },
-    {
-        "name": "Ray-Ban Aviators 27",
-        "category": "Fashion",
-        "price": 13500,
-        "stock": 29
-    },
-    {
-        "name": "Gucci Handbag 28",
-        "category": "Fashion",
-        "price": 14000,
-        "stock": 32
-    },
-    {
-        "name": "Armani Suit 29",
-        "category": "Fashion",
-        "price": 14500,
-        "stock": 35
-    },
-    {
-        "name": "Rolex Submariner 30",
-        "category": "Fashion",
-        "price": 15000,
-        "stock": 38
-    },
-    {
-        "name": "Levis Jeans 31",
-        "category": "Fashion",
-        "price": 15500,
-        "stock": 41
-    },
-    {
-        "name": "Nike Air Max 32",
-        "category": "Fashion",
-        "price": 16000,
-        "stock": 44
-    },
-    {
-        "name": "Adidas Ultraboost 33",
-        "category": "Fashion",
-        "price": 16500,
-        "stock": 47
-    },
-    {
-        "name": "Zara T-Shirt 34",
-        "category": "Fashion",
-        "price": 17000,
-        "stock": 50
-    },
-    {
-        "name": "H&M Hoodie 35",
-        "category": "Fashion",
-        "price": 17500,
-        "stock": 3
-    },
-    {
-        "name": "Puma Sneakers 36",
-        "category": "Fashion",
-        "price": 18000,
-        "stock": 6
-    },
-    {
-        "name": "Ray-Ban Aviators 37",
-        "category": "Fashion",
-        "price": 18500,
-        "stock": 9
-    },
-    {
-        "name": "Gucci Handbag 38",
-        "category": "Fashion",
-        "price": 19000,
-        "stock": 12
-    },
-    {
-        "name": "Armani Suit 39",
-        "category": "Fashion",
-        "price": 19500,
-        "stock": 15
-    },
-    {
-        "name": "Rolex Submariner 40",
-        "category": "Fashion",
-        "price": 20000,
-        "stock": 18
-    },
-    {
-        "name": "Prestige Pressure Cooker 1",
-        "category": "Home & Kitchen",
-        "price": 500,
-        "stock": 1
-    },
-    {
-        "name": "Philips Mixer Grinder 2",
-        "category": "Home & Kitchen",
-        "price": 1000,
-        "stock": 4
-    },
-    {
-        "name": "IKEA Dining Table 3",
-        "category": "Home & Kitchen",
-        "price": 1500,
-        "stock": 7
-    },
-    {
-        "name": "LG Refrigerator 4",
-        "category": "Home & Kitchen",
-        "price": 2000,
+        "name": "MacBook Pro 14\"",
+        "category": "Electronics",
+        "price": 150000,
         "stock": 10
     },
     {
-        "name": "Samsung Washing Machine 5",
-        "category": "Home & Kitchen",
-        "price": 2500,
-        "stock": 13
+        "name": "Sony WH-1000XM4 Headphones",
+        "category": "Electronics",
+        "price": 25000,
+        "stock": 30
     },
     {
-        "name": "Havells Ceiling Fan 6",
-        "category": "Home & Kitchen",
-        "price": 3000,
-        "stock": 16
-    },
-    {
-        "name": "Whirlpool Microwave 7",
-        "category": "Home & Kitchen",
-        "price": 3500,
-        "stock": 19
-    },
-    {
-        "name": "Cello Plastic Chair 8",
-        "category": "Home & Kitchen",
-        "price": 4000,
-        "stock": 22
-    },
-    {
-        "name": "Nilkamal Sofa Set 9",
-        "category": "Home & Kitchen",
-        "price": 4500,
+        "name": "Nike Air Max",
+        "category": "Fashion",
+        "price": 8000,
         "stock": 25
     },
     {
-        "name": "Prestige Gas Stove 10",
-        "category": "Home & Kitchen",
-        "price": 5000,
-        "stock": 28
-    },
-    {
-        "name": "Prestige Pressure Cooker 11",
-        "category": "Home & Kitchen",
-        "price": 5500,
-        "stock": 31
-    },
-    {
-        "name": "Philips Mixer Grinder 12",
-        "category": "Home & Kitchen",
-        "price": 6000,
-        "stock": 34
-    },
-    {
-        "name": "IKEA Dining Table 13",
-        "category": "Home & Kitchen",
-        "price": 6500,
-        "stock": 37
-    },
-    {
-        "name": "LG Refrigerator 14",
-        "category": "Home & Kitchen",
-        "price": 7000,
-        "stock": 40
-    },
-    {
-        "name": "Samsung Washing Machine 15",
-        "category": "Home & Kitchen",
-        "price": 7500,
-        "stock": 43
-    },
-    {
-        "name": "Havells Ceiling Fan 16",
-        "category": "Home & Kitchen",
-        "price": 8000,
-        "stock": 46
-    },
-    {
-        "name": "Whirlpool Microwave 17",
-        "category": "Home & Kitchen",
-        "price": 8500,
-        "stock": 49
-    },
-    {
-        "name": "Cello Plastic Chair 18",
-        "category": "Home & Kitchen",
-        "price": 9000,
-        "stock": 2
-    },
-    {
-        "name": "Nilkamal Sofa Set 19",
-        "category": "Home & Kitchen",
+        "name": "Adidas Ultraboost",
+        "category": "Fashion",
         "price": 9500,
-        "stock": 5
-    },
-    {
-        "name": "Prestige Gas Stove 20",
-        "category": "Home & Kitchen",
-        "price": 10000,
-        "stock": 8
-    },
-    {
-        "name": "Prestige Pressure Cooker 21",
-        "category": "Home & Kitchen",
-        "price": 10500,
-        "stock": 11
-    },
-    {
-        "name": "Philips Mixer Grinder 22",
-        "category": "Home & Kitchen",
-        "price": 11000,
-        "stock": 14
-    },
-    {
-        "name": "IKEA Dining Table 23",
-        "category": "Home & Kitchen",
-        "price": 11500,
-        "stock": 17
-    },
-    {
-        "name": "LG Refrigerator 24",
-        "category": "Home & Kitchen",
-        "price": 12000,
-        "stock": 20
-    },
-    {
-        "name": "Samsung Washing Machine 25",
-        "category": "Home & Kitchen",
-        "price": 12500,
-        "stock": 23
-    },
-    {
-        "name": "Havells Ceiling Fan 26",
-        "category": "Home & Kitchen",
-        "price": 13000,
-        "stock": 26
-    },
-    {
-        "name": "Whirlpool Microwave 27",
-        "category": "Home & Kitchen",
-        "price": 13500,
-        "stock": 29
-    },
-    {
-        "name": "Cello Plastic Chair 28",
-        "category": "Home & Kitchen",
-        "price": 14000,
-        "stock": 32
-    },
-    {
-        "name": "Nilkamal Sofa Set 29",
-        "category": "Home & Kitchen",
-        "price": 14500,
-        "stock": 35
-    },
-    {
-        "name": "Prestige Gas Stove 30",
-        "category": "Home & Kitchen",
-        "price": 15000,
-        "stock": 38
-    },
-    {
-        "name": "Prestige Pressure Cooker 31",
-        "category": "Home & Kitchen",
-        "price": 15500,
-        "stock": 41
-    },
-    {
-        "name": "Philips Mixer Grinder 32",
-        "category": "Home & Kitchen",
-        "price": 16000,
-        "stock": 44
-    },
-    {
-        "name": "IKEA Dining Table 33",
-        "category": "Home & Kitchen",
-        "price": 16500,
-        "stock": 47
-    },
-    {
-        "name": "LG Refrigerator 34",
-        "category": "Home & Kitchen",
-        "price": 17000,
-        "stock": 50
-    },
-    {
-        "name": "Samsung Washing Machine 35",
-        "category": "Home & Kitchen",
-        "price": 17500,
-        "stock": 3
-    },
-    {
-        "name": "Havells Ceiling Fan 36",
-        "category": "Home & Kitchen",
-        "price": 18000,
-        "stock": 6
-    },
-    {
-        "name": "Whirlpool Microwave 37",
-        "category": "Home & Kitchen",
-        "price": 18500,
-        "stock": 9
-    },
-    {
-        "name": "Cello Plastic Chair 38",
-        "category": "Home & Kitchen",
-        "price": 19000,
-        "stock": 12
-    },
-    {
-        "name": "Nilkamal Sofa Set 39",
-        "category": "Home & Kitchen",
-        "price": 19500,
-        "stock": 15
-    },
-    {
-        "name": "Prestige Gas Stove 40",
-        "category": "Home & Kitchen",
-        "price": 20000,
         "stock": 18
     },
     {
-        "name": "Harry Potter and the Sorcerer's Stone 1",
-        "category": "Books",
-        "price": 500,
-        "stock": 1
+        "name": "IKEA Dining Table",
+        "category": "Home & Kitchen",
+        "price": 45000,
+        "stock": 5
     },
     {
-        "name": "The Alchemist 2",
-        "category": "Books",
-        "price": 1000,
-        "stock": 4
-    },
-    {
-        "name": "Atomic Habits 3",
-        "category": "Books",
-        "price": 1500,
-        "stock": 7
-    },
-    {
-        "name": "Sapiens 4",
-        "category": "Books",
-        "price": 2000,
-        "stock": 10
-    },
-    {
-        "name": "Clean Code 5",
-        "category": "Books",
+        "name": "Prestige Pressure Cooker",
+        "category": "Home & Kitchen",
         "price": 2500,
-        "stock": 13
-    },
-    {
-        "name": "Design Patterns 6",
-        "category": "Books",
-        "price": 3000,
-        "stock": 16
-    },
-    {
-        "name": "Rich Dad Poor Dad 7",
-        "category": "Books",
-        "price": 3500,
-        "stock": 19
-    },
-    {
-        "name": "Deep Work 8",
-        "category": "Books",
-        "price": 4000,
-        "stock": 22
-    },
-    {
-        "name": "Educated 9",
-        "category": "Books",
-        "price": 4500,
-        "stock": 25
-    },
-    {
-        "name": "The Psychology of Money 10",
-        "category": "Books",
-        "price": 5000,
-        "stock": 28
-    },
-    {
-        "name": "Harry Potter and the Sorcerer's Stone 11",
-        "category": "Books",
-        "price": 5500,
-        "stock": 31
-    },
-    {
-        "name": "The Alchemist 12",
-        "category": "Books",
-        "price": 6000,
-        "stock": 34
-    },
-    {
-        "name": "Atomic Habits 13",
-        "category": "Books",
-        "price": 6500,
-        "stock": 37
-    },
-    {
-        "name": "Sapiens 14",
-        "category": "Books",
-        "price": 7000,
         "stock": 40
     },
     {
-        "name": "Clean Code 15",
+        "name": "Harry Potter and the Sorcerer's Stone",
         "category": "Books",
-        "price": 7500,
+        "price": 500,
+        "stock": 100
+    },
+    {
+        "name": "Atomic Habits",
+        "category": "Books",
+        "price": 700,
+        "stock": 60
+    },
+    {
+        "name": "Cello Chair 1",
+        "category": "Home & Kitchen",
+        "price": 112237.96,
         "stock": 43
     },
     {
-        "name": "Design Patterns 16",
-        "category": "Books",
-        "price": 8000,
-        "stock": 46
+        "name": "Apple Watch 2",
+        "category": "Electronics",
+        "price": 48908.1,
+        "stock": 95
     },
     {
-        "name": "Rich Dad Poor Dad 17",
+        "name": "Educated 3",
         "category": "Books",
-        "price": 8500,
-        "stock": 49
-    },
-    {
-        "name": "Deep Work 18",
-        "category": "Books",
-        "price": 9000,
-        "stock": 2
-    },
-    {
-        "name": "Educated 19",
-        "category": "Books",
-        "price": 9500,
-        "stock": 5
-    },
-    {
-        "name": "The Psychology of Money 20",
-        "category": "Books",
-        "price": 10000,
-        "stock": 8
-    },
-    {
-        "name": "Harry Potter and the Sorcerer's Stone 21",
-        "category": "Books",
-        "price": 10500,
-        "stock": 11
-    },
-    {
-        "name": "The Alchemist 22",
-        "category": "Books",
-        "price": 11000,
-        "stock": 14
-    },
-    {
-        "name": "Atomic Habits 23",
-        "category": "Books",
-        "price": 11500,
-        "stock": 17
-    },
-    {
-        "name": "Sapiens 24",
-        "category": "Books",
-        "price": 12000,
-        "stock": 20
-    },
-    {
-        "name": "Clean Code 25",
-        "category": "Books",
-        "price": 12500,
-        "stock": 23
-    },
-    {
-        "name": "Design Patterns 26",
-        "category": "Books",
-        "price": 13000,
-        "stock": 26
-    },
-    {
-        "name": "Rich Dad Poor Dad 27",
-        "category": "Books",
-        "price": 13500,
+        "price": 180099.12,
         "stock": 29
     },
     {
-        "name": "Deep Work 28",
+        "name": "Psychology of Money 4",
         "category": "Books",
-        "price": 14000,
-        "stock": 32
-    },
-    {
-        "name": "Educated 29",
-        "category": "Books",
-        "price": 14500,
-        "stock": 35
-    },
-    {
-        "name": "The Psychology of Money 30",
-        "category": "Books",
-        "price": 15000,
-        "stock": 38
-    },
-    {
-        "name": "Harry Potter and the Sorcerer's Stone 31",
-        "category": "Books",
-        "price": 15500,
-        "stock": 41
-    },
-    {
-        "name": "The Alchemist 32",
-        "category": "Books",
-        "price": 16000,
-        "stock": 44
-    },
-    {
-        "name": "Atomic Habits 33",
-        "category": "Books",
-        "price": 16500,
-        "stock": 47
-    },
-    {
-        "name": "Sapiens 34",
-        "category": "Books",
-        "price": 17000,
-        "stock": 50
-    },
-    {
-        "name": "Clean Code 35",
-        "category": "Books",
-        "price": 17500,
-        "stock": 3
-    },
-    {
-        "name": "Design Patterns 36",
-        "category": "Books",
-        "price": 18000,
-        "stock": 6
-    },
-    {
-        "name": "Rich Dad Poor Dad 37",
-        "category": "Books",
-        "price": 18500,
-        "stock": 9
-    },
-    {
-        "name": "Deep Work 38",
-        "category": "Books",
-        "price": 19000,
-        "stock": 12
-    },
-    {
-        "name": "Educated 39",
-        "category": "Books",
-        "price": 19500,
-        "stock": 15
-    },
-    {
-        "name": "The Psychology of Money 40",
-        "category": "Books",
-        "price": 20000,
+        "price": 133902.83,
         "stock": 18
-    },
-    {
-        "name": "Yonex Badminton Racket 1",
-        "category": "Sports & Outdoors",
-        "price": 500,
-        "stock": 1
-    },
-    {
-        "name": "Nivia Football 2",
-        "category": "Sports & Outdoors",
-        "price": 1000,
-        "stock": 4
-    },
-    {
-        "name": "SS Cricket Bat 3",
-        "category": "Sports & Outdoors",
-        "price": 1500,
-        "stock": 7
-    },
-    {
-        "name": "Spalding Basketball 4",
-        "category": "Sports & Outdoors",
-        "price": 2000,
-        "stock": 10
     },
     {
         "name": "Quechua Tent 5",
         "category": "Sports & Outdoors",
-        "price": 2500,
-        "stock": 13
-    },
-    {
-        "name": "Wildcraft Backpack 6",
-        "category": "Sports & Outdoors",
-        "price": 3000,
-        "stock": 16
-    },
-    {
-        "name": "Cosco Volleyball 7",
-        "category": "Sports & Outdoors",
-        "price": 3500,
-        "stock": 19
-    },
-    {
-        "name": "Nike Running Shorts 8",
-        "category": "Sports & Outdoors",
-        "price": 4000,
-        "stock": 22
-    },
-    {
-        "name": "Adidas Tracksuit 9",
-        "category": "Sports & Outdoors",
-        "price": 4500,
-        "stock": 25
-    },
-    {
-        "name": "Puma Sports Shoes 10",
-        "category": "Sports & Outdoors",
-        "price": 5000,
-        "stock": 28
-    },
-    {
-        "name": "Yonex Badminton Racket 11",
-        "category": "Sports & Outdoors",
-        "price": 5500,
-        "stock": 31
-    },
-    {
-        "name": "Nivia Football 12",
-        "category": "Sports & Outdoors",
-        "price": 6000,
-        "stock": 34
-    },
-    {
-        "name": "SS Cricket Bat 13",
-        "category": "Sports & Outdoors",
-        "price": 6500,
-        "stock": 37
-    },
-    {
-        "name": "Spalding Basketball 14",
-        "category": "Sports & Outdoors",
-        "price": 7000,
-        "stock": 40
-    },
-    {
-        "name": "Quechua Tent 15",
-        "category": "Sports & Outdoors",
-        "price": 7500,
-        "stock": 43
-    },
-    {
-        "name": "Wildcraft Backpack 16",
-        "category": "Sports & Outdoors",
-        "price": 8000,
-        "stock": 46
-    },
-    {
-        "name": "Cosco Volleyball 17",
-        "category": "Sports & Outdoors",
-        "price": 8500,
-        "stock": 49
-    },
-    {
-        "name": "Nike Running Shorts 18",
-        "category": "Sports & Outdoors",
-        "price": 9000,
-        "stock": 2
-    },
-    {
-        "name": "Adidas Tracksuit 19",
-        "category": "Sports & Outdoors",
-        "price": 9500,
-        "stock": 5
-    },
-    {
-        "name": "Puma Sports Shoes 20",
-        "category": "Sports & Outdoors",
-        "price": 10000,
+        "price": 81897.19,
         "stock": 8
     },
     {
-        "name": "Yonex Badminton Racket 21",
-        "category": "Sports & Outdoors",
-        "price": 10500,
-        "stock": 11
-    },
-    {
-        "name": "Nivia Football 22",
-        "category": "Sports & Outdoors",
-        "price": 11000,
-        "stock": 14
-    },
-    {
-        "name": "SS Cricket Bat 23",
-        "category": "Sports & Outdoors",
-        "price": 11500,
-        "stock": 17
-    },
-    {
-        "name": "Spalding Basketball 24",
-        "category": "Sports & Outdoors",
-        "price": 12000,
-        "stock": 20
-    },
-    {
-        "name": "Quechua Tent 25",
-        "category": "Sports & Outdoors",
-        "price": 12500,
-        "stock": 23
-    },
-    {
-        "name": "Wildcraft Backpack 26",
-        "category": "Sports & Outdoors",
-        "price": 13000,
-        "stock": 26
-    },
-    {
-        "name": "Cosco Volleyball 27",
-        "category": "Sports & Outdoors",
-        "price": 13500,
-        "stock": 29
-    },
-    {
-        "name": "Nike Running Shorts 28",
-        "category": "Sports & Outdoors",
-        "price": 14000,
-        "stock": 32
-    },
-    {
-        "name": "Adidas Tracksuit 29",
-        "category": "Sports & Outdoors",
-        "price": 14500,
-        "stock": 35
-    },
-    {
-        "name": "Puma Sports Shoes 30",
-        "category": "Sports & Outdoors",
-        "price": 15000,
-        "stock": 38
-    },
-    {
-        "name": "Yonex Badminton Racket 31",
-        "category": "Sports & Outdoors",
-        "price": 15500,
-        "stock": 41
-    },
-    {
-        "name": "Nivia Football 32",
-        "category": "Sports & Outdoors",
-        "price": 16000,
-        "stock": 44
-    },
-    {
-        "name": "SS Cricket Bat 33",
-        "category": "Sports & Outdoors",
-        "price": 16500,
-        "stock": 47
-    },
-    {
-        "name": "Spalding Basketball 34",
-        "category": "Sports & Outdoors",
-        "price": 17000,
-        "stock": 50
-    },
-    {
-        "name": "Quechua Tent 35",
-        "category": "Sports & Outdoors",
-        "price": 17500,
-        "stock": 3
-    },
-    {
-        "name": "Wildcraft Backpack 36",
-        "category": "Sports & Outdoors",
-        "price": 18000,
-        "stock": 6
-    },
-    {
-        "name": "Cosco Volleyball 37",
-        "category": "Sports & Outdoors",
-        "price": 18500,
-        "stock": 9
-    },
-    {
-        "name": "Nike Running Shorts 38",
-        "category": "Sports & Outdoors",
-        "price": 19000,
-        "stock": 12
-    },
-    {
-        "name": "Adidas Tracksuit 39",
-        "category": "Sports & Outdoors",
-        "price": 19500,
+        "name": "Clean Code 6",
+        "category": "Books",
+        "price": 15066.08,
         "stock": 15
     },
     {
-        "name": "Puma Sports Shoes 40",
+        "name": "Levis Jeans 7",
+        "category": "Fashion",
+        "price": 134219.7,
+        "stock": 83
+    },
+    {
+        "name": "Amazon Echo 8",
+        "category": "Electronics",
+        "price": 152504.56,
+        "stock": 91
+    },
+    {
+        "name": "Deep Work 9",
+        "category": "Books",
+        "price": 99917.55,
+        "stock": 33
+    },
+    {
+        "name": "Dell XPS 10",
+        "category": "Electronics",
+        "price": 189254.99,
+        "stock": 6
+    },
+    {
+        "name": "Nilkamal Sofa 11",
+        "category": "Home & Kitchen",
+        "price": 161649.9,
+        "stock": 87
+    },
+    {
+        "name": "iPhone 12",
+        "category": "Electronics",
+        "price": 50485.48,
+        "stock": 25
+    },
+    {
+        "name": "Sapiens 13",
+        "category": "Books",
+        "price": 103160.82,
+        "stock": 61
+    },
+    {
+        "name": "Amazon Echo 14",
+        "category": "Electronics",
+        "price": 91026.46,
+        "stock": 43
+    },
+    {
+        "name": "Rich Dad Poor Dad 15",
+        "category": "Books",
+        "price": 121680.18,
+        "stock": 60
+    },
+    {
+        "name": "Canon Camera 16",
+        "category": "Electronics",
+        "price": 64143.29,
+        "stock": 41
+    },
+    {
+        "name": "Adidas Tracksuit 17",
         "category": "Sports & Outdoors",
-        "price": 20000,
+        "price": 16250.17,
+        "stock": 29
+    },
+    {
+        "name": "Quechua Tent 18",
+        "category": "Sports & Outdoors",
+        "price": 71341.38,
+        "stock": 9
+    },
+    {
+        "name": "Gucci Handbag 19",
+        "category": "Fashion",
+        "price": 185220.58,
+        "stock": 64
+    },
+    {
+        "name": "Design Patterns 20",
+        "category": "Books",
+        "price": 134630.54,
+        "stock": 71
+    },
+    {
+        "name": "Rolex Watch 21",
+        "category": "Fashion",
+        "price": 134863.92,
+        "stock": 43
+    },
+    {
+        "name": "Nike Shorts 22",
+        "category": "Sports & Outdoors",
+        "price": 161128.83,
+        "stock": 59
+    },
+    {
+        "name": "Wildcraft Backpack 23",
+        "category": "Sports & Outdoors",
+        "price": 120570.28,
+        "stock": 8
+    },
+    {
+        "name": "H&M Hoodie 24",
+        "category": "Fashion",
+        "price": 81478.74,
+        "stock": 53
+    },
+    {
+        "name": "SS Cricket Bat 25",
+        "category": "Sports & Outdoors",
+        "price": 71533.24,
+        "stock": 30
+    },
+    {
+        "name": "Nike Shorts 26",
+        "category": "Sports & Outdoors",
+        "price": 41211.66,
+        "stock": 92
+    },
+    {
+        "name": "The Alchemist 27",
+        "category": "Books",
+        "price": 1777.57,
+        "stock": 66
+    },
+    {
+        "name": "Rolex Watch 28",
+        "category": "Fashion",
+        "price": 73023.46,
+        "stock": 1
+    },
+    {
+        "name": "Atomic Habits 29",
+        "category": "Books",
+        "price": 27497.97,
+        "stock": 15
+    },
+    {
+        "name": "Sapiens 30",
+        "category": "Books",
+        "price": 56328.38,
+        "stock": 95
+    },
+    {
+        "name": "LG OLED TV 31",
+        "category": "Electronics",
+        "price": 100993.68,
+        "stock": 27
+    },
+    {
+        "name": "H&M Hoodie 32",
+        "category": "Fashion",
+        "price": 1340.53,
+        "stock": 4
+    },
+    {
+        "name": "Nivia Football 33",
+        "category": "Sports & Outdoors",
+        "price": 194122.21,
+        "stock": 42
+    },
+    {
+        "name": "Samsung Washing Machine 34",
+        "category": "Home & Kitchen",
+        "price": 189634.73,
+        "stock": 21
+    },
+    {
+        "name": "Nilkamal Sofa 35",
+        "category": "Home & Kitchen",
+        "price": 51009.47,
+        "stock": 88
+    },
+    {
+        "name": "LG OLED TV 36",
+        "category": "Electronics",
+        "price": 136107.09,
+        "stock": 45
+    },
+    {
+        "name": "Rich Dad Poor Dad 37",
+        "category": "Books",
+        "price": 74658.92,
+        "stock": 32
+    },
+    {
+        "name": "Amazon Echo 38",
+        "category": "Electronics",
+        "price": 131607.59,
+        "stock": 8
+    },
+    {
+        "name": "Harry Potter 39",
+        "category": "Books",
+        "price": 196309.83,
+        "stock": 74
+    },
+    {
+        "name": "Nike Shorts 40",
+        "category": "Sports & Outdoors",
+        "price": 87895.68,
+        "stock": 70
+    },
+    {
+        "name": "LG Refrigerator 41",
+        "category": "Home & Kitchen",
+        "price": 174591.7,
+        "stock": 92
+    },
+    {
+        "name": "Dell XPS 42",
+        "category": "Electronics",
+        "price": 75611.39,
+        "stock": 21
+    },
+    {
+        "name": "Havells Fan 43",
+        "category": "Home & Kitchen",
+        "price": 67879.76,
+        "stock": 91
+    },
+    {
+        "name": "Amazon Echo 44",
+        "category": "Electronics",
+        "price": 93820.29,
+        "stock": 37
+    },
+    {
+        "name": "Atomic Habits 45",
+        "category": "Books",
+        "price": 86413.1,
+        "stock": 96
+    },
+    {
+        "name": "GoPro 46",
+        "category": "Electronics",
+        "price": 14739.74,
+        "stock": 44
+    },
+    {
+        "name": "Rolex Watch 47",
+        "category": "Fashion",
+        "price": 76166.63,
+        "stock": 55
+    },
+    {
+        "name": "Canon Camera 48",
+        "category": "Electronics",
+        "price": 26279.75,
+        "stock": 95
+    },
+    {
+        "name": "Cello Chair 49",
+        "category": "Home & Kitchen",
+        "price": 10878.26,
+        "stock": 14
+    },
+    {
+        "name": "The Alchemist 50",
+        "category": "Books",
+        "price": 119960.39,
+        "stock": 62
+    },
+    {
+        "name": "Rolex Watch 51",
+        "category": "Fashion",
+        "price": 170681.19,
+        "stock": 52
+    },
+    {
+        "name": "MacBook Pro 52",
+        "category": "Electronics",
+        "price": 65106.89,
+        "stock": 46
+    },
+    {
+        "name": "Rolex Watch 53",
+        "category": "Fashion",
+        "price": 120032.43,
+        "stock": 46
+    },
+    {
+        "name": "Dell XPS 54",
+        "category": "Electronics",
+        "price": 101779.91,
+        "stock": 64
+    },
+    {
+        "name": "Armani Suit 55",
+        "category": "Fashion",
+        "price": 76200.46,
+        "stock": 1
+    },
+    {
+        "name": "Sony Headphones 56",
+        "category": "Electronics",
+        "price": 114981.12,
+        "stock": 62
+    },
+    {
+        "name": "Adidas Tracksuit 57",
+        "category": "Sports & Outdoors",
+        "price": 169717.79,
+        "stock": 22
+    },
+    {
+        "name": "Prestige Cooker 58",
+        "category": "Home & Kitchen",
+        "price": 83540.61,
+        "stock": 15
+    },
+    {
+        "name": "Deep Work 59",
+        "category": "Books",
+        "price": 57502.47,
+        "stock": 35
+    },
+    {
+        "name": "Sapiens 60",
+        "category": "Books",
+        "price": 21269.99,
+        "stock": 54
+    },
+    {
+        "name": "Atomic Habits 61",
+        "category": "Books",
+        "price": 91261.86,
+        "stock": 76
+    },
+    {
+        "name": "Armani Suit 62",
+        "category": "Fashion",
+        "price": 106001.02,
+        "stock": 81
+    },
+    {
+        "name": "Levis Jeans 63",
+        "category": "Fashion",
+        "price": 10635.59,
+        "stock": 76
+    },
+    {
+        "name": "Canon Camera 64",
+        "category": "Electronics",
+        "price": 37846.51,
+        "stock": 12
+    },
+    {
+        "name": "Clean Code 65",
+        "category": "Books",
+        "price": 24860.99,
+        "stock": 27
+    },
+    {
+        "name": "Quechua Tent 66",
+        "category": "Sports & Outdoors",
+        "price": 10733.35,
+        "stock": 81
+    },
+    {
+        "name": "Samsung Galaxy 67",
+        "category": "Electronics",
+        "price": 93748.19,
+        "stock": 72
+    },
+    {
+        "name": "Philips Mixer 68",
+        "category": "Home & Kitchen",
+        "price": 59139.62,
+        "stock": 100
+    },
+    {
+        "name": "Ray-Ban Aviators 69",
+        "category": "Fashion",
+        "price": 23304.26,
+        "stock": 100
+    },
+    {
+        "name": "Educated 70",
+        "category": "Books",
+        "price": 45006.97,
+        "stock": 20
+    },
+    {
+        "name": "The Alchemist 71",
+        "category": "Books",
+        "price": 91546.22,
+        "stock": 15
+    },
+    {
+        "name": "Clean Code 72",
+        "category": "Books",
+        "price": 139110.65,
+        "stock": 24
+    },
+    {
+        "name": "Levis Jeans 73",
+        "category": "Fashion",
+        "price": 25811.97,
+        "stock": 71
+    },
+    {
+        "name": "Rolex Watch 74",
+        "category": "Fashion",
+        "price": 52862.81,
+        "stock": 73
+    },
+    {
+        "name": "Zara T-Shirt 75",
+        "category": "Fashion",
+        "price": 153635.14,
+        "stock": 32
+    },
+    {
+        "name": "Canon Camera 76",
+        "category": "Electronics",
+        "price": 10628.16,
+        "stock": 29
+    },
+    {
+        "name": "Sapiens 77",
+        "category": "Books",
+        "price": 11902.18,
+        "stock": 76
+    },
+    {
+        "name": "Adidas Tracksuit 78",
+        "category": "Sports & Outdoors",
+        "price": 121871.79,
+        "stock": 42
+    },
+    {
+        "name": "Amazon Echo 79",
+        "category": "Electronics",
+        "price": 107743.6,
+        "stock": 46
+    },
+    {
+        "name": "IKEA Table 80",
+        "category": "Home & Kitchen",
+        "price": 146422.46,
+        "stock": 12
+    },
+    {
+        "name": "GoPro 81",
+        "category": "Electronics",
+        "price": 181598.33,
+        "stock": 81
+    },
+    {
+        "name": "Psychology of Money 82",
+        "category": "Books",
+        "price": 134340.45,
+        "stock": 42
+    },
+    {
+        "name": "Samsung Galaxy 83",
+        "category": "Electronics",
+        "price": 15333.44,
         "stock": 18
+    },
+    {
+        "name": "Nivia Football 84",
+        "category": "Sports & Outdoors",
+        "price": 160771.43,
+        "stock": 95
+    },
+    {
+        "name": "Philips Mixer 85",
+        "category": "Home & Kitchen",
+        "price": 35176.12,
+        "stock": 26
+    },
+    {
+        "name": "Samsung Galaxy 86",
+        "category": "Electronics",
+        "price": 6649.45,
+        "stock": 80
+    },
+    {
+        "name": "Yonex Racket 87",
+        "category": "Sports & Outdoors",
+        "price": 10659.41,
+        "stock": 3
+    },
+    {
+        "name": "Philips Mixer 88",
+        "category": "Home & Kitchen",
+        "price": 153669.61,
+        "stock": 63
+    },
+    {
+        "name": "Puma Sports Shoes 89",
+        "category": "Sports & Outdoors",
+        "price": 136401.3,
+        "stock": 67
+    },
+    {
+        "name": "Wildcraft Backpack 90",
+        "category": "Sports & Outdoors",
+        "price": 30455.79,
+        "stock": 24
+    },
+    {
+        "name": "Deep Work 91",
+        "category": "Books",
+        "price": 18711.05,
+        "stock": 13
+    },
+    {
+        "name": "LG OLED TV 92",
+        "category": "Electronics",
+        "price": 113132.17,
+        "stock": 20
+    },
+    {
+        "name": "Quechua Tent 93",
+        "category": "Sports & Outdoors",
+        "price": 188119.47,
+        "stock": 96
+    },
+    {
+        "name": "Deep Work 94",
+        "category": "Books",
+        "price": 108274.46,
+        "stock": 52
+    },
+    {
+        "name": "Spalding Basketball 95",
+        "category": "Sports & Outdoors",
+        "price": 101323.21,
+        "stock": 81
+    },
+    {
+        "name": "IKEA Table 96",
+        "category": "Home & Kitchen",
+        "price": 75757.58,
+        "stock": 65
+    },
+    {
+        "name": "Prestige Cooker 97",
+        "category": "Home & Kitchen",
+        "price": 94782.28,
+        "stock": 36
+    },
+    {
+        "name": "Apple Watch 98",
+        "category": "Electronics",
+        "price": 48360.93,
+        "stock": 43
+    },
+    {
+        "name": "Puma Sneakers 99",
+        "category": "Fashion",
+        "price": 65661.42,
+        "stock": 94
+    },
+    {
+        "name": "Adidas Tracksuit 100",
+        "category": "Sports & Outdoors",
+        "price": 123308.41,
+        "stock": 49
+    },
+    {
+        "name": "Gucci Handbag 101",
+        "category": "Fashion",
+        "price": 34127.68,
+        "stock": 86
+    },
+    {
+        "name": "Philips Mixer 102",
+        "category": "Home & Kitchen",
+        "price": 98511.51,
+        "stock": 64
+    },
+    {
+        "name": "Armani Suit 103",
+        "category": "Fashion",
+        "price": 55412.0,
+        "stock": 19
+    },
+    {
+        "name": "The Alchemist 104",
+        "category": "Books",
+        "price": 199440.12,
+        "stock": 40
+    },
+    {
+        "name": "Sapiens 105",
+        "category": "Books",
+        "price": 88102.4,
+        "stock": 2
+    },
+    {
+        "name": "Whirlpool Microwave 106",
+        "category": "Home & Kitchen",
+        "price": 193317.83,
+        "stock": 32
+    },
+    {
+        "name": "Sapiens 107",
+        "category": "Books",
+        "price": 159689.12,
+        "stock": 91
+    },
+    {
+        "name": "Apple Watch 108",
+        "category": "Electronics",
+        "price": 94971.58,
+        "stock": 82
+    },
+    {
+        "name": "MacBook Pro 109",
+        "category": "Electronics",
+        "price": 186122.86,
+        "stock": 84
+    },
+    {
+        "name": "Apple Watch 110",
+        "category": "Electronics",
+        "price": 3953.45,
+        "stock": 33
+    },
+    {
+        "name": "Cello Chair 111",
+        "category": "Home & Kitchen",
+        "price": 23828.43,
+        "stock": 85
+    },
+    {
+        "name": "SS Cricket Bat 112",
+        "category": "Sports & Outdoors",
+        "price": 164885.82,
+        "stock": 11
+    },
+    {
+        "name": "Cello Chair 113",
+        "category": "Home & Kitchen",
+        "price": 7548.99,
+        "stock": 79
+    },
+    {
+        "name": "Nilkamal Sofa 114",
+        "category": "Home & Kitchen",
+        "price": 132371.89,
+        "stock": 86
+    },
+    {
+        "name": "Clean Code 115",
+        "category": "Books",
+        "price": 178553.29,
+        "stock": 96
+    },
+    {
+        "name": "GoPro 116",
+        "category": "Electronics",
+        "price": 161957.64,
+        "stock": 85
+    },
+    {
+        "name": "Whirlpool Microwave 117",
+        "category": "Home & Kitchen",
+        "price": 124470.78,
+        "stock": 90
+    },
+    {
+        "name": "Philips Mixer 118",
+        "category": "Home & Kitchen",
+        "price": 49862.81,
+        "stock": 13
+    },
+    {
+        "name": "Apple Watch 119",
+        "category": "Electronics",
+        "price": 144307.24,
+        "stock": 63
+    },
+    {
+        "name": "Gucci Handbag 120",
+        "category": "Fashion",
+        "price": 151223.04,
+        "stock": 66
+    },
+    {
+        "name": "Philips Mixer 121",
+        "category": "Home & Kitchen",
+        "price": 142866.79,
+        "stock": 56
+    },
+    {
+        "name": "LG Refrigerator 122",
+        "category": "Home & Kitchen",
+        "price": 68496.88,
+        "stock": 49
+    },
+    {
+        "name": "Nike Shorts 123",
+        "category": "Sports & Outdoors",
+        "price": 89620.39,
+        "stock": 80
+    },
+    {
+        "name": "GoPro 124",
+        "category": "Electronics",
+        "price": 134210.39,
+        "stock": 60
+    },
+    {
+        "name": "Ray-Ban Aviators 125",
+        "category": "Fashion",
+        "price": 85430.61,
+        "stock": 19
+    },
+    {
+        "name": "IKEA Table 126",
+        "category": "Home & Kitchen",
+        "price": 122579.0,
+        "stock": 79
+    },
+    {
+        "name": "Design Patterns 127",
+        "category": "Books",
+        "price": 19745.23,
+        "stock": 31
+    },
+    {
+        "name": "Design Patterns 128",
+        "category": "Books",
+        "price": 128094.05,
+        "stock": 54
+    },
+    {
+        "name": "Samsung Washing Machine 129",
+        "category": "Home & Kitchen",
+        "price": 124307.55,
+        "stock": 38
+    },
+    {
+        "name": "LG OLED TV 130",
+        "category": "Electronics",
+        "price": 71652.74,
+        "stock": 72
+    },
+    {
+        "name": "Educated 131",
+        "category": "Books",
+        "price": 152069.33,
+        "stock": 6
+    },
+    {
+        "name": "Prestige Cooker 132",
+        "category": "Home & Kitchen",
+        "price": 153597.46,
+        "stock": 20
+    },
+    {
+        "name": "Nilkamal Sofa 133",
+        "category": "Home & Kitchen",
+        "price": 14579.33,
+        "stock": 19
+    },
+    {
+        "name": "Atomic Habits 134",
+        "category": "Books",
+        "price": 64123.57,
+        "stock": 55
+    },
+    {
+        "name": "Zara T-Shirt 135",
+        "category": "Fashion",
+        "price": 64991.01,
+        "stock": 24
+    },
+    {
+        "name": "Amazon Echo 136",
+        "category": "Electronics",
+        "price": 156273.86,
+        "stock": 94
+    },
+    {
+        "name": "Quechua Tent 137",
+        "category": "Sports & Outdoors",
+        "price": 3600.92,
+        "stock": 68
+    },
+    {
+        "name": "The Alchemist 138",
+        "category": "Books",
+        "price": 95233.37,
+        "stock": 33
+    },
+    {
+        "name": "Havells Fan 139",
+        "category": "Home & Kitchen",
+        "price": 175395.11,
+        "stock": 52
+    },
+    {
+        "name": "Nike Air Max 140",
+        "category": "Fashion",
+        "price": 40643.45,
+        "stock": 2
+    },
+    {
+        "name": "Educated 141",
+        "category": "Books",
+        "price": 23665.07,
+        "stock": 55
+    },
+    {
+        "name": "Puma Sneakers 142",
+        "category": "Fashion",
+        "price": 188491.73,
+        "stock": 19
+    },
+    {
+        "name": "Puma Sports Shoes 143",
+        "category": "Sports & Outdoors",
+        "price": 102447.09,
+        "stock": 69
+    },
+    {
+        "name": "IKEA Table 144",
+        "category": "Home & Kitchen",
+        "price": 22383.66,
+        "stock": 85
+    },
+    {
+        "name": "MacBook Pro 145",
+        "category": "Electronics",
+        "price": 73892.37,
+        "stock": 25
+    },
+    {
+        "name": "Yonex Racket 146",
+        "category": "Sports & Outdoors",
+        "price": 9491.45,
+        "stock": 38
+    },
+    {
+        "name": "Harry Potter 147",
+        "category": "Books",
+        "price": 36945.47,
+        "stock": 81
+    },
+    {
+        "name": "Rolex Watch 148",
+        "category": "Fashion",
+        "price": 134727.83,
+        "stock": 28
+    },
+    {
+        "name": "Armani Suit 149",
+        "category": "Fashion",
+        "price": 185035.54,
+        "stock": 82
+    },
+    {
+        "name": "Whirlpool Microwave 150",
+        "category": "Home & Kitchen",
+        "price": 56070.74,
+        "stock": 38
+    },
+    {
+        "name": "Nivia Football 151",
+        "category": "Sports & Outdoors",
+        "price": 130866.16,
+        "stock": 90
+    },
+    {
+        "name": "Dell XPS 152",
+        "category": "Electronics",
+        "price": 15297.75,
+        "stock": 67
+    },
+    {
+        "name": "LG Refrigerator 153",
+        "category": "Home & Kitchen",
+        "price": 109861.89,
+        "stock": 90
+    },
+    {
+        "name": "Nike Air Max 154",
+        "category": "Fashion",
+        "price": 8500.47,
+        "stock": 32
+    },
+    {
+        "name": "MacBook Pro 155",
+        "category": "Electronics",
+        "price": 80200.94,
+        "stock": 46
+    },
+    {
+        "name": "Harry Potter 156",
+        "category": "Books",
+        "price": 153949.19,
+        "stock": 72
+    },
+    {
+        "name": "Havells Fan 157",
+        "category": "Home & Kitchen",
+        "price": 73253.62,
+        "stock": 58
+    },
+    {
+        "name": "The Alchemist 158",
+        "category": "Books",
+        "price": 133318.19,
+        "stock": 11
+    },
+    {
+        "name": "Harry Potter 159",
+        "category": "Books",
+        "price": 122541.62,
+        "stock": 50
+    },
+    {
+        "name": "Gucci Handbag 160",
+        "category": "Fashion",
+        "price": 193219.61,
+        "stock": 84
+    },
+    {
+        "name": "Apple Watch 161",
+        "category": "Electronics",
+        "price": 31240.47,
+        "stock": 16
+    },
+    {
+        "name": "Armani Suit 162",
+        "category": "Fashion",
+        "price": 138002.41,
+        "stock": 99
+    },
+    {
+        "name": "Adidas Ultraboost 163",
+        "category": "Fashion",
+        "price": 7165.51,
+        "stock": 60
+    },
+    {
+        "name": "Nilkamal Sofa 164",
+        "category": "Home & Kitchen",
+        "price": 129054.44,
+        "stock": 29
+    },
+    {
+        "name": "Zara T-Shirt 165",
+        "category": "Fashion",
+        "price": 102167.47,
+        "stock": 30
+    },
+    {
+        "name": "Zara T-Shirt 166",
+        "category": "Fashion",
+        "price": 30529.11,
+        "stock": 83
+    },
+    {
+        "name": "iPhone 167",
+        "category": "Electronics",
+        "price": 77508.42,
+        "stock": 16
+    },
+    {
+        "name": "Ray-Ban Aviators 168",
+        "category": "Fashion",
+        "price": 111401.12,
+        "stock": 99
+    },
+    {
+        "name": "Rolex Watch 169",
+        "category": "Fashion",
+        "price": 72501.19,
+        "stock": 85
+    },
+    {
+        "name": "Nilkamal Sofa 170",
+        "category": "Home & Kitchen",
+        "price": 20803.76,
+        "stock": 55
+    },
+    {
+        "name": "Quechua Tent 171",
+        "category": "Sports & Outdoors",
+        "price": 27875.86,
+        "stock": 15
+    },
+    {
+        "name": "The Alchemist 172",
+        "category": "Books",
+        "price": 100557.19,
+        "stock": 46
+    },
+    {
+        "name": "Adidas Ultraboost 173",
+        "category": "Fashion",
+        "price": 100634.91,
+        "stock": 57
+    },
+    {
+        "name": "Puma Sports Shoes 174",
+        "category": "Sports & Outdoors",
+        "price": 9158.57,
+        "stock": 53
+    },
+    {
+        "name": "MacBook Pro 175",
+        "category": "Electronics",
+        "price": 155148.05,
+        "stock": 18
+    },
+    {
+        "name": "Rolex Watch 176",
+        "category": "Fashion",
+        "price": 192577.91,
+        "stock": 59
+    },
+    {
+        "name": "Spalding Basketball 177",
+        "category": "Sports & Outdoors",
+        "price": 82667.45,
+        "stock": 49
+    },
+    {
+        "name": "Wildcraft Backpack 178",
+        "category": "Sports & Outdoors",
+        "price": 5932.96,
+        "stock": 49
+    },
+    {
+        "name": "LG OLED TV 179",
+        "category": "Electronics",
+        "price": 123420.51,
+        "stock": 27
+    },
+    {
+        "name": "Harry Potter 180",
+        "category": "Books",
+        "price": 74102.91,
+        "stock": 7
+    },
+    {
+        "name": "Nike Air Max 181",
+        "category": "Fashion",
+        "price": 149666.54,
+        "stock": 39
+    },
+    {
+        "name": "Nivia Football 182",
+        "category": "Sports & Outdoors",
+        "price": 177470.21,
+        "stock": 18
+    },
+    {
+        "name": "H&M Hoodie 183",
+        "category": "Fashion",
+        "price": 26457.46,
+        "stock": 10
+    },
+    {
+        "name": "Harry Potter 184",
+        "category": "Books",
+        "price": 21512.87,
+        "stock": 64
+    },
+    {
+        "name": "Adidas Ultraboost 185",
+        "category": "Fashion",
+        "price": 179907.02,
+        "stock": 52
+    },
+    {
+        "name": "LG OLED TV 186",
+        "category": "Electronics",
+        "price": 71488.26,
+        "stock": 86
+    },
+    {
+        "name": "Amazon Echo 187",
+        "category": "Electronics",
+        "price": 24137.0,
+        "stock": 59
+    },
+    {
+        "name": "Spalding Basketball 188",
+        "category": "Sports & Outdoors",
+        "price": 103863.17,
+        "stock": 48
+    },
+    {
+        "name": "Havells Fan 189",
+        "category": "Home & Kitchen",
+        "price": 11323.3,
+        "stock": 3
+    },
+    {
+        "name": "Whirlpool Microwave 190",
+        "category": "Home & Kitchen",
+        "price": 137307.01,
+        "stock": 11
+    },
+    {
+        "name": "Wildcraft Backpack 191",
+        "category": "Sports & Outdoors",
+        "price": 96992.36,
+        "stock": 72
+    },
+    {
+        "name": "Psychology of Money 192",
+        "category": "Books",
+        "price": 166080.94,
+        "stock": 82
+    },
+    {
+        "name": "Spalding Basketball 193",
+        "category": "Sports & Outdoors",
+        "price": 152079.04,
+        "stock": 66
+    },
+    {
+        "name": "Harry Potter 194",
+        "category": "Books",
+        "price": 4263.61,
+        "stock": 22
+    },
+    {
+        "name": "Wildcraft Backpack 195",
+        "category": "Sports & Outdoors",
+        "price": 28034.92,
+        "stock": 92
+    },
+    {
+        "name": "SS Cricket Bat 196",
+        "category": "Sports & Outdoors",
+        "price": 99800.49,
+        "stock": 22
+    },
+    {
+        "name": "iPhone 197",
+        "category": "Electronics",
+        "price": 182036.74,
+        "stock": 42
+    },
+    {
+        "name": "SS Cricket Bat 198",
+        "category": "Sports & Outdoors",
+        "price": 154039.86,
+        "stock": 49
+    },
+    {
+        "name": "MacBook Pro 199",
+        "category": "Electronics",
+        "price": 157194.64,
+        "stock": 39
+    },
+    {
+        "name": "Havells Fan 200",
+        "category": "Home & Kitchen",
+        "price": 13209.72,
+        "stock": 78
+    },
+    {
+        "name": "Levis Jeans 201",
+        "category": "Fashion",
+        "price": 20429.02,
+        "stock": 22
+    },
+    {
+        "name": "Atomic Habits 202",
+        "category": "Books",
+        "price": 10874.79,
+        "stock": 50
+    },
+    {
+        "name": "MacBook Pro 203",
+        "category": "Electronics",
+        "price": 158634.64,
+        "stock": 22
+    },
+    {
+        "name": "Ray-Ban Aviators 204",
+        "category": "Fashion",
+        "price": 116619.58,
+        "stock": 41
+    },
+    {
+        "name": "Deep Work 205",
+        "category": "Books",
+        "price": 181554.96,
+        "stock": 13
+    },
+    {
+        "name": "Apple Watch 206",
+        "category": "Electronics",
+        "price": 133580.37,
+        "stock": 20
+    },
+    {
+        "name": "Whirlpool Microwave 207",
+        "category": "Home & Kitchen",
+        "price": 118206.15,
+        "stock": 17
+    },
+    {
+        "name": "LG OLED TV 208",
+        "category": "Electronics",
+        "price": 130507.12,
+        "stock": 1
+    },
+    {
+        "name": "Sapiens 209",
+        "category": "Books",
+        "price": 196016.27,
+        "stock": 73
+    },
+    {
+        "name": "GoPro 210",
+        "category": "Electronics",
+        "price": 47199.39,
+        "stock": 39
+    },
+    {
+        "name": "GoPro 211",
+        "category": "Electronics",
+        "price": 96204.85,
+        "stock": 11
+    },
+    {
+        "name": "iPhone 212",
+        "category": "Electronics",
+        "price": 101815.85,
+        "stock": 85
+    },
+    {
+        "name": "Apple Watch 213",
+        "category": "Electronics",
+        "price": 89683.41,
+        "stock": 39
+    },
+    {
+        "name": "Wildcraft Backpack 214",
+        "category": "Sports & Outdoors",
+        "price": 6286.39,
+        "stock": 81
+    },
+    {
+        "name": "Cosco Volleyball 215",
+        "category": "Sports & Outdoors",
+        "price": 100900.81,
+        "stock": 55
+    },
+    {
+        "name": "Whirlpool Microwave 216",
+        "category": "Home & Kitchen",
+        "price": 82423.94,
+        "stock": 98
+    },
+    {
+        "name": "Cello Chair 217",
+        "category": "Home & Kitchen",
+        "price": 100270.78,
+        "stock": 65
+    },
+    {
+        "name": "Harry Potter 218",
+        "category": "Books",
+        "price": 109795.32,
+        "stock": 99
+    },
+    {
+        "name": "Amazon Echo 219",
+        "category": "Electronics",
+        "price": 21777.56,
+        "stock": 88
+    },
+    {
+        "name": "Ray-Ban Aviators 220",
+        "category": "Fashion",
+        "price": 58694.47,
+        "stock": 89
+    },
+    {
+        "name": "The Alchemist 221",
+        "category": "Books",
+        "price": 20464.48,
+        "stock": 55
+    },
+    {
+        "name": "Sony Headphones 222",
+        "category": "Electronics",
+        "price": 173304.11,
+        "stock": 52
+    },
+    {
+        "name": "Zara T-Shirt 223",
+        "category": "Fashion",
+        "price": 151231.64,
+        "stock": 9
+    },
+    {
+        "name": "Harry Potter 224",
+        "category": "Books",
+        "price": 65642.47,
+        "stock": 89
+    },
+    {
+        "name": "MacBook Pro 225",
+        "category": "Electronics",
+        "price": 40965.09,
+        "stock": 13
+    },
+    {
+        "name": "Sapiens 226",
+        "category": "Books",
+        "price": 80924.59,
+        "stock": 53
+    },
+    {
+        "name": "Prestige Stove 227",
+        "category": "Home & Kitchen",
+        "price": 144813.91,
+        "stock": 5
+    },
+    {
+        "name": "Harry Potter 228",
+        "category": "Books",
+        "price": 166749.25,
+        "stock": 2
+    },
+    {
+        "name": "Amazon Echo 229",
+        "category": "Electronics",
+        "price": 15234.14,
+        "stock": 64
+    },
+    {
+        "name": "Rolex Watch 230",
+        "category": "Fashion",
+        "price": 124735.24,
+        "stock": 32
+    },
+    {
+        "name": "Levis Jeans 231",
+        "category": "Fashion",
+        "price": 151993.04,
+        "stock": 26
+    },
+    {
+        "name": "Clean Code 232",
+        "category": "Books",
+        "price": 174791.04,
+        "stock": 17
+    },
+    {
+        "name": "Samsung Galaxy 233",
+        "category": "Electronics",
+        "price": 171106.56,
+        "stock": 20
+    },
+    {
+        "name": "Adidas Ultraboost 234",
+        "category": "Fashion",
+        "price": 197023.28,
+        "stock": 53
+    },
+    {
+        "name": "The Alchemist 235",
+        "category": "Books",
+        "price": 63537.32,
+        "stock": 36
+    },
+    {
+        "name": "Rolex Watch 236",
+        "category": "Fashion",
+        "price": 53861.87,
+        "stock": 41
+    },
+    {
+        "name": "Whirlpool Microwave 237",
+        "category": "Home & Kitchen",
+        "price": 138739.17,
+        "stock": 25
+    },
+    {
+        "name": "Sony Headphones 238",
+        "category": "Electronics",
+        "price": 47840.81,
+        "stock": 98
+    },
+    {
+        "name": "MacBook Pro 239",
+        "category": "Electronics",
+        "price": 96001.19,
+        "stock": 18
+    },
+    {
+        "name": "Sony Headphones 240",
+        "category": "Electronics",
+        "price": 115593.83,
+        "stock": 53
+    },
+    {
+        "name": "iPhone 241",
+        "category": "Electronics",
+        "price": 51171.7,
+        "stock": 53
+    },
+    {
+        "name": "Canon Camera 242",
+        "category": "Electronics",
+        "price": 46240.97,
+        "stock": 76
+    },
+    {
+        "name": "Nike Shorts 243",
+        "category": "Sports & Outdoors",
+        "price": 127563.01,
+        "stock": 13
+    },
+    {
+        "name": "Levis Jeans 244",
+        "category": "Fashion",
+        "price": 67430.31,
+        "stock": 41
+    },
+    {
+        "name": "Nike Shorts 245",
+        "category": "Sports & Outdoors",
+        "price": 138472.45,
+        "stock": 23
+    },
+    {
+        "name": "Apple Watch 246",
+        "category": "Electronics",
+        "price": 103588.27,
+        "stock": 76
+    },
+    {
+        "name": "Design Patterns 247",
+        "category": "Books",
+        "price": 99695.71,
+        "stock": 79
+    },
+    {
+        "name": "Samsung Washing Machine 248",
+        "category": "Home & Kitchen",
+        "price": 73170.92,
+        "stock": 69
+    },
+    {
+        "name": "LG Refrigerator 249",
+        "category": "Home & Kitchen",
+        "price": 3682.38,
+        "stock": 90
+    },
+    {
+        "name": "Gucci Handbag 250",
+        "category": "Fashion",
+        "price": 197043.46,
+        "stock": 34
+    },
+    {
+        "name": "Adidas Tracksuit 251",
+        "category": "Sports & Outdoors",
+        "price": 104637.15,
+        "stock": 46
+    },
+    {
+        "name": "Rolex Watch 252",
+        "category": "Fashion",
+        "price": 116381.78,
+        "stock": 59
+    },
+    {
+        "name": "Wildcraft Backpack 253",
+        "category": "Sports & Outdoors",
+        "price": 68750.16,
+        "stock": 87
+    },
+    {
+        "name": "Quechua Tent 254",
+        "category": "Sports & Outdoors",
+        "price": 32144.99,
+        "stock": 95
+    },
+    {
+        "name": "Whirlpool Microwave 255",
+        "category": "Home & Kitchen",
+        "price": 58480.2,
+        "stock": 20
+    },
+    {
+        "name": "Rolex Watch 256",
+        "category": "Fashion",
+        "price": 77672.86,
+        "stock": 39
+    },
+    {
+        "name": "Atomic Habits 257",
+        "category": "Books",
+        "price": 170600.59,
+        "stock": 77
+    },
+    {
+        "name": "Canon Camera 258",
+        "category": "Electronics",
+        "price": 17341.58,
+        "stock": 63
+    },
+    {
+        "name": "Nilkamal Sofa 259",
+        "category": "Home & Kitchen",
+        "price": 75181.79,
+        "stock": 44
+    },
+    {
+        "name": "SS Cricket Bat 260",
+        "category": "Sports & Outdoors",
+        "price": 185094.82,
+        "stock": 35
+    },
+    {
+        "name": "iPhone 261",
+        "category": "Electronics",
+        "price": 173098.63,
+        "stock": 51
+    },
+    {
+        "name": "Spalding Basketball 262",
+        "category": "Sports & Outdoors",
+        "price": 91026.25,
+        "stock": 35
+    },
+    {
+        "name": "Nike Air Max 263",
+        "category": "Fashion",
+        "price": 85527.74,
+        "stock": 4
+    },
+    {
+        "name": "Design Patterns 264",
+        "category": "Books",
+        "price": 164884.96,
+        "stock": 73
+    },
+    {
+        "name": "H&M Hoodie 265",
+        "category": "Fashion",
+        "price": 71374.38,
+        "stock": 9
+    },
+    {
+        "name": "Whirlpool Microwave 266",
+        "category": "Home & Kitchen",
+        "price": 51140.81,
+        "stock": 38
+    },
+    {
+        "name": "SS Cricket Bat 267",
+        "category": "Sports & Outdoors",
+        "price": 54636.33,
+        "stock": 82
+    },
+    {
+        "name": "LG OLED TV 268",
+        "category": "Electronics",
+        "price": 94999.53,
+        "stock": 4
+    },
+    {
+        "name": "Zara T-Shirt 269",
+        "category": "Fashion",
+        "price": 134796.67,
+        "stock": 11
+    },
+    {
+        "name": "Nivia Football 270",
+        "category": "Sports & Outdoors",
+        "price": 198821.12,
+        "stock": 29
+    },
+    {
+        "name": "Cello Chair 271",
+        "category": "Home & Kitchen",
+        "price": 59717.71,
+        "stock": 92
+    },
+    {
+        "name": "MacBook Pro 272",
+        "category": "Electronics",
+        "price": 60136.92,
+        "stock": 52
+    },
+    {
+        "name": "Apple Watch 273",
+        "category": "Electronics",
+        "price": 6978.71,
+        "stock": 71
+    },
+    {
+        "name": "LG OLED TV 274",
+        "category": "Electronics",
+        "price": 50279.44,
+        "stock": 57
+    },
+    {
+        "name": "SS Cricket Bat 275",
+        "category": "Sports & Outdoors",
+        "price": 5791.75,
+        "stock": 68
+    },
+    {
+        "name": "Gucci Handbag 276",
+        "category": "Fashion",
+        "price": 166881.5,
+        "stock": 92
+    },
+    {
+        "name": "The Alchemist 277",
+        "category": "Books",
+        "price": 101958.58,
+        "stock": 41
+    },
+    {
+        "name": "Deep Work 278",
+        "category": "Books",
+        "price": 94138.07,
+        "stock": 45
+    },
+    {
+        "name": "Dell XPS 279",
+        "category": "Electronics",
+        "price": 184641.95,
+        "stock": 84
+    },
+    {
+        "name": "LG Refrigerator 280",
+        "category": "Home & Kitchen",
+        "price": 117134.35,
+        "stock": 62
+    },
+    {
+        "name": "Samsung Galaxy 281",
+        "category": "Electronics",
+        "price": 15484.37,
+        "stock": 88
+    },
+    {
+        "name": "Design Patterns 282",
+        "category": "Books",
+        "price": 75259.25,
+        "stock": 74
+    },
+    {
+        "name": "Zara T-Shirt 283",
+        "category": "Fashion",
+        "price": 145875.02,
+        "stock": 33
+    },
+    {
+        "name": "SS Cricket Bat 284",
+        "category": "Sports & Outdoors",
+        "price": 44386.24,
+        "stock": 88
+    },
+    {
+        "name": "MacBook Pro 285",
+        "category": "Electronics",
+        "price": 150715.07,
+        "stock": 43
+    },
+    {
+        "name": "Yonex Racket 286",
+        "category": "Sports & Outdoors",
+        "price": 14796.62,
+        "stock": 80
+    },
+    {
+        "name": "Philips Mixer 287",
+        "category": "Home & Kitchen",
+        "price": 133472.78,
+        "stock": 21
+    },
+    {
+        "name": "Philips Mixer 288",
+        "category": "Home & Kitchen",
+        "price": 148393.92,
+        "stock": 63
+    },
+    {
+        "name": "iPhone 289",
+        "category": "Electronics",
+        "price": 115996.52,
+        "stock": 29
+    },
+    {
+        "name": "Sony Headphones 290",
+        "category": "Electronics",
+        "price": 5199.7,
+        "stock": 65
+    },
+    {
+        "name": "MacBook Pro 291",
+        "category": "Electronics",
+        "price": 158608.2,
+        "stock": 59
+    },
+    {
+        "name": "Levis Jeans 292",
+        "category": "Fashion",
+        "price": 38541.22,
+        "stock": 96
+    },
+    {
+        "name": "Nilkamal Sofa 293",
+        "category": "Home & Kitchen",
+        "price": 60193.09,
+        "stock": 38
+    },
+    {
+        "name": "Zara T-Shirt 294",
+        "category": "Fashion",
+        "price": 139025.58,
+        "stock": 20
+    },
+    {
+        "name": "Wildcraft Backpack 295",
+        "category": "Sports & Outdoors",
+        "price": 166114.99,
+        "stock": 77
+    },
+    {
+        "name": "Cosco Volleyball 296",
+        "category": "Sports & Outdoors",
+        "price": 51722.04,
+        "stock": 3
+    },
+    {
+        "name": "Armani Suit 297",
+        "category": "Fashion",
+        "price": 112181.37,
+        "stock": 36
+    },
+    {
+        "name": "iPhone 298",
+        "category": "Electronics",
+        "price": 43838.85,
+        "stock": 24
+    },
+    {
+        "name": "Adidas Ultraboost 299",
+        "category": "Fashion",
+        "price": 131209.85,
+        "stock": 88
+    },
+    {
+        "name": "Design Patterns 300",
+        "category": "Books",
+        "price": 183348.42,
+        "stock": 33
+    },
+    {
+        "name": "Spalding Basketball 301",
+        "category": "Sports & Outdoors",
+        "price": 192592.47,
+        "stock": 51
+    },
+    {
+        "name": "Ray-Ban Aviators 302",
+        "category": "Fashion",
+        "price": 63869.04,
+        "stock": 28
+    },
+    {
+        "name": "Whirlpool Microwave 303",
+        "category": "Home & Kitchen",
+        "price": 59082.68,
+        "stock": 69
+    },
+    {
+        "name": "Harry Potter 304",
+        "category": "Books",
+        "price": 84059.03,
+        "stock": 19
+    },
+    {
+        "name": "Apple Watch 305",
+        "category": "Electronics",
+        "price": 13042.55,
+        "stock": 4
+    },
+    {
+        "name": "LG Refrigerator 306",
+        "category": "Home & Kitchen",
+        "price": 91469.49,
+        "stock": 99
+    },
+    {
+        "name": "Sony Headphones 307",
+        "category": "Electronics",
+        "price": 90759.51,
+        "stock": 40
+    },
+    {
+        "name": "Psychology of Money 308",
+        "category": "Books",
+        "price": 146236.98,
+        "stock": 55
+    },
+    {
+        "name": "Rich Dad Poor Dad 309",
+        "category": "Books",
+        "price": 148916.73,
+        "stock": 57
+    },
+    {
+        "name": "Gucci Handbag 310",
+        "category": "Fashion",
+        "price": 167380.11,
+        "stock": 30
+    },
+    {
+        "name": "Armani Suit 311",
+        "category": "Fashion",
+        "price": 170444.56,
+        "stock": 87
+    },
+    {
+        "name": "Harry Potter 312",
+        "category": "Books",
+        "price": 88868.06,
+        "stock": 15
+    },
+    {
+        "name": "Nike Shorts 313",
+        "category": "Sports & Outdoors",
+        "price": 94428.37,
+        "stock": 54
+    },
+    {
+        "name": "iPhone 314",
+        "category": "Electronics",
+        "price": 40162.87,
+        "stock": 87
+    },
+    {
+        "name": "Rich Dad Poor Dad 315",
+        "category": "Books",
+        "price": 84140.26,
+        "stock": 41
+    },
+    {
+        "name": "LG Refrigerator 316",
+        "category": "Home & Kitchen",
+        "price": 77436.11,
+        "stock": 82
+    },
+    {
+        "name": "Amazon Echo 317",
+        "category": "Electronics",
+        "price": 23681.24,
+        "stock": 65
+    },
+    {
+        "name": "Clean Code 318",
+        "category": "Books",
+        "price": 93192.29,
+        "stock": 44
+    },
+    {
+        "name": "Nike Air Max 319",
+        "category": "Fashion",
+        "price": 108601.65,
+        "stock": 46
+    },
+    {
+        "name": "Nivia Football 320",
+        "category": "Sports & Outdoors",
+        "price": 67547.17,
+        "stock": 30
+    },
+    {
+        "name": "H&M Hoodie 321",
+        "category": "Fashion",
+        "price": 21580.84,
+        "stock": 64
+    },
+    {
+        "name": "Design Patterns 322",
+        "category": "Books",
+        "price": 15498.87,
+        "stock": 73
+    },
+    {
+        "name": "Deep Work 323",
+        "category": "Books",
+        "price": 177333.24,
+        "stock": 20
+    },
+    {
+        "name": "Cello Chair 324",
+        "category": "Home & Kitchen",
+        "price": 119943.19,
+        "stock": 28
+    },
+    {
+        "name": "IKEA Table 325",
+        "category": "Home & Kitchen",
+        "price": 35867.6,
+        "stock": 10
+    },
+    {
+        "name": "Adidas Tracksuit 326",
+        "category": "Sports & Outdoors",
+        "price": 138883.26,
+        "stock": 61
+    },
+    {
+        "name": "Cosco Volleyball 327",
+        "category": "Sports & Outdoors",
+        "price": 69225.15,
+        "stock": 98
+    },
+    {
+        "name": "Nike Shorts 328",
+        "category": "Sports & Outdoors",
+        "price": 106784.89,
+        "stock": 80
+    },
+    {
+        "name": "Levis Jeans 329",
+        "category": "Fashion",
+        "price": 188063.69,
+        "stock": 3
+    },
+    {
+        "name": "Amazon Echo 330",
+        "category": "Electronics",
+        "price": 17595.0,
+        "stock": 52
+    },
+    {
+        "name": "Cello Chair 331",
+        "category": "Home & Kitchen",
+        "price": 127325.8,
+        "stock": 89
+    },
+    {
+        "name": "LG OLED TV 332",
+        "category": "Electronics",
+        "price": 84145.42,
+        "stock": 40
+    },
+    {
+        "name": "IKEA Table 333",
+        "category": "Home & Kitchen",
+        "price": 119383.96,
+        "stock": 39
+    },
+    {
+        "name": "Adidas Ultraboost 334",
+        "category": "Fashion",
+        "price": 89697.37,
+        "stock": 14
+    },
+    {
+        "name": "Wildcraft Backpack 335",
+        "category": "Sports & Outdoors",
+        "price": 192321.18,
+        "stock": 28
+    },
+    {
+        "name": "Educated 336",
+        "category": "Books",
+        "price": 150346.49,
+        "stock": 57
+    },
+    {
+        "name": "Levis Jeans 337",
+        "category": "Fashion",
+        "price": 169941.72,
+        "stock": 28
+    },
+    {
+        "name": "Sony Headphones 338",
+        "category": "Electronics",
+        "price": 185991.48,
+        "stock": 21
+    },
+    {
+        "name": "Nivia Football 339",
+        "category": "Sports & Outdoors",
+        "price": 79348.77,
+        "stock": 7
+    },
+    {
+        "name": "Dell XPS 340",
+        "category": "Electronics",
+        "price": 58119.63,
+        "stock": 64
+    },
+    {
+        "name": "Sony Headphones 341",
+        "category": "Electronics",
+        "price": 189822.15,
+        "stock": 11
+    },
+    {
+        "name": "MacBook Pro 342",
+        "category": "Electronics",
+        "price": 130610.59,
+        "stock": 100
+    },
+    {
+        "name": "Rolex Watch 343",
+        "category": "Fashion",
+        "price": 199218.73,
+        "stock": 28
+    },
+    {
+        "name": "Sapiens 344",
+        "category": "Books",
+        "price": 45887.53,
+        "stock": 83
+    },
+    {
+        "name": "Quechua Tent 345",
+        "category": "Sports & Outdoors",
+        "price": 118357.44,
+        "stock": 1
+    },
+    {
+        "name": "Adidas Ultraboost 346",
+        "category": "Fashion",
+        "price": 126277.4,
+        "stock": 36
+    },
+    {
+        "name": "Quechua Tent 347",
+        "category": "Sports & Outdoors",
+        "price": 129714.54,
+        "stock": 35
+    },
+    {
+        "name": "Amazon Echo 348",
+        "category": "Electronics",
+        "price": 166883.94,
+        "stock": 76
+    },
+    {
+        "name": "MacBook Pro 349",
+        "category": "Electronics",
+        "price": 32904.35,
+        "stock": 66
+    },
+    {
+        "name": "Dell XPS 350",
+        "category": "Electronics",
+        "price": 157416.89,
+        "stock": 53
+    },
+    {
+        "name": "Harry Potter 351",
+        "category": "Books",
+        "price": 195669.68,
+        "stock": 56
+    },
+    {
+        "name": "Psychology of Money 352",
+        "category": "Books",
+        "price": 24710.24,
+        "stock": 21
+    },
+    {
+        "name": "Rolex Watch 353",
+        "category": "Fashion",
+        "price": 128259.08,
+        "stock": 97
+    },
+    {
+        "name": "Dell XPS 354",
+        "category": "Electronics",
+        "price": 34610.76,
+        "stock": 88
+    },
+    {
+        "name": "H&M Hoodie 355",
+        "category": "Fashion",
+        "price": 109599.07,
+        "stock": 5
+    },
+    {
+        "name": "Amazon Echo 356",
+        "category": "Electronics",
+        "price": 147426.59,
+        "stock": 55
+    },
+    {
+        "name": "Prestige Cooker 357",
+        "category": "Home & Kitchen",
+        "price": 43274.74,
+        "stock": 48
+    },
+    {
+        "name": "Samsung Washing Machine 358",
+        "category": "Home & Kitchen",
+        "price": 49066.73,
+        "stock": 20
+    },
+    {
+        "name": "Whirlpool Microwave 359",
+        "category": "Home & Kitchen",
+        "price": 91111.38,
+        "stock": 89
+    },
+    {
+        "name": "Yonex Racket 360",
+        "category": "Sports & Outdoors",
+        "price": 143284.68,
+        "stock": 10
+    },
+    {
+        "name": "Nivia Football 361",
+        "category": "Sports & Outdoors",
+        "price": 169624.04,
+        "stock": 59
+    },
+    {
+        "name": "Samsung Washing Machine 362",
+        "category": "Home & Kitchen",
+        "price": 108593.53,
+        "stock": 94
+    },
+    {
+        "name": "Sony Headphones 363",
+        "category": "Electronics",
+        "price": 15618.77,
+        "stock": 67
+    },
+    {
+        "name": "Psychology of Money 364",
+        "category": "Books",
+        "price": 130878.44,
+        "stock": 69
+    },
+    {
+        "name": "Prestige Cooker 365",
+        "category": "Home & Kitchen",
+        "price": 72026.37,
+        "stock": 78
+    },
+    {
+        "name": "Spalding Basketball 366",
+        "category": "Sports & Outdoors",
+        "price": 137545.6,
+        "stock": 42
+    },
+    {
+        "name": "Prestige Cooker 367",
+        "category": "Home & Kitchen",
+        "price": 105580.69,
+        "stock": 44
+    },
+    {
+        "name": "Sony Headphones 368",
+        "category": "Electronics",
+        "price": 4846.83,
+        "stock": 35
+    },
+    {
+        "name": "Zara T-Shirt 369",
+        "category": "Fashion",
+        "price": 3714.07,
+        "stock": 92
+    },
+    {
+        "name": "SS Cricket Bat 370",
+        "category": "Sports & Outdoors",
+        "price": 167441.21,
+        "stock": 4
+    },
+    {
+        "name": "Wildcraft Backpack 371",
+        "category": "Sports & Outdoors",
+        "price": 183480.59,
+        "stock": 70
+    },
+    {
+        "name": "Nilkamal Sofa 372",
+        "category": "Home & Kitchen",
+        "price": 78468.96,
+        "stock": 36
+    },
+    {
+        "name": "Spalding Basketball 373",
+        "category": "Sports & Outdoors",
+        "price": 30108.86,
+        "stock": 36
+    },
+    {
+        "name": "Cosco Volleyball 374",
+        "category": "Sports & Outdoors",
+        "price": 177860.68,
+        "stock": 65
+    },
+    {
+        "name": "Nilkamal Sofa 375",
+        "category": "Home & Kitchen",
+        "price": 122545.18,
+        "stock": 85
+    },
+    {
+        "name": "Puma Sneakers 376",
+        "category": "Fashion",
+        "price": 125090.67,
+        "stock": 94
+    },
+    {
+        "name": "Sony Headphones 377",
+        "category": "Electronics",
+        "price": 102038.02,
+        "stock": 27
+    },
+    {
+        "name": "Dell XPS 378",
+        "category": "Electronics",
+        "price": 48161.46,
+        "stock": 74
+    },
+    {
+        "name": "Nike Shorts 379",
+        "category": "Sports & Outdoors",
+        "price": 87392.89,
+        "stock": 99
+    },
+    {
+        "name": "Atomic Habits 380",
+        "category": "Books",
+        "price": 141113.47,
+        "stock": 55
+    },
+    {
+        "name": "IKEA Table 381",
+        "category": "Home & Kitchen",
+        "price": 141813.5,
+        "stock": 97
+    },
+    {
+        "name": "Clean Code 382",
+        "category": "Books",
+        "price": 66563.1,
+        "stock": 39
+    },
+    {
+        "name": "Prestige Cooker 383",
+        "category": "Home & Kitchen",
+        "price": 193400.01,
+        "stock": 26
+    },
+    {
+        "name": "Prestige Cooker 384",
+        "category": "Home & Kitchen",
+        "price": 127055.97,
+        "stock": 18
+    },
+    {
+        "name": "Deep Work 385",
+        "category": "Books",
+        "price": 51594.3,
+        "stock": 99
+    },
+    {
+        "name": "Nivia Football 386",
+        "category": "Sports & Outdoors",
+        "price": 70742.5,
+        "stock": 43
+    },
+    {
+        "name": "Prestige Stove 387",
+        "category": "Home & Kitchen",
+        "price": 143424.97,
+        "stock": 76
+    },
+    {
+        "name": "Sapiens 388",
+        "category": "Books",
+        "price": 159024.94,
+        "stock": 18
+    },
+    {
+        "name": "Cello Chair 389",
+        "category": "Home & Kitchen",
+        "price": 3387.52,
+        "stock": 5
+    },
+    {
+        "name": "Nilkamal Sofa 390",
+        "category": "Home & Kitchen",
+        "price": 16323.69,
+        "stock": 5
+    },
+    {
+        "name": "GoPro 391",
+        "category": "Electronics",
+        "price": 67610.03,
+        "stock": 51
+    },
+    {
+        "name": "Quechua Tent 392",
+        "category": "Sports & Outdoors",
+        "price": 18104.9,
+        "stock": 32
+    },
+    {
+        "name": "Atomic Habits 393",
+        "category": "Books",
+        "price": 135976.37,
+        "stock": 73
+    },
+    {
+        "name": "Gucci Handbag 394",
+        "category": "Fashion",
+        "price": 139990.04,
+        "stock": 90
+    },
+    {
+        "name": "iPhone 395",
+        "category": "Electronics",
+        "price": 168142.52,
+        "stock": 19
+    },
+    {
+        "name": "Samsung Galaxy 396",
+        "category": "Electronics",
+        "price": 29292.62,
+        "stock": 6
+    },
+    {
+        "name": "Quechua Tent 397",
+        "category": "Sports & Outdoors",
+        "price": 70573.24,
+        "stock": 81
+    },
+    {
+        "name": "Design Patterns 398",
+        "category": "Books",
+        "price": 103457.04,
+        "stock": 54
+    },
+    {
+        "name": "Psychology of Money 399",
+        "category": "Books",
+        "price": 127594.26,
+        "stock": 68
+    },
+    {
+        "name": "Ray-Ban Aviators 400",
+        "category": "Fashion",
+        "price": 146544.0,
+        "stock": 67
+    },
+    {
+        "name": "Adidas Tracksuit 401",
+        "category": "Sports & Outdoors",
+        "price": 199903.51,
+        "stock": 78
+    },
+    {
+        "name": "Amazon Echo 402",
+        "category": "Electronics",
+        "price": 194022.55,
+        "stock": 95
+    },
+    {
+        "name": "Wildcraft Backpack 403",
+        "category": "Sports & Outdoors",
+        "price": 57501.44,
+        "stock": 40
+    },
+    {
+        "name": "Design Patterns 404",
+        "category": "Books",
+        "price": 44573.63,
+        "stock": 45
+    },
+    {
+        "name": "MacBook Pro 405",
+        "category": "Electronics",
+        "price": 113815.32,
+        "stock": 23
+    },
+    {
+        "name": "iPhone 406",
+        "category": "Electronics",
+        "price": 129490.48,
+        "stock": 79
+    },
+    {
+        "name": "Nilkamal Sofa 407",
+        "category": "Home & Kitchen",
+        "price": 64391.34,
+        "stock": 19
+    },
+    {
+        "name": "LG Refrigerator 408",
+        "category": "Home & Kitchen",
+        "price": 160697.6,
+        "stock": 94
+    },
+    {
+        "name": "Deep Work 409",
+        "category": "Books",
+        "price": 37144.88,
+        "stock": 53
+    },
+    {
+        "name": "Havells Fan 410",
+        "category": "Home & Kitchen",
+        "price": 152745.98,
+        "stock": 85
+    },
+    {
+        "name": "Apple Watch 411",
+        "category": "Electronics",
+        "price": 112208.75,
+        "stock": 57
+    },
+    {
+        "name": "Armani Suit 412",
+        "category": "Fashion",
+        "price": 144624.25,
+        "stock": 29
+    },
+    {
+        "name": "Cosco Volleyball 413",
+        "category": "Sports & Outdoors",
+        "price": 102553.02,
+        "stock": 15
+    },
+    {
+        "name": "Atomic Habits 414",
+        "category": "Books",
+        "price": 85978.12,
+        "stock": 71
+    },
+    {
+        "name": "MacBook Pro 415",
+        "category": "Electronics",
+        "price": 147673.79,
+        "stock": 43
+    },
+    {
+        "name": "Rich Dad Poor Dad 416",
+        "category": "Books",
+        "price": 61113.15,
+        "stock": 18
+    },
+    {
+        "name": "Design Patterns 417",
+        "category": "Books",
+        "price": 182719.02,
+        "stock": 85
+    },
+    {
+        "name": "Nike Air Max 418",
+        "category": "Fashion",
+        "price": 197253.54,
+        "stock": 5
+    },
+    {
+        "name": "Zara T-Shirt 419",
+        "category": "Fashion",
+        "price": 176327.37,
+        "stock": 42
+    },
+    {
+        "name": "Samsung Washing Machine 420",
+        "category": "Home & Kitchen",
+        "price": 64930.94,
+        "stock": 91
+    },
+    {
+        "name": "The Alchemist 421",
+        "category": "Books",
+        "price": 23224.35,
+        "stock": 2
+    },
+    {
+        "name": "Canon Camera 422",
+        "category": "Electronics",
+        "price": 101773.78,
+        "stock": 68
+    },
+    {
+        "name": "iPhone 423",
+        "category": "Electronics",
+        "price": 33498.41,
+        "stock": 80
+    },
+    {
+        "name": "Zara T-Shirt 424",
+        "category": "Fashion",
+        "price": 82207.6,
+        "stock": 9
+    },
+    {
+        "name": "Nike Shorts 425",
+        "category": "Sports & Outdoors",
+        "price": 186558.26,
+        "stock": 38
+    },
+    {
+        "name": "Philips Mixer 426",
+        "category": "Home & Kitchen",
+        "price": 94715.71,
+        "stock": 8
+    },
+    {
+        "name": "Atomic Habits 427",
+        "category": "Books",
+        "price": 65199.07,
+        "stock": 73
+    },
+    {
+        "name": "Psychology of Money 428",
+        "category": "Books",
+        "price": 145486.72,
+        "stock": 99
+    },
+    {
+        "name": "Amazon Echo 429",
+        "category": "Electronics",
+        "price": 155100.87,
+        "stock": 4
+    },
+    {
+        "name": "Canon Camera 430",
+        "category": "Electronics",
+        "price": 78790.97,
+        "stock": 48
+    },
+    {
+        "name": "Wildcraft Backpack 431",
+        "category": "Sports & Outdoors",
+        "price": 198762.02,
+        "stock": 23
+    },
+    {
+        "name": "GoPro 432",
+        "category": "Electronics",
+        "price": 101074.46,
+        "stock": 88
+    },
+    {
+        "name": "Educated 433",
+        "category": "Books",
+        "price": 41233.21,
+        "stock": 62
+    },
+    {
+        "name": "Cello Chair 434",
+        "category": "Home & Kitchen",
+        "price": 103395.5,
+        "stock": 93
+    },
+    {
+        "name": "Quechua Tent 435",
+        "category": "Sports & Outdoors",
+        "price": 56228.5,
+        "stock": 11
+    },
+    {
+        "name": "Nivia Football 436",
+        "category": "Sports & Outdoors",
+        "price": 165108.12,
+        "stock": 38
+    },
+    {
+        "name": "Nike Air Max 437",
+        "category": "Fashion",
+        "price": 81441.5,
+        "stock": 29
+    },
+    {
+        "name": "Cello Chair 438",
+        "category": "Home & Kitchen",
+        "price": 171668.4,
+        "stock": 59
+    },
+    {
+        "name": "The Alchemist 439",
+        "category": "Books",
+        "price": 134712.19,
+        "stock": 91
+    },
+    {
+        "name": "Wildcraft Backpack 440",
+        "category": "Sports & Outdoors",
+        "price": 131600.06,
+        "stock": 50
+    },
+    {
+        "name": "Samsung Galaxy 441",
+        "category": "Electronics",
+        "price": 111547.26,
+        "stock": 82
+    },
+    {
+        "name": "Wildcraft Backpack 442",
+        "category": "Sports & Outdoors",
+        "price": 21203.5,
+        "stock": 92
+    },
+    {
+        "name": "Samsung Galaxy 443",
+        "category": "Electronics",
+        "price": 37694.6,
+        "stock": 87
+    },
+    {
+        "name": "Nike Shorts 444",
+        "category": "Sports & Outdoors",
+        "price": 184330.63,
+        "stock": 71
+    },
+    {
+        "name": "Prestige Stove 445",
+        "category": "Home & Kitchen",
+        "price": 65041.09,
+        "stock": 74
+    },
+    {
+        "name": "LG OLED TV 446",
+        "category": "Electronics",
+        "price": 1444.32,
+        "stock": 29
+    },
+    {
+        "name": "Canon Camera 447",
+        "category": "Electronics",
+        "price": 66948.16,
+        "stock": 59
+    },
+    {
+        "name": "Havells Fan 448",
+        "category": "Home & Kitchen",
+        "price": 172752.6,
+        "stock": 21
+    },
+    {
+        "name": "Whirlpool Microwave 449",
+        "category": "Home & Kitchen",
+        "price": 6611.26,
+        "stock": 45
+    },
+    {
+        "name": "Rolex Watch 450",
+        "category": "Fashion",
+        "price": 187911.05,
+        "stock": 8
+    },
+    {
+        "name": "Levis Jeans 451",
+        "category": "Fashion",
+        "price": 170057.66,
+        "stock": 1
+    },
+    {
+        "name": "Puma Sneakers 452",
+        "category": "Fashion",
+        "price": 28876.6,
+        "stock": 89
+    },
+    {
+        "name": "Wildcraft Backpack 453",
+        "category": "Sports & Outdoors",
+        "price": 125722.26,
+        "stock": 16
+    },
+    {
+        "name": "Whirlpool Microwave 454",
+        "category": "Home & Kitchen",
+        "price": 143333.93,
+        "stock": 29
+    },
+    {
+        "name": "Sapiens 455",
+        "category": "Books",
+        "price": 997.84,
+        "stock": 15
+    },
+    {
+        "name": "Deep Work 456",
+        "category": "Books",
+        "price": 47688.64,
+        "stock": 100
+    },
+    {
+        "name": "H&M Hoodie 457",
+        "category": "Fashion",
+        "price": 31575.23,
+        "stock": 60
+    },
+    {
+        "name": "Nilkamal Sofa 458",
+        "category": "Home & Kitchen",
+        "price": 61952.39,
+        "stock": 31
+    },
+    {
+        "name": "Atomic Habits 459",
+        "category": "Books",
+        "price": 83361.95,
+        "stock": 65
+    },
+    {
+        "name": "LG OLED TV 460",
+        "category": "Electronics",
+        "price": 146495.58,
+        "stock": 92
+    },
+    {
+        "name": "Spalding Basketball 461",
+        "category": "Sports & Outdoors",
+        "price": 169352.02,
+        "stock": 7
+    },
+    {
+        "name": "Atomic Habits 462",
+        "category": "Books",
+        "price": 82356.13,
+        "stock": 39
+    },
+    {
+        "name": "Philips Mixer 463",
+        "category": "Home & Kitchen",
+        "price": 185209.48,
+        "stock": 14
+    },
+    {
+        "name": "Dell XPS 464",
+        "category": "Electronics",
+        "price": 94354.77,
+        "stock": 80
+    },
+    {
+        "name": "Clean Code 465",
+        "category": "Books",
+        "price": 115004.4,
+        "stock": 18
+    },
+    {
+        "name": "Puma Sneakers 466",
+        "category": "Fashion",
+        "price": 50027.29,
+        "stock": 96
+    },
+    {
+        "name": "Adidas Tracksuit 467",
+        "category": "Sports & Outdoors",
+        "price": 181177.48,
+        "stock": 34
+    },
+    {
+        "name": "Sapiens 468",
+        "category": "Books",
+        "price": 59327.05,
+        "stock": 32
+    },
+    {
+        "name": "Wildcraft Backpack 469",
+        "category": "Sports & Outdoors",
+        "price": 37887.16,
+        "stock": 65
+    },
+    {
+        "name": "Amazon Echo 470",
+        "category": "Electronics",
+        "price": 161399.47,
+        "stock": 17
+    },
+    {
+        "name": "Rolex Watch 471",
+        "category": "Fashion",
+        "price": 116795.66,
+        "stock": 76
+    },
+    {
+        "name": "Whirlpool Microwave 472",
+        "category": "Home & Kitchen",
+        "price": 116745.6,
+        "stock": 74
+    },
+    {
+        "name": "Canon Camera 473",
+        "category": "Electronics",
+        "price": 151149.16,
+        "stock": 32
+    },
+    {
+        "name": "Nilkamal Sofa 474",
+        "category": "Home & Kitchen",
+        "price": 161430.92,
+        "stock": 36
+    },
+    {
+        "name": "Whirlpool Microwave 475",
+        "category": "Home & Kitchen",
+        "price": 37243.38,
+        "stock": 54
+    },
+    {
+        "name": "Atomic Habits 476",
+        "category": "Books",
+        "price": 110078.7,
+        "stock": 40
+    },
+    {
+        "name": "LG Refrigerator 477",
+        "category": "Home & Kitchen",
+        "price": 37500.76,
+        "stock": 64
+    },
+    {
+        "name": "Nike Shorts 478",
+        "category": "Sports & Outdoors",
+        "price": 156209.66,
+        "stock": 71
+    },
+    {
+        "name": "Spalding Basketball 479",
+        "category": "Sports & Outdoors",
+        "price": 35924.76,
+        "stock": 4
+    },
+    {
+        "name": "Havells Fan 480",
+        "category": "Home & Kitchen",
+        "price": 123037.88,
+        "stock": 9
+    },
+    {
+        "name": "LG Refrigerator 481",
+        "category": "Home & Kitchen",
+        "price": 187892.09,
+        "stock": 40
+    },
+    {
+        "name": "Educated 482",
+        "category": "Books",
+        "price": 130882.92,
+        "stock": 65
+    },
+    {
+        "name": "Zara T-Shirt 483",
+        "category": "Fashion",
+        "price": 57243.85,
+        "stock": 74
+    },
+    {
+        "name": "Quechua Tent 484",
+        "category": "Sports & Outdoors",
+        "price": 158778.78,
+        "stock": 49
+    },
+    {
+        "name": "Rich Dad Poor Dad 485",
+        "category": "Books",
+        "price": 128018.11,
+        "stock": 39
+    },
+    {
+        "name": "Puma Sneakers 486",
+        "category": "Fashion",
+        "price": 159067.01,
+        "stock": 46
+    },
+    {
+        "name": "Atomic Habits 487",
+        "category": "Books",
+        "price": 48014.88,
+        "stock": 97
+    },
+    {
+        "name": "Nike Shorts 488",
+        "category": "Sports & Outdoors",
+        "price": 129086.11,
+        "stock": 96
+    },
+    {
+        "name": "Dell XPS 489",
+        "category": "Electronics",
+        "price": 167116.24,
+        "stock": 32
+    },
+    {
+        "name": "Whirlpool Microwave 490",
+        "category": "Home & Kitchen",
+        "price": 180318.07,
+        "stock": 82
+    },
+    {
+        "name": "iPhone 491",
+        "category": "Electronics",
+        "price": 133443.6,
+        "stock": 12
+    },
+    {
+        "name": "Adidas Tracksuit 492",
+        "category": "Sports & Outdoors",
+        "price": 88310.61,
+        "stock": 15
+    },
+    {
+        "name": "MacBook Pro 493",
+        "category": "Electronics",
+        "price": 115609.56,
+        "stock": 55
+    },
+    {
+        "name": "Educated 494",
+        "category": "Books",
+        "price": 187235.48,
+        "stock": 4
+    },
+    {
+        "name": "IKEA Table 495",
+        "category": "Home & Kitchen",
+        "price": 136169.25,
+        "stock": 58
+    },
+    {
+        "name": "Adidas Ultraboost 496",
+        "category": "Fashion",
+        "price": 190372.75,
+        "stock": 4
+    },
+    {
+        "name": "H&M Hoodie 497",
+        "category": "Fashion",
+        "price": 102374.4,
+        "stock": 17
+    },
+    {
+        "name": "Quechua Tent 498",
+        "category": "Sports & Outdoors",
+        "price": 140150.16,
+        "stock": 32
+    },
+    {
+        "name": "Nilkamal Sofa 499",
+        "category": "Home & Kitchen",
+        "price": 149718.43,
+        "stock": 31
+    },
+    {
+        "name": "Nike Air Max 500",
+        "category": "Fashion",
+        "price": 196980.65,
+        "stock": 78
+    },
+    {
+        "name": "The Alchemist 501",
+        "category": "Books",
+        "price": 13311.76,
+        "stock": 12
+    },
+    {
+        "name": "The Alchemist 502",
+        "category": "Books",
+        "price": 130711.95,
+        "stock": 48
+    },
+    {
+        "name": "Atomic Habits 503",
+        "category": "Books",
+        "price": 51556.21,
+        "stock": 75
+    },
+    {
+        "name": "Wildcraft Backpack 504",
+        "category": "Sports & Outdoors",
+        "price": 164024.79,
+        "stock": 63
+    },
+    {
+        "name": "Adidas Ultraboost 505",
+        "category": "Fashion",
+        "price": 159522.99,
+        "stock": 64
+    },
+    {
+        "name": "Apple Watch 506",
+        "category": "Electronics",
+        "price": 25952.58,
+        "stock": 80
+    },
+    {
+        "name": "Philips Mixer 507",
+        "category": "Home & Kitchen",
+        "price": 185432.55,
+        "stock": 41
+    },
+    {
+        "name": "Psychology of Money 508",
+        "category": "Books",
+        "price": 94238.09,
+        "stock": 81
+    },
+    {
+        "name": "Sapiens 509",
+        "category": "Books",
+        "price": 97661.6,
+        "stock": 97
+    },
+    {
+        "name": "Levis Jeans 510",
+        "category": "Fashion",
+        "price": 63847.59,
+        "stock": 44
+    },
+    {
+        "name": "Yonex Racket 511",
+        "category": "Sports & Outdoors",
+        "price": 75620.21,
+        "stock": 41
+    },
+    {
+        "name": "SS Cricket Bat 512",
+        "category": "Sports & Outdoors",
+        "price": 186880.88,
+        "stock": 32
+    },
+    {
+        "name": "Whirlpool Microwave 513",
+        "category": "Home & Kitchen",
+        "price": 139848.63,
+        "stock": 82
+    },
+    {
+        "name": "GoPro 514",
+        "category": "Electronics",
+        "price": 12373.01,
+        "stock": 4
+    },
+    {
+        "name": "Philips Mixer 515",
+        "category": "Home & Kitchen",
+        "price": 36414.74,
+        "stock": 46
+    },
+    {
+        "name": "SS Cricket Bat 516",
+        "category": "Sports & Outdoors",
+        "price": 160781.84,
+        "stock": 1
+    },
+    {
+        "name": "Nike Air Max 517",
+        "category": "Fashion",
+        "price": 23486.37,
+        "stock": 81
+    },
+    {
+        "name": "H&M Hoodie 518",
+        "category": "Fashion",
+        "price": 130644.51,
+        "stock": 62
+    },
+    {
+        "name": "Samsung Galaxy 519",
+        "category": "Electronics",
+        "price": 179261.55,
+        "stock": 80
+    },
+    {
+        "name": "MacBook Pro 520",
+        "category": "Electronics",
+        "price": 40576.74,
+        "stock": 28
+    },
+    {
+        "name": "Educated 521",
+        "category": "Books",
+        "price": 56818.62,
+        "stock": 16
+    },
+    {
+        "name": "Deep Work 522",
+        "category": "Books",
+        "price": 67243.38,
+        "stock": 33
+    },
+    {
+        "name": "Ray-Ban Aviators 523",
+        "category": "Fashion",
+        "price": 199693.46,
+        "stock": 14
+    },
+    {
+        "name": "Cello Chair 524",
+        "category": "Home & Kitchen",
+        "price": 16547.95,
+        "stock": 24
+    },
+    {
+        "name": "Spalding Basketball 525",
+        "category": "Sports & Outdoors",
+        "price": 98160.23,
+        "stock": 80
+    },
+    {
+        "name": "Samsung Galaxy 526",
+        "category": "Electronics",
+        "price": 96922.14,
+        "stock": 52
+    },
+    {
+        "name": "Sony Headphones 527",
+        "category": "Electronics",
+        "price": 137955.02,
+        "stock": 24
+    },
+    {
+        "name": "Prestige Cooker 528",
+        "category": "Home & Kitchen",
+        "price": 25061.08,
+        "stock": 12
+    },
+    {
+        "name": "Psychology of Money 529",
+        "category": "Books",
+        "price": 90288.43,
+        "stock": 93
+    },
+    {
+        "name": "MacBook Pro 530",
+        "category": "Electronics",
+        "price": 111201.8,
+        "stock": 76
+    },
+    {
+        "name": "Nilkamal Sofa 531",
+        "category": "Home & Kitchen",
+        "price": 45688.55,
+        "stock": 37
+    },
+    {
+        "name": "Sapiens 532",
+        "category": "Books",
+        "price": 32419.67,
+        "stock": 16
+    },
+    {
+        "name": "MacBook Pro 533",
+        "category": "Electronics",
+        "price": 7575.16,
+        "stock": 83
+    },
+    {
+        "name": "Clean Code 534",
+        "category": "Books",
+        "price": 55685.29,
+        "stock": 36
+    },
+    {
+        "name": "Educated 535",
+        "category": "Books",
+        "price": 106461.37,
+        "stock": 15
+    },
+    {
+        "name": "LG Refrigerator 536",
+        "category": "Home & Kitchen",
+        "price": 199790.35,
+        "stock": 34
+    },
+    {
+        "name": "Design Patterns 537",
+        "category": "Books",
+        "price": 180956.08,
+        "stock": 89
+    },
+    {
+        "name": "Spalding Basketball 538",
+        "category": "Sports & Outdoors",
+        "price": 189213.91,
+        "stock": 62
+    },
+    {
+        "name": "Yonex Racket 539",
+        "category": "Sports & Outdoors",
+        "price": 128168.51,
+        "stock": 25
+    },
+    {
+        "name": "Cello Chair 540",
+        "category": "Home & Kitchen",
+        "price": 84697.8,
+        "stock": 38
+    },
+    {
+        "name": "Nike Air Max 541",
+        "category": "Fashion",
+        "price": 62962.25,
+        "stock": 25
+    },
+    {
+        "name": "Rolex Watch 542",
+        "category": "Fashion",
+        "price": 88734.77,
+        "stock": 20
+    },
+    {
+        "name": "Armani Suit 543",
+        "category": "Fashion",
+        "price": 69278.68,
+        "stock": 52
+    },
+    {
+        "name": "Educated 544",
+        "category": "Books",
+        "price": 7239.73,
+        "stock": 17
+    },
+    {
+        "name": "Prestige Stove 545",
+        "category": "Home & Kitchen",
+        "price": 174804.51,
+        "stock": 55
+    },
+    {
+        "name": "Design Patterns 546",
+        "category": "Books",
+        "price": 84711.36,
+        "stock": 71
+    },
+    {
+        "name": "iPhone 547",
+        "category": "Electronics",
+        "price": 106454.99,
+        "stock": 88
+    },
+    {
+        "name": "Armani Suit 548",
+        "category": "Fashion",
+        "price": 2755.74,
+        "stock": 61
+    },
+    {
+        "name": "MacBook Pro 549",
+        "category": "Electronics",
+        "price": 194741.58,
+        "stock": 78
+    },
+    {
+        "name": "LG Refrigerator 550",
+        "category": "Home & Kitchen",
+        "price": 135730.91,
+        "stock": 62
+    },
+    {
+        "name": "Rolex Watch 551",
+        "category": "Fashion",
+        "price": 130431.79,
+        "stock": 71
+    },
+    {
+        "name": "Apple Watch 552",
+        "category": "Electronics",
+        "price": 34974.13,
+        "stock": 34
+    },
+    {
+        "name": "Deep Work 553",
+        "category": "Books",
+        "price": 106218.02,
+        "stock": 91
+    },
+    {
+        "name": "Design Patterns 554",
+        "category": "Books",
+        "price": 146647.23,
+        "stock": 61
+    },
+    {
+        "name": "Canon Camera 555",
+        "category": "Electronics",
+        "price": 29372.31,
+        "stock": 5
+    },
+    {
+        "name": "Nike Shorts 556",
+        "category": "Sports & Outdoors",
+        "price": 41202.27,
+        "stock": 44
+    },
+    {
+        "name": "Spalding Basketball 557",
+        "category": "Sports & Outdoors",
+        "price": 170923.38,
+        "stock": 51
+    },
+    {
+        "name": "Rich Dad Poor Dad 558",
+        "category": "Books",
+        "price": 192297.5,
+        "stock": 5
+    },
+    {
+        "name": "Ray-Ban Aviators 559",
+        "category": "Fashion",
+        "price": 100508.65,
+        "stock": 91
+    },
+    {
+        "name": "Zara T-Shirt 560",
+        "category": "Fashion",
+        "price": 52979.34,
+        "stock": 37
+    },
+    {
+        "name": "Spalding Basketball 561",
+        "category": "Sports & Outdoors",
+        "price": 74506.22,
+        "stock": 11
+    },
+    {
+        "name": "Quechua Tent 562",
+        "category": "Sports & Outdoors",
+        "price": 91478.39,
+        "stock": 33
+    },
+    {
+        "name": "IKEA Table 563",
+        "category": "Home & Kitchen",
+        "price": 71331.77,
+        "stock": 2
+    },
+    {
+        "name": "Rich Dad Poor Dad 564",
+        "category": "Books",
+        "price": 107304.77,
+        "stock": 83
+    },
+    {
+        "name": "H&M Hoodie 565",
+        "category": "Fashion",
+        "price": 100375.9,
+        "stock": 23
+    },
+    {
+        "name": "iPhone 566",
+        "category": "Electronics",
+        "price": 186442.96,
+        "stock": 80
+    },
+    {
+        "name": "H&M Hoodie 567",
+        "category": "Fashion",
+        "price": 3579.96,
+        "stock": 26
+    },
+    {
+        "name": "Dell XPS 568",
+        "category": "Electronics",
+        "price": 50838.25,
+        "stock": 74
+    },
+    {
+        "name": "Harry Potter 569",
+        "category": "Books",
+        "price": 21080.82,
+        "stock": 6
+    },
+    {
+        "name": "Yonex Racket 570",
+        "category": "Sports & Outdoors",
+        "price": 160913.74,
+        "stock": 74
+    },
+    {
+        "name": "IKEA Table 571",
+        "category": "Home & Kitchen",
+        "price": 3822.96,
+        "stock": 75
+    },
+    {
+        "name": "Sony Headphones 572",
+        "category": "Electronics",
+        "price": 110995.99,
+        "stock": 9
+    },
+    {
+        "name": "Cosco Volleyball 573",
+        "category": "Sports & Outdoors",
+        "price": 6505.14,
+        "stock": 5
+    },
+    {
+        "name": "Whirlpool Microwave 574",
+        "category": "Home & Kitchen",
+        "price": 46651.58,
+        "stock": 26
+    },
+    {
+        "name": "Whirlpool Microwave 575",
+        "category": "Home & Kitchen",
+        "price": 155220.46,
+        "stock": 89
+    },
+    {
+        "name": "Ray-Ban Aviators 576",
+        "category": "Fashion",
+        "price": 189696.45,
+        "stock": 58
+    },
+    {
+        "name": "MacBook Pro 577",
+        "category": "Electronics",
+        "price": 121506.1,
+        "stock": 68
+    },
+    {
+        "name": "Samsung Washing Machine 578",
+        "category": "Home & Kitchen",
+        "price": 40975.83,
+        "stock": 61
+    },
+    {
+        "name": "Prestige Stove 579",
+        "category": "Home & Kitchen",
+        "price": 123553.09,
+        "stock": 15
+    },
+    {
+        "name": "Educated 580",
+        "category": "Books",
+        "price": 123369.75,
+        "stock": 13
+    },
+    {
+        "name": "Gucci Handbag 581",
+        "category": "Fashion",
+        "price": 171620.99,
+        "stock": 24
+    },
+    {
+        "name": "Yonex Racket 582",
+        "category": "Sports & Outdoors",
+        "price": 174160.06,
+        "stock": 7
+    },
+    {
+        "name": "Educated 583",
+        "category": "Books",
+        "price": 175647.45,
+        "stock": 57
+    },
+    {
+        "name": "Yonex Racket 584",
+        "category": "Sports & Outdoors",
+        "price": 113055.64,
+        "stock": 21
+    },
+    {
+        "name": "Adidas Tracksuit 585",
+        "category": "Sports & Outdoors",
+        "price": 164720.57,
+        "stock": 3
+    },
+    {
+        "name": "Ray-Ban Aviators 586",
+        "category": "Fashion",
+        "price": 72646.26,
+        "stock": 49
+    },
+    {
+        "name": "Yonex Racket 587",
+        "category": "Sports & Outdoors",
+        "price": 58809.99,
+        "stock": 84
+    },
+    {
+        "name": "Nivia Football 588",
+        "category": "Sports & Outdoors",
+        "price": 169268.15,
+        "stock": 55
+    },
+    {
+        "name": "Samsung Washing Machine 589",
+        "category": "Home & Kitchen",
+        "price": 134807.37,
+        "stock": 55
+    },
+    {
+        "name": "Puma Sneakers 590",
+        "category": "Fashion",
+        "price": 133670.47,
+        "stock": 94
+    },
+    {
+        "name": "Sapiens 591",
+        "category": "Books",
+        "price": 11057.63,
+        "stock": 19
+    },
+    {
+        "name": "Deep Work 592",
+        "category": "Books",
+        "price": 94718.27,
+        "stock": 40
+    },
+    {
+        "name": "Deep Work 593",
+        "category": "Books",
+        "price": 26041.36,
+        "stock": 51
+    },
+    {
+        "name": "Wildcraft Backpack 594",
+        "category": "Sports & Outdoors",
+        "price": 160154.65,
+        "stock": 81
+    },
+    {
+        "name": "Nilkamal Sofa 595",
+        "category": "Home & Kitchen",
+        "price": 108920.38,
+        "stock": 90
+    },
+    {
+        "name": "Prestige Cooker 596",
+        "category": "Home & Kitchen",
+        "price": 129293.08,
+        "stock": 10
+    },
+    {
+        "name": "Nivia Football 597",
+        "category": "Sports & Outdoors",
+        "price": 83172.42,
+        "stock": 13
+    },
+    {
+        "name": "Sony Headphones 598",
+        "category": "Electronics",
+        "price": 156503.18,
+        "stock": 44
+    },
+    {
+        "name": "LG OLED TV 599",
+        "category": "Electronics",
+        "price": 138473.36,
+        "stock": 7
+    },
+    {
+        "name": "Clean Code 600",
+        "category": "Books",
+        "price": 192350.63,
+        "stock": 36
+    },
+    {
+        "name": "Atomic Habits 601",
+        "category": "Books",
+        "price": 98305.68,
+        "stock": 100
+    },
+    {
+        "name": "LG Refrigerator 602",
+        "category": "Home & Kitchen",
+        "price": 29691.31,
+        "stock": 41
+    },
+    {
+        "name": "Samsung Galaxy 603",
+        "category": "Electronics",
+        "price": 176444.52,
+        "stock": 50
+    },
+    {
+        "name": "Havells Fan 604",
+        "category": "Home & Kitchen",
+        "price": 57961.69,
+        "stock": 21
+    },
+    {
+        "name": "Rolex Watch 605",
+        "category": "Fashion",
+        "price": 13031.46,
+        "stock": 38
+    },
+    {
+        "name": "Adidas Ultraboost 606",
+        "category": "Fashion",
+        "price": 112202.66,
+        "stock": 35
+    },
+    {
+        "name": "Clean Code 607",
+        "category": "Books",
+        "price": 33983.49,
+        "stock": 53
+    },
+    {
+        "name": "Deep Work 608",
+        "category": "Books",
+        "price": 182050.98,
+        "stock": 62
+    },
+    {
+        "name": "Puma Sneakers 609",
+        "category": "Fashion",
+        "price": 170066.43,
+        "stock": 21
+    },
+    {
+        "name": "GoPro 610",
+        "category": "Electronics",
+        "price": 27584.69,
+        "stock": 70
+    },
+    {
+        "name": "Ray-Ban Aviators 611",
+        "category": "Fashion",
+        "price": 47305.16,
+        "stock": 57
+    },
+    {
+        "name": "Havells Fan 612",
+        "category": "Home & Kitchen",
+        "price": 106603.64,
+        "stock": 63
+    },
+    {
+        "name": "LG Refrigerator 613",
+        "category": "Home & Kitchen",
+        "price": 186508.37,
+        "stock": 51
+    },
+    {
+        "name": "IKEA Table 614",
+        "category": "Home & Kitchen",
+        "price": 152755.57,
+        "stock": 14
+    },
+    {
+        "name": "Puma Sneakers 615",
+        "category": "Fashion",
+        "price": 62876.19,
+        "stock": 41
+    },
+    {
+        "name": "Samsung Washing Machine 616",
+        "category": "Home & Kitchen",
+        "price": 9860.03,
+        "stock": 21
+    },
+    {
+        "name": "H&M Hoodie 617",
+        "category": "Fashion",
+        "price": 60222.37,
+        "stock": 86
+    },
+    {
+        "name": "Rolex Watch 618",
+        "category": "Fashion",
+        "price": 114853.84,
+        "stock": 70
+    },
+    {
+        "name": "Design Patterns 619",
+        "category": "Books",
+        "price": 80910.99,
+        "stock": 98
+    },
+    {
+        "name": "Harry Potter 620",
+        "category": "Books",
+        "price": 6237.7,
+        "stock": 67
+    },
+    {
+        "name": "Apple Watch 621",
+        "category": "Electronics",
+        "price": 32357.55,
+        "stock": 28
+    },
+    {
+        "name": "Whirlpool Microwave 622",
+        "category": "Home & Kitchen",
+        "price": 37270.21,
+        "stock": 24
+    },
+    {
+        "name": "Harry Potter 623",
+        "category": "Books",
+        "price": 37579.45,
+        "stock": 12
+    },
+    {
+        "name": "Dell XPS 624",
+        "category": "Electronics",
+        "price": 134215.58,
+        "stock": 71
+    },
+    {
+        "name": "iPhone 625",
+        "category": "Electronics",
+        "price": 42539.56,
+        "stock": 54
+    },
+    {
+        "name": "Harry Potter 626",
+        "category": "Books",
+        "price": 179335.37,
+        "stock": 63
+    },
+    {
+        "name": "Cosco Volleyball 627",
+        "category": "Sports & Outdoors",
+        "price": 15458.41,
+        "stock": 37
+    },
+    {
+        "name": "Psychology of Money 628",
+        "category": "Books",
+        "price": 51003.33,
+        "stock": 71
+    },
+    {
+        "name": "LG OLED TV 629",
+        "category": "Electronics",
+        "price": 159629.17,
+        "stock": 73
+    },
+    {
+        "name": "Adidas Tracksuit 630",
+        "category": "Sports & Outdoors",
+        "price": 15028.16,
+        "stock": 90
+    },
+    {
+        "name": "Whirlpool Microwave 631",
+        "category": "Home & Kitchen",
+        "price": 113428.44,
+        "stock": 85
+    },
+    {
+        "name": "Wildcraft Backpack 632",
+        "category": "Sports & Outdoors",
+        "price": 20333.88,
+        "stock": 74
+    },
+    {
+        "name": "Adidas Ultraboost 633",
+        "category": "Fashion",
+        "price": 78939.49,
+        "stock": 74
+    },
+    {
+        "name": "Sapiens 634",
+        "category": "Books",
+        "price": 181918.62,
+        "stock": 50
+    },
+    {
+        "name": "Cello Chair 635",
+        "category": "Home & Kitchen",
+        "price": 122632.51,
+        "stock": 23
+    },
+    {
+        "name": "Nike Shorts 636",
+        "category": "Sports & Outdoors",
+        "price": 198650.37,
+        "stock": 96
+    },
+    {
+        "name": "Wildcraft Backpack 637",
+        "category": "Sports & Outdoors",
+        "price": 133893.2,
+        "stock": 7
+    },
+    {
+        "name": "Yonex Racket 638",
+        "category": "Sports & Outdoors",
+        "price": 12359.71,
+        "stock": 17
+    },
+    {
+        "name": "LG OLED TV 639",
+        "category": "Electronics",
+        "price": 70843.11,
+        "stock": 98
+    },
+    {
+        "name": "Philips Mixer 640",
+        "category": "Home & Kitchen",
+        "price": 15060.22,
+        "stock": 54
+    },
+    {
+        "name": "H&M Hoodie 641",
+        "category": "Fashion",
+        "price": 168884.87,
+        "stock": 7
+    },
+    {
+        "name": "Dell XPS 642",
+        "category": "Electronics",
+        "price": 93133.84,
+        "stock": 10
+    },
+    {
+        "name": "Psychology of Money 643",
+        "category": "Books",
+        "price": 14321.4,
+        "stock": 35
+    },
+    {
+        "name": "Philips Mixer 644",
+        "category": "Home & Kitchen",
+        "price": 67301.95,
+        "stock": 79
+    },
+    {
+        "name": "H&M Hoodie 645",
+        "category": "Fashion",
+        "price": 120666.71,
+        "stock": 90
+    },
+    {
+        "name": "Nike Air Max 646",
+        "category": "Fashion",
+        "price": 70194.56,
+        "stock": 23
+    },
+    {
+        "name": "Cello Chair 647",
+        "category": "Home & Kitchen",
+        "price": 176617.42,
+        "stock": 15
+    },
+    {
+        "name": "Adidas Ultraboost 648",
+        "category": "Fashion",
+        "price": 127346.47,
+        "stock": 39
+    },
+    {
+        "name": "Educated 649",
+        "category": "Books",
+        "price": 38028.77,
+        "stock": 7
+    },
+    {
+        "name": "Wildcraft Backpack 650",
+        "category": "Sports & Outdoors",
+        "price": 47943.29,
+        "stock": 45
+    },
+    {
+        "name": "Armani Suit 651",
+        "category": "Fashion",
+        "price": 186511.63,
+        "stock": 87
+    },
+    {
+        "name": "Sapiens 652",
+        "category": "Books",
+        "price": 169563.22,
+        "stock": 80
+    },
+    {
+        "name": "LG OLED TV 653",
+        "category": "Electronics",
+        "price": 100616.18,
+        "stock": 57
+    },
+    {
+        "name": "H&M Hoodie 654",
+        "category": "Fashion",
+        "price": 114683.88,
+        "stock": 11
+    },
+    {
+        "name": "Wildcraft Backpack 655",
+        "category": "Sports & Outdoors",
+        "price": 132592.38,
+        "stock": 23
+    },
+    {
+        "name": "Sapiens 656",
+        "category": "Books",
+        "price": 188554.35,
+        "stock": 51
+    },
+    {
+        "name": "Adidas Ultraboost 657",
+        "category": "Fashion",
+        "price": 76337.67,
+        "stock": 59
+    },
+    {
+        "name": "Levis Jeans 658",
+        "category": "Fashion",
+        "price": 66176.81,
+        "stock": 43
+    },
+    {
+        "name": "Nike Shorts 659",
+        "category": "Sports & Outdoors",
+        "price": 195646.37,
+        "stock": 59
+    },
+    {
+        "name": "Prestige Stove 660",
+        "category": "Home & Kitchen",
+        "price": 146800.98,
+        "stock": 31
+    },
+    {
+        "name": "Nike Air Max 661",
+        "category": "Fashion",
+        "price": 140043.57,
+        "stock": 12
+    },
+    {
+        "name": "Prestige Stove 662",
+        "category": "Home & Kitchen",
+        "price": 132491.7,
+        "stock": 44
+    },
+    {
+        "name": "Rolex Watch 663",
+        "category": "Fashion",
+        "price": 114439.81,
+        "stock": 82
+    },
+    {
+        "name": "Nivia Football 664",
+        "category": "Sports & Outdoors",
+        "price": 1787.36,
+        "stock": 49
+    },
+    {
+        "name": "iPhone 665",
+        "category": "Electronics",
+        "price": 42906.13,
+        "stock": 17
+    },
+    {
+        "name": "Cosco Volleyball 666",
+        "category": "Sports & Outdoors",
+        "price": 146994.59,
+        "stock": 20
+    },
+    {
+        "name": "Quechua Tent 667",
+        "category": "Sports & Outdoors",
+        "price": 13681.42,
+        "stock": 30
+    },
+    {
+        "name": "IKEA Table 668",
+        "category": "Home & Kitchen",
+        "price": 128177.91,
+        "stock": 23
+    },
+    {
+        "name": "Nilkamal Sofa 669",
+        "category": "Home & Kitchen",
+        "price": 30767.51,
+        "stock": 59
+    },
+    {
+        "name": "Nike Air Max 670",
+        "category": "Fashion",
+        "price": 97462.77,
+        "stock": 100
+    },
+    {
+        "name": "Nivia Football 671",
+        "category": "Sports & Outdoors",
+        "price": 110613.42,
+        "stock": 98
+    },
+    {
+        "name": "Clean Code 672",
+        "category": "Books",
+        "price": 91761.03,
+        "stock": 68
+    },
+    {
+        "name": "Clean Code 673",
+        "category": "Books",
+        "price": 126255.23,
+        "stock": 40
+    },
+    {
+        "name": "Ray-Ban Aviators 674",
+        "category": "Fashion",
+        "price": 188681.99,
+        "stock": 3
+    },
+    {
+        "name": "Armani Suit 675",
+        "category": "Fashion",
+        "price": 530.94,
+        "stock": 11
+    },
+    {
+        "name": "Sapiens 676",
+        "category": "Books",
+        "price": 188319.1,
+        "stock": 70
+    },
+    {
+        "name": "Ray-Ban Aviators 677",
+        "category": "Fashion",
+        "price": 4243.61,
+        "stock": 19
+    },
+    {
+        "name": "Prestige Stove 678",
+        "category": "Home & Kitchen",
+        "price": 163762.71,
+        "stock": 17
+    },
+    {
+        "name": "Cello Chair 679",
+        "category": "Home & Kitchen",
+        "price": 52549.36,
+        "stock": 87
+    },
+    {
+        "name": "Philips Mixer 680",
+        "category": "Home & Kitchen",
+        "price": 3064.42,
+        "stock": 76
+    },
+    {
+        "name": "Sony Headphones 681",
+        "category": "Electronics",
+        "price": 82613.81,
+        "stock": 69
+    },
+    {
+        "name": "Samsung Galaxy 682",
+        "category": "Electronics",
+        "price": 57905.12,
+        "stock": 2
+    },
+    {
+        "name": "Samsung Galaxy 683",
+        "category": "Electronics",
+        "price": 140922.24,
+        "stock": 41
+    },
+    {
+        "name": "Wildcraft Backpack 684",
+        "category": "Sports & Outdoors",
+        "price": 38452.95,
+        "stock": 94
+    },
+    {
+        "name": "Gucci Handbag 685",
+        "category": "Fashion",
+        "price": 168117.41,
+        "stock": 69
+    },
+    {
+        "name": "MacBook Pro 686",
+        "category": "Electronics",
+        "price": 96895.87,
+        "stock": 44
+    },
+    {
+        "name": "Nivia Football 687",
+        "category": "Sports & Outdoors",
+        "price": 40991.97,
+        "stock": 33
+    },
+    {
+        "name": "Amazon Echo 688",
+        "category": "Electronics",
+        "price": 35044.52,
+        "stock": 12
+    },
+    {
+        "name": "GoPro 689",
+        "category": "Electronics",
+        "price": 129435.51,
+        "stock": 73
+    },
+    {
+        "name": "Harry Potter 690",
+        "category": "Books",
+        "price": 71007.07,
+        "stock": 23
+    },
+    {
+        "name": "The Alchemist 691",
+        "category": "Books",
+        "price": 174542.88,
+        "stock": 29
+    },
+    {
+        "name": "GoPro 692",
+        "category": "Electronics",
+        "price": 63025.86,
+        "stock": 25
+    },
+    {
+        "name": "Nike Shorts 693",
+        "category": "Sports & Outdoors",
+        "price": 63725.88,
+        "stock": 64
+    },
+    {
+        "name": "SS Cricket Bat 694",
+        "category": "Sports & Outdoors",
+        "price": 176571.83,
+        "stock": 31
+    },
+    {
+        "name": "Apple Watch 695",
+        "category": "Electronics",
+        "price": 39049.42,
+        "stock": 21
+    },
+    {
+        "name": "Zara T-Shirt 696",
+        "category": "Fashion",
+        "price": 53869.47,
+        "stock": 10
+    },
+    {
+        "name": "Adidas Ultraboost 697",
+        "category": "Fashion",
+        "price": 168279.01,
+        "stock": 93
+    },
+    {
+        "name": "Cello Chair 698",
+        "category": "Home & Kitchen",
+        "price": 177205.5,
+        "stock": 49
+    },
+    {
+        "name": "SS Cricket Bat 699",
+        "category": "Sports & Outdoors",
+        "price": 154060.8,
+        "stock": 91
+    },
+    {
+        "name": "Rich Dad Poor Dad 700",
+        "category": "Books",
+        "price": 17171.36,
+        "stock": 68
+    },
+    {
+        "name": "Atomic Habits 701",
+        "category": "Books",
+        "price": 55918.51,
+        "stock": 88
+    },
+    {
+        "name": "SS Cricket Bat 702",
+        "category": "Sports & Outdoors",
+        "price": 26848.75,
+        "stock": 86
+    },
+    {
+        "name": "Puma Sneakers 703",
+        "category": "Fashion",
+        "price": 132510.94,
+        "stock": 38
+    },
+    {
+        "name": "Educated 704",
+        "category": "Books",
+        "price": 131494.04,
+        "stock": 95
+    },
+    {
+        "name": "Zara T-Shirt 705",
+        "category": "Fashion",
+        "price": 151332.8,
+        "stock": 25
+    },
+    {
+        "name": "Zara T-Shirt 706",
+        "category": "Fashion",
+        "price": 29487.75,
+        "stock": 65
+    },
+    {
+        "name": "Adidas Ultraboost 707",
+        "category": "Fashion",
+        "price": 129330.75,
+        "stock": 88
+    },
+    {
+        "name": "Deep Work 708",
+        "category": "Books",
+        "price": 147671.19,
+        "stock": 85
+    },
+    {
+        "name": "Deep Work 709",
+        "category": "Books",
+        "price": 101064.4,
+        "stock": 64
+    },
+    {
+        "name": "Nivia Football 710",
+        "category": "Sports & Outdoors",
+        "price": 154390.18,
+        "stock": 20
+    },
+    {
+        "name": "The Alchemist 711",
+        "category": "Books",
+        "price": 96492.11,
+        "stock": 16
+    },
+    {
+        "name": "The Alchemist 712",
+        "category": "Books",
+        "price": 90585.79,
+        "stock": 57
+    },
+    {
+        "name": "LG OLED TV 713",
+        "category": "Electronics",
+        "price": 40943.13,
+        "stock": 88
+    },
+    {
+        "name": "Quechua Tent 714",
+        "category": "Sports & Outdoors",
+        "price": 177558.43,
+        "stock": 78
+    },
+    {
+        "name": "Whirlpool Microwave 715",
+        "category": "Home & Kitchen",
+        "price": 53427.74,
+        "stock": 41
+    },
+    {
+        "name": "Wildcraft Backpack 716",
+        "category": "Sports & Outdoors",
+        "price": 22894.56,
+        "stock": 73
+    },
+    {
+        "name": "GoPro 717",
+        "category": "Electronics",
+        "price": 95212.88,
+        "stock": 100
+    },
+    {
+        "name": "Rich Dad Poor Dad 718",
+        "category": "Books",
+        "price": 135469.16,
+        "stock": 4
+    },
+    {
+        "name": "Educated 719",
+        "category": "Books",
+        "price": 81024.81,
+        "stock": 68
+    },
+    {
+        "name": "Nilkamal Sofa 720",
+        "category": "Home & Kitchen",
+        "price": 79605.17,
+        "stock": 20
+    },
+    {
+        "name": "Spalding Basketball 721",
+        "category": "Sports & Outdoors",
+        "price": 171799.14,
+        "stock": 57
+    },
+    {
+        "name": "H&M Hoodie 722",
+        "category": "Fashion",
+        "price": 126884.26,
+        "stock": 7
+    },
+    {
+        "name": "Sony Headphones 723",
+        "category": "Electronics",
+        "price": 147582.06,
+        "stock": 45
+    },
+    {
+        "name": "Nivia Football 724",
+        "category": "Sports & Outdoors",
+        "price": 102158.1,
+        "stock": 30
+    },
+    {
+        "name": "Sony Headphones 725",
+        "category": "Electronics",
+        "price": 47718.31,
+        "stock": 28
+    },
+    {
+        "name": "Canon Camera 726",
+        "category": "Electronics",
+        "price": 198222.5,
+        "stock": 2
+    },
+    {
+        "name": "Nike Air Max 727",
+        "category": "Fashion",
+        "price": 157085.28,
+        "stock": 98
+    },
+    {
+        "name": "LG Refrigerator 728",
+        "category": "Home & Kitchen",
+        "price": 60590.57,
+        "stock": 74
+    },
+    {
+        "name": "LG OLED TV 729",
+        "category": "Electronics",
+        "price": 156702.23,
+        "stock": 68
+    },
+    {
+        "name": "The Alchemist 730",
+        "category": "Books",
+        "price": 65243.99,
+        "stock": 14
+    },
+    {
+        "name": "Amazon Echo 731",
+        "category": "Electronics",
+        "price": 4687.23,
+        "stock": 30
+    },
+    {
+        "name": "Whirlpool Microwave 732",
+        "category": "Home & Kitchen",
+        "price": 66246.85,
+        "stock": 48
+    },
+    {
+        "name": "Harry Potter 733",
+        "category": "Books",
+        "price": 78872.1,
+        "stock": 63
+    },
+    {
+        "name": "Yonex Racket 734",
+        "category": "Sports & Outdoors",
+        "price": 81413.6,
+        "stock": 96
+    },
+    {
+        "name": "Nilkamal Sofa 735",
+        "category": "Home & Kitchen",
+        "price": 142393.53,
+        "stock": 95
+    },
+    {
+        "name": "Spalding Basketball 736",
+        "category": "Sports & Outdoors",
+        "price": 52106.5,
+        "stock": 37
+    },
+    {
+        "name": "Levis Jeans 737",
+        "category": "Fashion",
+        "price": 11431.0,
+        "stock": 12
+    },
+    {
+        "name": "Cosco Volleyball 738",
+        "category": "Sports & Outdoors",
+        "price": 78240.15,
+        "stock": 21
+    },
+    {
+        "name": "Zara T-Shirt 739",
+        "category": "Fashion",
+        "price": 96925.8,
+        "stock": 99
+    },
+    {
+        "name": "LG OLED TV 740",
+        "category": "Electronics",
+        "price": 104020.85,
+        "stock": 86
+    },
+    {
+        "name": "Apple Watch 741",
+        "category": "Electronics",
+        "price": 138493.72,
+        "stock": 64
+    },
+    {
+        "name": "Spalding Basketball 742",
+        "category": "Sports & Outdoors",
+        "price": 148705.37,
+        "stock": 74
+    },
+    {
+        "name": "Nike Shorts 743",
+        "category": "Sports & Outdoors",
+        "price": 168203.17,
+        "stock": 60
+    },
+    {
+        "name": "Atomic Habits 744",
+        "category": "Books",
+        "price": 19376.74,
+        "stock": 23
+    },
+    {
+        "name": "Whirlpool Microwave 745",
+        "category": "Home & Kitchen",
+        "price": 13174.44,
+        "stock": 90
+    },
+    {
+        "name": "Philips Mixer 746",
+        "category": "Home & Kitchen",
+        "price": 163304.89,
+        "stock": 98
+    },
+    {
+        "name": "iPhone 747",
+        "category": "Electronics",
+        "price": 59658.69,
+        "stock": 19
+    },
+    {
+        "name": "Rich Dad Poor Dad 748",
+        "category": "Books",
+        "price": 159380.24,
+        "stock": 8
+    },
+    {
+        "name": "Design Patterns 749",
+        "category": "Books",
+        "price": 127567.81,
+        "stock": 16
+    },
+    {
+        "name": "Rolex Watch 750",
+        "category": "Fashion",
+        "price": 185175.01,
+        "stock": 63
+    },
+    {
+        "name": "LG Refrigerator 751",
+        "category": "Home & Kitchen",
+        "price": 117698.2,
+        "stock": 72
+    },
+    {
+        "name": "Philips Mixer 752",
+        "category": "Home & Kitchen",
+        "price": 182379.28,
+        "stock": 67
+    },
+    {
+        "name": "Harry Potter 753",
+        "category": "Books",
+        "price": 42343.7,
+        "stock": 12
+    },
+    {
+        "name": "Puma Sports Shoes 754",
+        "category": "Sports & Outdoors",
+        "price": 75719.97,
+        "stock": 75
+    },
+    {
+        "name": "Zara T-Shirt 755",
+        "category": "Fashion",
+        "price": 178945.92,
+        "stock": 87
+    },
+    {
+        "name": "Nilkamal Sofa 756",
+        "category": "Home & Kitchen",
+        "price": 22346.25,
+        "stock": 16
+    },
+    {
+        "name": "LG Refrigerator 757",
+        "category": "Home & Kitchen",
+        "price": 182759.28,
+        "stock": 95
+    },
+    {
+        "name": "Cello Chair 758",
+        "category": "Home & Kitchen",
+        "price": 178277.56,
+        "stock": 20
+    },
+    {
+        "name": "Rich Dad Poor Dad 759",
+        "category": "Books",
+        "price": 129943.68,
+        "stock": 49
+    },
+    {
+        "name": "GoPro 760",
+        "category": "Electronics",
+        "price": 108257.12,
+        "stock": 9
+    },
+    {
+        "name": "Nike Air Max 761",
+        "category": "Fashion",
+        "price": 42152.53,
+        "stock": 1
+    },
+    {
+        "name": "Zara T-Shirt 762",
+        "category": "Fashion",
+        "price": 32760.09,
+        "stock": 42
+    },
+    {
+        "name": "Dell XPS 763",
+        "category": "Electronics",
+        "price": 118928.33,
+        "stock": 39
+    },
+    {
+        "name": "Adidas Tracksuit 764",
+        "category": "Sports & Outdoors",
+        "price": 146910.26,
+        "stock": 56
+    },
+    {
+        "name": "Nike Air Max 765",
+        "category": "Fashion",
+        "price": 198202.25,
+        "stock": 22
+    },
+    {
+        "name": "Rolex Watch 766",
+        "category": "Fashion",
+        "price": 133191.03,
+        "stock": 22
+    },
+    {
+        "name": "H&M Hoodie 767",
+        "category": "Fashion",
+        "price": 105531.34,
+        "stock": 25
+    },
+    {
+        "name": "Atomic Habits 768",
+        "category": "Books",
+        "price": 117831.65,
+        "stock": 8
+    },
+    {
+        "name": "Cello Chair 769",
+        "category": "Home & Kitchen",
+        "price": 54452.82,
+        "stock": 32
+    },
+    {
+        "name": "Adidas Ultraboost 770",
+        "category": "Fashion",
+        "price": 143189.84,
+        "stock": 47
+    },
+    {
+        "name": "Harry Potter 771",
+        "category": "Books",
+        "price": 12090.11,
+        "stock": 37
+    },
+    {
+        "name": "iPhone 772",
+        "category": "Electronics",
+        "price": 183541.39,
+        "stock": 12
+    },
+    {
+        "name": "Amazon Echo 773",
+        "category": "Electronics",
+        "price": 170933.11,
+        "stock": 6
+    },
+    {
+        "name": "Nike Shorts 774",
+        "category": "Sports & Outdoors",
+        "price": 22181.17,
+        "stock": 74
+    },
+    {
+        "name": "SS Cricket Bat 775",
+        "category": "Sports & Outdoors",
+        "price": 174178.27,
+        "stock": 24
+    },
+    {
+        "name": "The Alchemist 776",
+        "category": "Books",
+        "price": 141085.04,
+        "stock": 6
+    },
+    {
+        "name": "Samsung Galaxy 777",
+        "category": "Electronics",
+        "price": 39875.95,
+        "stock": 41
+    },
+    {
+        "name": "Clean Code 778",
+        "category": "Books",
+        "price": 34237.59,
+        "stock": 43
+    },
+    {
+        "name": "Amazon Echo 779",
+        "category": "Electronics",
+        "price": 23644.47,
+        "stock": 35
+    },
+    {
+        "name": "Sony Headphones 780",
+        "category": "Electronics",
+        "price": 133935.87,
+        "stock": 35
+    },
+    {
+        "name": "Atomic Habits 781",
+        "category": "Books",
+        "price": 106293.08,
+        "stock": 45
+    },
+    {
+        "name": "Sony Headphones 782",
+        "category": "Electronics",
+        "price": 185279.72,
+        "stock": 28
+    },
+    {
+        "name": "Wildcraft Backpack 783",
+        "category": "Sports & Outdoors",
+        "price": 44048.77,
+        "stock": 56
+    },
+    {
+        "name": "Harry Potter 784",
+        "category": "Books",
+        "price": 35381.12,
+        "stock": 58
+    },
+    {
+        "name": "GoPro 785",
+        "category": "Electronics",
+        "price": 186367.44,
+        "stock": 39
+    },
+    {
+        "name": "Puma Sports Shoes 786",
+        "category": "Sports & Outdoors",
+        "price": 29121.86,
+        "stock": 51
+    },
+    {
+        "name": "Gucci Handbag 787",
+        "category": "Fashion",
+        "price": 63599.2,
+        "stock": 63
+    },
+    {
+        "name": "Nivia Football 788",
+        "category": "Sports & Outdoors",
+        "price": 160100.73,
+        "stock": 35
+    },
+    {
+        "name": "Nilkamal Sofa 789",
+        "category": "Home & Kitchen",
+        "price": 173854.89,
+        "stock": 90
+    },
+    {
+        "name": "H&M Hoodie 790",
+        "category": "Fashion",
+        "price": 18863.34,
+        "stock": 18
+    },
+    {
+        "name": "The Alchemist 791",
+        "category": "Books",
+        "price": 19662.72,
+        "stock": 54
+    },
+    {
+        "name": "Puma Sneakers 792",
+        "category": "Fashion",
+        "price": 180440.68,
+        "stock": 22
+    },
+    {
+        "name": "iPhone 793",
+        "category": "Electronics",
+        "price": 190930.21,
+        "stock": 36
+    },
+    {
+        "name": "Quechua Tent 794",
+        "category": "Sports & Outdoors",
+        "price": 141384.07,
+        "stock": 52
+    },
+    {
+        "name": "Philips Mixer 795",
+        "category": "Home & Kitchen",
+        "price": 887.61,
+        "stock": 40
+    },
+    {
+        "name": "Puma Sports Shoes 796",
+        "category": "Sports & Outdoors",
+        "price": 99595.11,
+        "stock": 85
+    },
+    {
+        "name": "GoPro 797",
+        "category": "Electronics",
+        "price": 110441.03,
+        "stock": 84
+    },
+    {
+        "name": "Quechua Tent 798",
+        "category": "Sports & Outdoors",
+        "price": 70893.57,
+        "stock": 26
+    },
+    {
+        "name": "Nike Air Max 799",
+        "category": "Fashion",
+        "price": 113447.15,
+        "stock": 25
+    },
+    {
+        "name": "Wildcraft Backpack 800",
+        "category": "Sports & Outdoors",
+        "price": 46158.39,
+        "stock": 32
+    },
+    {
+        "name": "Nilkamal Sofa 801",
+        "category": "Home & Kitchen",
+        "price": 76512.95,
+        "stock": 97
+    },
+    {
+        "name": "Samsung Galaxy 802",
+        "category": "Electronics",
+        "price": 116551.32,
+        "stock": 46
+    },
+    {
+        "name": "Psychology of Money 803",
+        "category": "Books",
+        "price": 142508.76,
+        "stock": 17
+    },
+    {
+        "name": "Cello Chair 804",
+        "category": "Home & Kitchen",
+        "price": 82029.83,
+        "stock": 38
+    },
+    {
+        "name": "Rich Dad Poor Dad 805",
+        "category": "Books",
+        "price": 129481.25,
+        "stock": 92
+    },
+    {
+        "name": "Psychology of Money 806",
+        "category": "Books",
+        "price": 76997.74,
+        "stock": 100
+    },
+    {
+        "name": "Atomic Habits 807",
+        "category": "Books",
+        "price": 71098.88,
+        "stock": 46
+    },
+    {
+        "name": "Puma Sneakers 808",
+        "category": "Fashion",
+        "price": 98970.45,
+        "stock": 86
+    },
+    {
+        "name": "Cello Chair 809",
+        "category": "Home & Kitchen",
+        "price": 100482.6,
+        "stock": 65
+    },
+    {
+        "name": "Samsung Galaxy 810",
+        "category": "Electronics",
+        "price": 45165.73,
+        "stock": 77
+    },
+    {
+        "name": "Atomic Habits 811",
+        "category": "Books",
+        "price": 105240.78,
+        "stock": 43
+    },
+    {
+        "name": "H&M Hoodie 812",
+        "category": "Fashion",
+        "price": 179175.74,
+        "stock": 90
+    },
+    {
+        "name": "Harry Potter 813",
+        "category": "Books",
+        "price": 112565.22,
+        "stock": 38
+    },
+    {
+        "name": "Canon Camera 814",
+        "category": "Electronics",
+        "price": 181713.37,
+        "stock": 23
+    },
+    {
+        "name": "Puma Sneakers 815",
+        "category": "Fashion",
+        "price": 173783.48,
+        "stock": 59
+    },
+    {
+        "name": "Harry Potter 816",
+        "category": "Books",
+        "price": 102071.64,
+        "stock": 4
+    },
+    {
+        "name": "Prestige Stove 817",
+        "category": "Home & Kitchen",
+        "price": 25754.66,
+        "stock": 76
+    },
+    {
+        "name": "SS Cricket Bat 818",
+        "category": "Sports & Outdoors",
+        "price": 85382.19,
+        "stock": 1
+    },
+    {
+        "name": "Samsung Washing Machine 819",
+        "category": "Home & Kitchen",
+        "price": 43201.54,
+        "stock": 90
+    },
+    {
+        "name": "MacBook Pro 820",
+        "category": "Electronics",
+        "price": 166113.29,
+        "stock": 39
+    },
+    {
+        "name": "MacBook Pro 821",
+        "category": "Electronics",
+        "price": 155931.66,
+        "stock": 24
+    },
+    {
+        "name": "Yonex Racket 822",
+        "category": "Sports & Outdoors",
+        "price": 115500.18,
+        "stock": 100
+    },
+    {
+        "name": "MacBook Pro 823",
+        "category": "Electronics",
+        "price": 190825.81,
+        "stock": 11
+    },
+    {
+        "name": "Rolex Watch 824",
+        "category": "Fashion",
+        "price": 59917.18,
+        "stock": 61
+    },
+    {
+        "name": "Nivia Football 825",
+        "category": "Sports & Outdoors",
+        "price": 127294.58,
+        "stock": 31
+    },
+    {
+        "name": "Nivia Football 826",
+        "category": "Sports & Outdoors",
+        "price": 66954.69,
+        "stock": 19
+    },
+    {
+        "name": "Zara T-Shirt 827",
+        "category": "Fashion",
+        "price": 90107.55,
+        "stock": 97
+    },
+    {
+        "name": "Atomic Habits 828",
+        "category": "Books",
+        "price": 152947.45,
+        "stock": 28
+    },
+    {
+        "name": "Adidas Tracksuit 829",
+        "category": "Sports & Outdoors",
+        "price": 97954.9,
+        "stock": 7
+    },
+    {
+        "name": "Philips Mixer 830",
+        "category": "Home & Kitchen",
+        "price": 183356.43,
+        "stock": 33
+    },
+    {
+        "name": "Amazon Echo 831",
+        "category": "Electronics",
+        "price": 82941.15,
+        "stock": 34
+    },
+    {
+        "name": "Havells Fan 832",
+        "category": "Home & Kitchen",
+        "price": 91571.03,
+        "stock": 96
+    },
+    {
+        "name": "Apple Watch 833",
+        "category": "Electronics",
+        "price": 53696.86,
+        "stock": 90
+    },
+    {
+        "name": "Gucci Handbag 834",
+        "category": "Fashion",
+        "price": 145593.82,
+        "stock": 9
+    },
+    {
+        "name": "Prestige Stove 835",
+        "category": "Home & Kitchen",
+        "price": 36888.11,
+        "stock": 68
+    },
+    {
+        "name": "Puma Sports Shoes 836",
+        "category": "Sports & Outdoors",
+        "price": 112621.73,
+        "stock": 62
+    },
+    {
+        "name": "Nivia Football 837",
+        "category": "Sports & Outdoors",
+        "price": 136220.8,
+        "stock": 61
+    },
+    {
+        "name": "Cosco Volleyball 838",
+        "category": "Sports & Outdoors",
+        "price": 30888.41,
+        "stock": 64
+    },
+    {
+        "name": "Canon Camera 839",
+        "category": "Electronics",
+        "price": 196126.57,
+        "stock": 44
+    },
+    {
+        "name": "Apple Watch 840",
+        "category": "Electronics",
+        "price": 170695.16,
+        "stock": 78
+    },
+    {
+        "name": "Ray-Ban Aviators 841",
+        "category": "Fashion",
+        "price": 121685.38,
+        "stock": 93
+    },
+    {
+        "name": "Adidas Tracksuit 842",
+        "category": "Sports & Outdoors",
+        "price": 88957.17,
+        "stock": 27
+    },
+    {
+        "name": "LG Refrigerator 843",
+        "category": "Home & Kitchen",
+        "price": 172472.04,
+        "stock": 17
+    },
+    {
+        "name": "Atomic Habits 844",
+        "category": "Books",
+        "price": 138663.66,
+        "stock": 63
+    },
+    {
+        "name": "Prestige Stove 845",
+        "category": "Home & Kitchen",
+        "price": 184436.89,
+        "stock": 49
+    },
+    {
+        "name": "Deep Work 846",
+        "category": "Books",
+        "price": 184929.28,
+        "stock": 97
+    },
+    {
+        "name": "Sony Headphones 847",
+        "category": "Electronics",
+        "price": 74996.01,
+        "stock": 11
+    },
+    {
+        "name": "Apple Watch 848",
+        "category": "Electronics",
+        "price": 182102.17,
+        "stock": 44
+    },
+    {
+        "name": "Dell XPS 849",
+        "category": "Electronics",
+        "price": 89825.47,
+        "stock": 88
+    },
+    {
+        "name": "Armani Suit 850",
+        "category": "Fashion",
+        "price": 166241.19,
+        "stock": 4
+    },
+    {
+        "name": "GoPro 851",
+        "category": "Electronics",
+        "price": 45198.71,
+        "stock": 31
+    },
+    {
+        "name": "LG Refrigerator 852",
+        "category": "Home & Kitchen",
+        "price": 54718.7,
+        "stock": 21
+    },
+    {
+        "name": "Rolex Watch 853",
+        "category": "Fashion",
+        "price": 103208.82,
+        "stock": 40
+    },
+    {
+        "name": "Dell XPS 854",
+        "category": "Electronics",
+        "price": 180415.03,
+        "stock": 70
+    },
+    {
+        "name": "iPhone 855",
+        "category": "Electronics",
+        "price": 28897.57,
+        "stock": 42
+    },
+    {
+        "name": "Quechua Tent 856",
+        "category": "Sports & Outdoors",
+        "price": 29822.35,
+        "stock": 16
+    },
+    {
+        "name": "Deep Work 857",
+        "category": "Books",
+        "price": 172835.45,
+        "stock": 26
+    },
+    {
+        "name": "Adidas Ultraboost 858",
+        "category": "Fashion",
+        "price": 136936.28,
+        "stock": 91
+    },
+    {
+        "name": "Cosco Volleyball 859",
+        "category": "Sports & Outdoors",
+        "price": 74901.4,
+        "stock": 20
+    },
+    {
+        "name": "Atomic Habits 860",
+        "category": "Books",
+        "price": 3489.38,
+        "stock": 2
+    },
+    {
+        "name": "Nilkamal Sofa 861",
+        "category": "Home & Kitchen",
+        "price": 2519.77,
+        "stock": 66
+    },
+    {
+        "name": "Nivia Football 862",
+        "category": "Sports & Outdoors",
+        "price": 132004.53,
+        "stock": 16
+    },
+    {
+        "name": "Psychology of Money 863",
+        "category": "Books",
+        "price": 135815.47,
+        "stock": 62
+    },
+    {
+        "name": "Puma Sneakers 864",
+        "category": "Fashion",
+        "price": 10701.38,
+        "stock": 27
+    },
+    {
+        "name": "Adidas Ultraboost 865",
+        "category": "Fashion",
+        "price": 31335.12,
+        "stock": 13
+    },
+    {
+        "name": "Rolex Watch 866",
+        "category": "Fashion",
+        "price": 116989.71,
+        "stock": 60
+    },
+    {
+        "name": "Spalding Basketball 867",
+        "category": "Sports & Outdoors",
+        "price": 167499.76,
+        "stock": 85
+    },
+    {
+        "name": "Sapiens 868",
+        "category": "Books",
+        "price": 41670.79,
+        "stock": 24
+    },
+    {
+        "name": "Zara T-Shirt 869",
+        "category": "Fashion",
+        "price": 147242.28,
+        "stock": 31
+    },
+    {
+        "name": "Gucci Handbag 870",
+        "category": "Fashion",
+        "price": 23746.35,
+        "stock": 60
+    },
+    {
+        "name": "Educated 871",
+        "category": "Books",
+        "price": 1110.68,
+        "stock": 40
+    },
+    {
+        "name": "SS Cricket Bat 872",
+        "category": "Sports & Outdoors",
+        "price": 127351.76,
+        "stock": 11
+    },
+    {
+        "name": "Nivia Football 873",
+        "category": "Sports & Outdoors",
+        "price": 187093.41,
+        "stock": 51
+    },
+    {
+        "name": "Cosco Volleyball 874",
+        "category": "Sports & Outdoors",
+        "price": 141515.46,
+        "stock": 65
+    },
+    {
+        "name": "Levis Jeans 875",
+        "category": "Fashion",
+        "price": 1026.22,
+        "stock": 64
+    },
+    {
+        "name": "Apple Watch 876",
+        "category": "Electronics",
+        "price": 46450.59,
+        "stock": 97
+    },
+    {
+        "name": "Nike Air Max 877",
+        "category": "Fashion",
+        "price": 197816.35,
+        "stock": 5
+    },
+    {
+        "name": "Cello Chair 878",
+        "category": "Home & Kitchen",
+        "price": 165717.73,
+        "stock": 62
+    },
+    {
+        "name": "LG OLED TV 879",
+        "category": "Electronics",
+        "price": 131532.14,
+        "stock": 60
+    },
+    {
+        "name": "Psychology of Money 880",
+        "category": "Books",
+        "price": 198128.88,
+        "stock": 41
+    },
+    {
+        "name": "Atomic Habits 881",
+        "category": "Books",
+        "price": 144526.33,
+        "stock": 55
+    },
+    {
+        "name": "Cello Chair 882",
+        "category": "Home & Kitchen",
+        "price": 161427.97,
+        "stock": 65
+    },
+    {
+        "name": "Adidas Ultraboost 883",
+        "category": "Fashion",
+        "price": 146551.71,
+        "stock": 42
+    },
+    {
+        "name": "Nivia Football 884",
+        "category": "Sports & Outdoors",
+        "price": 82319.23,
+        "stock": 6
+    },
+    {
+        "name": "Prestige Cooker 885",
+        "category": "Home & Kitchen",
+        "price": 99131.47,
+        "stock": 2
+    },
+    {
+        "name": "Ray-Ban Aviators 886",
+        "category": "Fashion",
+        "price": 120881.73,
+        "stock": 93
+    },
+    {
+        "name": "Prestige Stove 887",
+        "category": "Home & Kitchen",
+        "price": 39158.79,
+        "stock": 2
+    },
+    {
+        "name": "Prestige Stove 888",
+        "category": "Home & Kitchen",
+        "price": 183564.55,
+        "stock": 37
+    },
+    {
+        "name": "Levis Jeans 889",
+        "category": "Fashion",
+        "price": 34181.02,
+        "stock": 28
+    },
+    {
+        "name": "Whirlpool Microwave 890",
+        "category": "Home & Kitchen",
+        "price": 52240.05,
+        "stock": 97
+    },
+    {
+        "name": "Harry Potter 891",
+        "category": "Books",
+        "price": 63842.54,
+        "stock": 65
+    },
+    {
+        "name": "Prestige Cooker 892",
+        "category": "Home & Kitchen",
+        "price": 68499.94,
+        "stock": 35
+    },
+    {
+        "name": "GoPro 893",
+        "category": "Electronics",
+        "price": 35874.95,
+        "stock": 40
+    },
+    {
+        "name": "Cello Chair 894",
+        "category": "Home & Kitchen",
+        "price": 109046.26,
+        "stock": 77
+    },
+    {
+        "name": "Ray-Ban Aviators 895",
+        "category": "Fashion",
+        "price": 80772.94,
+        "stock": 41
+    },
+    {
+        "name": "iPhone 896",
+        "category": "Electronics",
+        "price": 141597.24,
+        "stock": 87
+    },
+    {
+        "name": "Educated 897",
+        "category": "Books",
+        "price": 161714.82,
+        "stock": 50
+    },
+    {
+        "name": "LG Refrigerator 898",
+        "category": "Home & Kitchen",
+        "price": 196789.93,
+        "stock": 9
+    },
+    {
+        "name": "Psychology of Money 899",
+        "category": "Books",
+        "price": 37141.07,
+        "stock": 27
+    },
+    {
+        "name": "H&M Hoodie 900",
+        "category": "Fashion",
+        "price": 183259.69,
+        "stock": 1
+    },
+    {
+        "name": "Yonex Racket 901",
+        "category": "Sports & Outdoors",
+        "price": 35445.54,
+        "stock": 25
+    },
+    {
+        "name": "Prestige Stove 902",
+        "category": "Home & Kitchen",
+        "price": 183191.99,
+        "stock": 24
+    },
+    {
+        "name": "MacBook Pro 903",
+        "category": "Electronics",
+        "price": 186716.77,
+        "stock": 91
+    },
+    {
+        "name": "Deep Work 904",
+        "category": "Books",
+        "price": 16898.16,
+        "stock": 88
+    },
+    {
+        "name": "Zara T-Shirt 905",
+        "category": "Fashion",
+        "price": 193197.97,
+        "stock": 15
+    },
+    {
+        "name": "Wildcraft Backpack 906",
+        "category": "Sports & Outdoors",
+        "price": 165559.77,
+        "stock": 89
+    },
+    {
+        "name": "Nivia Football 907",
+        "category": "Sports & Outdoors",
+        "price": 97744.99,
+        "stock": 59
+    },
+    {
+        "name": "Cello Chair 908",
+        "category": "Home & Kitchen",
+        "price": 189333.39,
+        "stock": 61
+    },
+    {
+        "name": "Dell XPS 909",
+        "category": "Electronics",
+        "price": 153789.53,
+        "stock": 10
+    },
+    {
+        "name": "Sony Headphones 910",
+        "category": "Electronics",
+        "price": 165119.14,
+        "stock": 94
+    },
+    {
+        "name": "Puma Sports Shoes 911",
+        "category": "Sports & Outdoors",
+        "price": 90928.63,
+        "stock": 78
+    },
+    {
+        "name": "Rolex Watch 912",
+        "category": "Fashion",
+        "price": 15614.38,
+        "stock": 65
+    },
+    {
+        "name": "Dell XPS 913",
+        "category": "Electronics",
+        "price": 136595.99,
+        "stock": 9
+    },
+    {
+        "name": "Prestige Cooker 914",
+        "category": "Home & Kitchen",
+        "price": 57953.77,
+        "stock": 23
+    },
+    {
+        "name": "Deep Work 915",
+        "category": "Books",
+        "price": 81730.26,
+        "stock": 50
+    },
+    {
+        "name": "Rich Dad Poor Dad 916",
+        "category": "Books",
+        "price": 37997.92,
+        "stock": 92
+    },
+    {
+        "name": "Harry Potter 917",
+        "category": "Books",
+        "price": 125247.89,
+        "stock": 79
+    },
+    {
+        "name": "Whirlpool Microwave 918",
+        "category": "Home & Kitchen",
+        "price": 139007.19,
+        "stock": 48
+    },
+    {
+        "name": "Havells Fan 919",
+        "category": "Home & Kitchen",
+        "price": 50184.59,
+        "stock": 28
+    },
+    {
+        "name": "GoPro 920",
+        "category": "Electronics",
+        "price": 141632.33,
+        "stock": 31
+    },
+    {
+        "name": "Philips Mixer 921",
+        "category": "Home & Kitchen",
+        "price": 150453.48,
+        "stock": 57
+    },
+    {
+        "name": "Amazon Echo 922",
+        "category": "Electronics",
+        "price": 136713.05,
+        "stock": 80
+    },
+    {
+        "name": "Samsung Galaxy 923",
+        "category": "Electronics",
+        "price": 63784.88,
+        "stock": 39
+    },
+    {
+        "name": "Adidas Tracksuit 924",
+        "category": "Sports & Outdoors",
+        "price": 87088.8,
+        "stock": 51
+    },
+    {
+        "name": "Sapiens 925",
+        "category": "Books",
+        "price": 159742.03,
+        "stock": 21
+    },
+    {
+        "name": "Prestige Stove 926",
+        "category": "Home & Kitchen",
+        "price": 118149.83,
+        "stock": 67
+    },
+    {
+        "name": "Nilkamal Sofa 927",
+        "category": "Home & Kitchen",
+        "price": 165943.92,
+        "stock": 51
+    },
+    {
+        "name": "Rolex Watch 928",
+        "category": "Fashion",
+        "price": 34981.03,
+        "stock": 88
+    },
+    {
+        "name": "Nike Shorts 929",
+        "category": "Sports & Outdoors",
+        "price": 60131.38,
+        "stock": 46
+    },
+    {
+        "name": "Prestige Cooker 930",
+        "category": "Home & Kitchen",
+        "price": 19268.17,
+        "stock": 66
+    },
+    {
+        "name": "LG Refrigerator 931",
+        "category": "Home & Kitchen",
+        "price": 73287.29,
+        "stock": 32
+    },
+    {
+        "name": "Dell XPS 932",
+        "category": "Electronics",
+        "price": 180590.45,
+        "stock": 48
+    },
+    {
+        "name": "Nilkamal Sofa 933",
+        "category": "Home & Kitchen",
+        "price": 79283.01,
+        "stock": 52
+    },
+    {
+        "name": "Quechua Tent 934",
+        "category": "Sports & Outdoors",
+        "price": 159426.44,
+        "stock": 57
+    },
+    {
+        "name": "GoPro 935",
+        "category": "Electronics",
+        "price": 197666.93,
+        "stock": 6
+    },
+    {
+        "name": "Havells Fan 936",
+        "category": "Home & Kitchen",
+        "price": 42040.85,
+        "stock": 34
+    },
+    {
+        "name": "MacBook Pro 937",
+        "category": "Electronics",
+        "price": 32899.76,
+        "stock": 44
+    },
+    {
+        "name": "MacBook Pro 938",
+        "category": "Electronics",
+        "price": 5469.96,
+        "stock": 88
+    },
+    {
+        "name": "Design Patterns 939",
+        "category": "Books",
+        "price": 73107.54,
+        "stock": 63
+    },
+    {
+        "name": "Amazon Echo 940",
+        "category": "Electronics",
+        "price": 131143.44,
+        "stock": 78
+    },
+    {
+        "name": "Wildcraft Backpack 941",
+        "category": "Sports & Outdoors",
+        "price": 86180.73,
+        "stock": 72
+    },
+    {
+        "name": "iPhone 942",
+        "category": "Electronics",
+        "price": 59797.98,
+        "stock": 41
+    },
+    {
+        "name": "Nike Shorts 943",
+        "category": "Sports & Outdoors",
+        "price": 176165.4,
+        "stock": 35
+    },
+    {
+        "name": "GoPro 944",
+        "category": "Electronics",
+        "price": 31000.81,
+        "stock": 11
+    },
+    {
+        "name": "Puma Sports Shoes 945",
+        "category": "Sports & Outdoors",
+        "price": 198688.82,
+        "stock": 64
+    },
+    {
+        "name": "Adidas Tracksuit 946",
+        "category": "Sports & Outdoors",
+        "price": 17890.31,
+        "stock": 52
+    },
+    {
+        "name": "Amazon Echo 947",
+        "category": "Electronics",
+        "price": 11143.44,
+        "stock": 53
+    },
+    {
+        "name": "Philips Mixer 948",
+        "category": "Home & Kitchen",
+        "price": 43057.99,
+        "stock": 70
+    },
+    {
+        "name": "Nilkamal Sofa 949",
+        "category": "Home & Kitchen",
+        "price": 73212.92,
+        "stock": 15
+    },
+    {
+        "name": "Sapiens 950",
+        "category": "Books",
+        "price": 90774.55,
+        "stock": 3
+    },
+    {
+        "name": "Nivia Football 951",
+        "category": "Sports & Outdoors",
+        "price": 46088.47,
+        "stock": 9
+    },
+    {
+        "name": "Spalding Basketball 952",
+        "category": "Sports & Outdoors",
+        "price": 103455.51,
+        "stock": 55
+    },
+    {
+        "name": "Educated 953",
+        "category": "Books",
+        "price": 88491.52,
+        "stock": 24
+    },
+    {
+        "name": "IKEA Table 954",
+        "category": "Home & Kitchen",
+        "price": 98587.28,
+        "stock": 22
+    },
+    {
+        "name": "Samsung Galaxy 955",
+        "category": "Electronics",
+        "price": 68926.73,
+        "stock": 26
+    },
+    {
+        "name": "Yonex Racket 956",
+        "category": "Sports & Outdoors",
+        "price": 110598.57,
+        "stock": 27
+    },
+    {
+        "name": "Apple Watch 957",
+        "category": "Electronics",
+        "price": 194444.42,
+        "stock": 66
+    },
+    {
+        "name": "Gucci Handbag 958",
+        "category": "Fashion",
+        "price": 74669.68,
+        "stock": 79
+    },
+    {
+        "name": "IKEA Table 959",
+        "category": "Home & Kitchen",
+        "price": 173568.24,
+        "stock": 98
+    },
+    {
+        "name": "Design Patterns 960",
+        "category": "Books",
+        "price": 162635.87,
+        "stock": 48
+    },
+    {
+        "name": "Cello Chair 961",
+        "category": "Home & Kitchen",
+        "price": 63356.08,
+        "stock": 38
+    },
+    {
+        "name": "Whirlpool Microwave 962",
+        "category": "Home & Kitchen",
+        "price": 154766.97,
+        "stock": 76
+    },
+    {
+        "name": "Puma Sneakers 963",
+        "category": "Fashion",
+        "price": 56475.94,
+        "stock": 57
+    },
+    {
+        "name": "Puma Sports Shoes 964",
+        "category": "Sports & Outdoors",
+        "price": 77521.43,
+        "stock": 29
+    },
+    {
+        "name": "Nike Air Max 965",
+        "category": "Fashion",
+        "price": 24785.7,
+        "stock": 91
+    },
+    {
+        "name": "Nivia Football 966",
+        "category": "Sports & Outdoors",
+        "price": 123132.99,
+        "stock": 25
+    },
+    {
+        "name": "Nike Shorts 967",
+        "category": "Sports & Outdoors",
+        "price": 106637.06,
+        "stock": 37
+    },
+    {
+        "name": "SS Cricket Bat 968",
+        "category": "Sports & Outdoors",
+        "price": 40091.88,
+        "stock": 6
+    },
+    {
+        "name": "Quechua Tent 969",
+        "category": "Sports & Outdoors",
+        "price": 77465.66,
+        "stock": 66
+    },
+    {
+        "name": "Nike Air Max 970",
+        "category": "Fashion",
+        "price": 34449.69,
+        "stock": 18
+    },
+    {
+        "name": "Samsung Galaxy 971",
+        "category": "Electronics",
+        "price": 63869.23,
+        "stock": 39
+    },
+    {
+        "name": "Atomic Habits 972",
+        "category": "Books",
+        "price": 5559.04,
+        "stock": 95
+    },
+    {
+        "name": "GoPro 973",
+        "category": "Electronics",
+        "price": 103871.58,
+        "stock": 46
+    },
+    {
+        "name": "GoPro 974",
+        "category": "Electronics",
+        "price": 69978.87,
+        "stock": 45
+    },
+    {
+        "name": "LG Refrigerator 975",
+        "category": "Home & Kitchen",
+        "price": 39273.92,
+        "stock": 17
+    },
+    {
+        "name": "IKEA Table 976",
+        "category": "Home & Kitchen",
+        "price": 39107.39,
+        "stock": 59
+    },
+    {
+        "name": "Sony Headphones 977",
+        "category": "Electronics",
+        "price": 53079.23,
+        "stock": 9
+    },
+    {
+        "name": "Zara T-Shirt 978",
+        "category": "Fashion",
+        "price": 118863.02,
+        "stock": 20
+    },
+    {
+        "name": "Spalding Basketball 979",
+        "category": "Sports & Outdoors",
+        "price": 48423.29,
+        "stock": 87
+    },
+    {
+        "name": "Canon Camera 980",
+        "category": "Electronics",
+        "price": 109682.49,
+        "stock": 100
+    },
+    {
+        "name": "Levis Jeans 981",
+        "category": "Fashion",
+        "price": 130118.41,
+        "stock": 73
+    },
+    {
+        "name": "Cosco Volleyball 982",
+        "category": "Sports & Outdoors",
+        "price": 142699.65,
+        "stock": 30
+    },
+    {
+        "name": "Clean Code 983",
+        "category": "Books",
+        "price": 50599.13,
+        "stock": 37
+    },
+    {
+        "name": "Wildcraft Backpack 984",
+        "category": "Sports & Outdoors",
+        "price": 176904.8,
+        "stock": 89
+    },
+    {
+        "name": "LG OLED TV 985",
+        "category": "Electronics",
+        "price": 98522.33,
+        "stock": 80
+    },
+    {
+        "name": "SS Cricket Bat 986",
+        "category": "Sports & Outdoors",
+        "price": 52147.83,
+        "stock": 18
+    },
+    {
+        "name": "LG OLED TV 987",
+        "category": "Electronics",
+        "price": 49426.9,
+        "stock": 70
+    },
+    {
+        "name": "Levis Jeans 988",
+        "category": "Fashion",
+        "price": 65299.52,
+        "stock": 89
+    },
+    {
+        "name": "Nike Shorts 989",
+        "category": "Sports & Outdoors",
+        "price": 53734.67,
+        "stock": 94
+    },
+    {
+        "name": "Armani Suit 990",
+        "category": "Fashion",
+        "price": 170320.6,
+        "stock": 94
+    },
+    {
+        "name": "Nike Air Max 991",
+        "category": "Fashion",
+        "price": 55052.39,
+        "stock": 37
+    },
+    {
+        "name": "SS Cricket Bat 992",
+        "category": "Sports & Outdoors",
+        "price": 68637.38,
+        "stock": 92
+    },
+    {
+        "name": "Atomic Habits 993",
+        "category": "Books",
+        "price": 149779.4,
+        "stock": 48
+    },
+    {
+        "name": "Psychology of Money 994",
+        "category": "Books",
+        "price": 9319.56,
+        "stock": 62
+    },
+    {
+        "name": "MacBook Pro 995",
+        "category": "Electronics",
+        "price": 196566.39,
+        "stock": 71
+    },
+    {
+        "name": "SS Cricket Bat 996",
+        "category": "Sports & Outdoors",
+        "price": 127564.99,
+        "stock": 67
+    },
+    {
+        "name": "Levis Jeans 997",
+        "category": "Fashion",
+        "price": 114487.99,
+        "stock": 13
+    },
+    {
+        "name": "iPhone 998",
+        "category": "Electronics",
+        "price": 78435.47,
+        "stock": 25
+    },
+    {
+        "name": "Sony Headphones 999",
+        "category": "Electronics",
+        "price": 153160.42,
+        "stock": 39
+    },
+    {
+        "name": "Havells Fan 1000",
+        "category": "Home & Kitchen",
+        "price": 35848.38,
+        "stock": 71
     }
 ]

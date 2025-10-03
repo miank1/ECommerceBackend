@@ -158,3 +158,11 @@ Next (Phase 3/4) → Refactor Catalog/Search to consume Product Service APIs or 
 This keeps microservice boundaries clean.
 
 Later (Production scale) → Add ElasticSearch + Event-driven sync for high-performance search.
+
+
+UserService - API
+
+GET - http://localhost:8081/health
+
+✅ That’s the complete flow for userservice:
+health → register → login → fetch profile
