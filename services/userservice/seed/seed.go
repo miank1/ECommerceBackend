@@ -1,15 +1,14 @@
 package main
 
 import (
-	"ecommerce-backend/pkg/config"
+	"ecommerce-backend/pkg/db"
 	"encoding/json"
 	"fmt"
 	"log"
 	"os"
+	"time"
 
 	"golang.org/x/crypto/bcrypt"
-	"gorm.io/driver/postgres"
-	"gorm.io/gorm"
 )
 
 type User struct {
@@ -20,33 +19,30 @@ type User struct {
 }
 
 func main() {
-	config.LoadEnv()
-	dsn := os.Getenv("DATABASE_DSN") // e.g., "host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable"
-	log.Fatal("Hello World DATABASE_DSN not set !!", dsn)
-
-	if dsn == "" {
-		log.Fatal("DATABASE_DSN not set!")
-	} else {
-		log.Println("✅ DATABASE_DSN loaded:", dsn)
+	cfg := db.Config{
+		DSN:         os.Getenv("DATABASE_DSN"),
+		MaxRetries:  6,
+		RetryDelay:  2 * time.Second,
+		ConnTimeout: 5 * time.Second,
 	}
 
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	gormDB, err := db.InitPostgres(cfg)
 	if err != nil {
-		log.Fatalf("✅ Failed to connect DB: %v", err)
+		log.Fatalf("could not initialize database: %v", err)
 	}
 
-	if err := db.AutoMigrate(&User{}); err != nil {
+	if err := gormDB.AutoMigrate(&User{}); err != nil {
 		log.Fatalf("✅ Migration failed: %v", err)
 	}
 
 	// Clear old data
-	if err := db.Exec("TRUNCATE TABLE users RESTART IDENTITY CASCADE").Error; err != nil {
+	if err := gormDB.Exec("TRUNCATE TABLE users RESTART IDENTITY CASCADE").Error; err != nil {
 		log.Fatalf("Failed to truncate users table: %v", err)
 	}
 	log.Println("🧹 Cleared existing users")
 
 	// Load JSON
-	file, err := os.Open("seed/users.json")
+	file, err := os.Open("/seed/users.json")
 	if err != nil {
 		log.Fatalf("Failed to open JSON: %v", err)
 	}
@@ -64,7 +60,7 @@ func main() {
 	}
 
 	// Insert into DB
-	if err := db.Create(&users).Error; err != nil {
+	if err := gormDB.Create(&users).Error; err != nil {
 		log.Fatalf("Failed to insert users: %v", err)
 	}
 

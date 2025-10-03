@@ -42,8 +42,8 @@ services:
     build:
       context: ../
       dockerfile: services/userservice/Dockerfile.seed
-    environment:
-      - DATABASE_DSN=host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable
+    env_file:
+      - ../services/userservice/.env
     depends_on:
       postgres:
         condition: service_healthy

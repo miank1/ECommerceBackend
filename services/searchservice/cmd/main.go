@@ -32,7 +32,7 @@ func main() {
 
 	http.HandleFunc("/search", handler.Search)
 
-	log.Printf("📦 Catalog/Search Service running on :%s\n", port)
+	log.Printf("✅ Search Service running on :%s\n", port)
 	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Fatal(err)
 	}

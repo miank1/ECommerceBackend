@@ -16,5 +16,6 @@ FROM alpine:3.18
 RUN apk add --no-cache ca-certificates
 
 COPY --from=builder /seed /usr/local/bin/seed
+COPY services/userservice/seed/users.json /seed/users.json 
 
 CMD ["/usr/local/bin/seed"]
