@@ -2,9 +2,10 @@ package handler
 
 import (
 	"ecommerce-backend/services/searchservice/internals/service"
-	"encoding/json"
 	"net/http"
 	"strconv"
+
+	"github.com/gin-gonic/gin"
 )
 
 type SearchHandler struct {
@@ -15,11 +16,11 @@ func NewSearchHandler(s service.SearchService) *SearchHandler {
 	return &SearchHandler{service: s}
 }
 
-func (h *SearchHandler) Search(w http.ResponseWriter, r *http.Request) {
-	q := r.URL.Query().Get("q")
-	category := r.URL.Query().Get("category")
-	minPriceStr := r.URL.Query().Get("minPrice")
-	maxPriceStr := r.URL.Query().Get("maxPrice")
+func (h *SearchHandler) Search(c *gin.Context) {
+	q := c.Query("q")
+	category := c.Query("category")
+	minPriceStr := c.Query("minPrice")
+	maxPriceStr := c.Query("maxPrice")
 
 	var minPrice, maxPrice float64
 	var err error
@@ -27,24 +28,23 @@ func (h *SearchHandler) Search(w http.ResponseWriter, r *http.Request) {
 	if minPriceStr != "" {
 		minPrice, err = strconv.ParseFloat(minPriceStr, 64)
 		if err != nil {
-			http.Error(w, "invalid minPrice", http.StatusBadRequest)
+			c.JSON(http.StatusBadRequest, gin.H{"error": "invalid minPrice"})
 			return
 		}
 	}
 	if maxPriceStr != "" {
 		maxPrice, err = strconv.ParseFloat(maxPriceStr, 64)
 		if err != nil {
-			http.Error(w, "invalid maxPrice", http.StatusBadRequest)
+			c.JSON(http.StatusBadRequest, gin.H{"error": "invalid maxPrice"})
 			return
 		}
 	}
 
 	products, err := h.service.SearchProducts(q, category, minPrice, maxPrice)
 	if err != nil {
-		http.Error(w, "failed to search products", http.StatusInternalServerError)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to search products"})
 		return
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(products)
+	c.JSON(http.StatusOK, products)
 }

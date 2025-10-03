@@ -54,7 +54,7 @@ func main() {
 	api.DELETE("/items/:id", handler.DeleteItem)
 	api.POST("/checkout", handler.Checkout)
 
-	port := config.GetEnv("PORT", "8084")
+	port := config.GetEnv("PORT", "8085")
 	log.Println("✅ CartService running on port", port)
 	r.Run(":" + port)
 }

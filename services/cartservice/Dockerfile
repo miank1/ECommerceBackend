@@ -12,5 +12,5 @@ FROM alpine:3.18
 RUN apk add --no-cache ca-certificates tzdata
 COPY --from=builder /cartservice /usr/local/bin/cartservice
 
-EXPOSE 8084
+EXPOSE 8085
 CMD ["/usr/local/bin/cartservice"]

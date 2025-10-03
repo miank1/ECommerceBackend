@@ -20,7 +20,7 @@ RUN apk add --no-cache ca-certificates
 COPY --from=builder /searchservice /usr/local/bin/searchservice
 
 # Expose service port
-EXPOSE 8085
+EXPOSE 8084
 
 # Run service
 CMD ["/usr/local/bin/searchservice"]

@@ -77,7 +77,7 @@ services:
       context: ../
       dockerfile: services/cartservice/Dockerfile
     ports:
-      - "8084:8084"
+      - "8085:8085"
     env_file:
       - ../services/cartservice/.env
     depends_on:
@@ -91,7 +91,7 @@ services:
       context: ../
       dockerfile: services/searchservice/Dockerfile
     ports:
-      - "8085:8085"
+      - "8084:8084"
     env_file:
       - ../services/searchservice/.env
     environment:
