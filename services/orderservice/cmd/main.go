@@ -43,14 +43,6 @@ func main() {
 		c.JSON(200, gin.H{"status": "orderservice up"})
 	})
 
-	r.GET("/health1", func(c *gin.Context) {
-		c.JSON(200, gin.H{"status": "Hello World !!"})
-	})
-
-	r.GET("/hello", func(c *gin.Context) {
-		c.JSON(200, gin.H{"status": "Hello World !!!!"})
-	})
-
 	// after AutoMigrate
 	orderRepo := repository.NewOrderRepository(gormDB)
 	orderSvc := service.NewOrderService(orderRepo)
