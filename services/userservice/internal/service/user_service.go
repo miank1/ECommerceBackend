@@ -5,8 +5,11 @@ import (
 	"ecommerce-backend/services/userservice/internal/model"
 	"ecommerce-backend/services/userservice/internal/repository"
 	"errors"
+	"log"
+	"os"
 	"time"
 
+	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -82,4 +85,33 @@ func (s *UserService) Register(name, email, password string) (*model.User, error
 
 func (s *UserService) GetByID(id string) (*model.User, error) {
 	return s.Repo.GetByID(id)
+}
+
+func (s *UserService) GenerateToken(userID string) (string, error) {
+	claims := jwt.MapClaims{
+		"user_id": userID,
+		"exp":     time.Now().Add(time.Hour * 24).Unix(),
+	}
+
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+	log.Println("🔐 UserService secret:", os.Getenv("JWT_SECRET"))
+
+	return token.SignedString([]byte(os.Getenv("JWT_SECRET")))
+}
+
+func (s *UserService) Authenticate(email, password string) (*model.User, error) {
+	user, err := s.Repo.FindByEmail(email)
+	if err != nil {
+		return nil, err
+	}
+
+	if user == nil {
+		return nil, errors.New("user not found")
+	}
+
+	if err := bcrypt.CompareHashAndPassword([]byte(user.PasswordHash), []byte(password)); err != nil {
+		return nil, errors.New("invalid credentials")
+	}
+
+	return user, nil
 }

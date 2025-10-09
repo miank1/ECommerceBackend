@@ -47,15 +47,30 @@ type loginReq struct {
 func (h *UserHandler) Login(c *gin.Context) {
 	var req loginReq
 	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"status": "error", "message": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	token, user, err := h.Svc.Login(req.Email, req.Password)
+
+	// ✅ Step 1: Validate user credentials
+	user, err := h.Svc.Authenticate(req.Email, req.Password)
 	if err != nil {
-		c.JSON(http.StatusUnauthorized, gin.H{"status": "error", "message": err.Error()})
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "invalid email or password"})
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"status": "success", "token": token, "user": user})
+
+	// ✅ Step 2: Generate JWT Token
+	token, err := h.Svc.GenerateToken(user.ID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to generate token"})
+		return
+	}
+
+	// ✅ Step 3: Respond with token and user info
+	c.JSON(http.StatusOK, gin.H{
+		"status": "success",
+		"token":  token,
+		"user":   user,
+	})
 }
 
 /* Me */

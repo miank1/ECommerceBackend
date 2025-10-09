@@ -3,7 +3,6 @@ package main
 import (
 	"ecommerce-backend/pkg/config"
 	logger "ecommerce-backend/pkg/logger"
-	"ecommerce-backend/pkg/middleware"
 	"ecommerce-backend/services/userservice/internal/handler"
 	"ecommerce-backend/services/userservice/internal/model"
 	"ecommerce-backend/services/userservice/internal/repository"
@@ -60,9 +59,9 @@ func main() {
 	api.POST("/register", h.Register)
 	api.POST("/login", h.Login)
 
-	protected := api.Group("")
-	protected.Use(middleware.JWTAuth())
-	protected.GET("/me", h.Me)
+	// protected := api.Group("")
+	// protected.Use(middleware.JWTAuth())
+	// protected.GET("/me", h.Me)
 
 	port = config.GetEnv("PORT", "8081")
 	log.Println("✅ UserService running on port", port)

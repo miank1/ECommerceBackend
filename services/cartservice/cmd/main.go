@@ -4,6 +4,7 @@ import (
 	"ecommerce-backend/pkg/config"
 	"ecommerce-backend/pkg/db"
 	"ecommerce-backend/pkg/logger"
+	"ecommerce-backend/pkg/middleware"
 	"ecommerce-backend/services/cartservice/internal/handler"
 	"ecommerce-backend/services/cartservice/internal/model"
 	"ecommerce-backend/services/cartservice/internal/repository"
@@ -48,13 +49,17 @@ func main() {
 	handler := handler.NewCartHandler(svc)
 
 	api := r.Group("/api/v1/cart")
-	api.POST("/items", handler.AddItem)
-	api.GET("", handler.GetCart)
-	api.PUT("/items/:id", handler.UpdateItem)
-	api.DELETE("/items/:id", handler.DeleteItem)
-	api.POST("/checkout", handler.Checkout)
+
+	api.Use(middleware.JWTAuth())
+	{
+		api.POST("/items", handler.AddItem)
+		api.GET("", handler.GetCart)
+		api.PUT("/items/:id", handler.UpdateItem)
+		api.DELETE("/items/:id", handler.DeleteItem)
+		api.POST("/checkout", handler.Checkout)
+	}
 
 	port := config.GetEnv("PORT", "8085")
-	log.Println("✅ CartService running on port", port)
+	log.Println("✅ CartService running on port -----------", port)
 	r.Run(":" + port)
 }
