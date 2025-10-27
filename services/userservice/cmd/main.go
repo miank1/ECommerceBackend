@@ -1,7 +1,6 @@
 package main
 
 import (
-	"ecommerce-backend/pkg/config"
 	logger "ecommerce-backend/pkg/logger"
 	"ecommerce-backend/services/userservice/internal/handler"
 	"ecommerce-backend/services/userservice/internal/model"
@@ -9,61 +8,90 @@ import (
 	"ecommerce-backend/services/userservice/internal/service"
 	"log"
 	"os"
-	"strconv"
+	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	gormLogger "gorm.io/gorm/logger"
 )
 
 func main() {
-
+	// Initialize global logger
 	logger.Init()
 	defer logger.Sync()
 
+	// Load environment variables from .env file
+	if err := godotenv.Load("../.env"); err != nil {
+		log.Println("⚠️  No .env file found, using system environment variables")
+	}
+
+	log.Println("Loaded DSN:", os.Getenv("DATABASE_DSN"))
+
+	// Read environment variables
 	dsn := os.Getenv("DATABASE_DSN")
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8084"
-	}
 
-	// Connect DB
-	gormDB, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	// Connect to Neon PostgreSQL with GORM
+	gormDB, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
+		Logger: gormLogger.New(
+			log.New(os.Stdout, "\r\n", log.LstdFlags),
+			gormLogger.Config{
+				SlowThreshold: time.Second,
+				LogLevel:      gormLogger.Info, // change to Warn or Silent to reduce logs
+				Colorful:      true,
+			},
+		),
+	})
 	if err != nil {
-		log.Fatalf("Failed to connect to ProductDB: %v", err)
-	}
-	// migrate User model
-	if err := gormDB.AutoMigrate(&model.User{}); err != nil {
-		log.Fatalf("❌ auto migrate failed: %v", err)
+		log.Fatalf("❌ Failed to connect to PostgreSQL: %v\nDSN: %s", err, dsn)
 	} else {
-		log.Println(" ✅ Migration Successful user service!!")
+		log.Println("✅ Successfully connected to Neon PostgreSQL database.")
 	}
 
-	// wire layers
+	// Auto migrate User model
+	if err := gormDB.AutoMigrate(&model.User{}); err != nil {
+		log.Fatalf("❌ Auto migrate failed: %v", err)
+	} else {
+		log.Println("✅ User table migration successful!")
+	}
+
+	// Initialize repository, service, handler
 	repo := repository.NewUserRepository(gormDB)
-	ttlStr := config.GetEnv("TOKEN_TTL_MIN", "60")
-	ttl, _ := strconv.Atoi(ttlStr)
-	secret := config.GetEnv("JWT_SECRET", "changeme")
-	svc := service.NewUserService(repo, secret, ttl)
+	svc := service.NewUserService(repo)
 	h := handler.NewUserHandler(svc)
 
-	// gin setup
+	// Initialize Gin router
 	r := gin.Default()
 
-	// health
+	// Health check endpoint
 	r.GET("/health", func(c *gin.Context) {
 		c.JSON(200, gin.H{"status": "userservice is up"})
 	})
 
+	// Database connectivity check
+	r.GET("/health/db", func(c *gin.Context) {
+		sqlDB, err := gormDB.DB()
+		if err != nil {
+			c.JSON(500, gin.H{"db": "error", "details": err.Error()})
+			return
+		}
+		if err := sqlDB.Ping(); err != nil {
+			c.JSON(500, gin.H{"db": "not reachable", "details": err.Error()})
+			return
+		}
+		c.JSON(200, gin.H{"db": "connected ✅"})
+	})
+
+	// User API routes
 	api := r.Group("/api/v1")
 	api.POST("/register", h.Register)
 	api.POST("/login", h.Login)
+	api.GET("/me", h.Me)
 
-	// protected := api.Group("")
-	// protected.Use(middleware.JWTAuth())
-	// protected.GET("/me", h.Me)
-
-	port = config.GetEnv("PORT", "8081")
-	log.Println("✅ UserService running on port", port)
-	r.Run(":" + port)
+	// Start server
+	log.Println("✅ UserService running on port 8081")
+	if err := r.Run(":" + "8081"); err != nil {
+		log.Fatalf("❌ Failed to start server: %v", err)
+	}
 }

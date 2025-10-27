@@ -19,8 +19,8 @@ type UserService struct {
 	JWTSecret string
 }
 
-func NewUserService(r *repository.UserRepository, secret string, ttlMinutes int) *UserService {
-	return &UserService{Repo: r, JWTSecret: secret, JWTTTL: ttlMinutes}
+func NewUserService(r *repository.UserRepository) *UserService {
+	return &UserService{Repo: r}
 }
 
 // Login validates credentials and returns JWT + user (without password)
