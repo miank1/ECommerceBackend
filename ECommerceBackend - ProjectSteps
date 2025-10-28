@@ -1,0 +1,199 @@
+# End-to-end flow (very small steps) — from **user register** → **payout**
+
+I'll break this into tiny actionable steps you can follow, grouped by phase. Treat each bullet as one thing to implement/test before moving to the next.
+
+---
+
+## 1) Registration & login (Auth)
+
+1. User opens signup page → frontend collects name/email/password.
+2. Frontend `POST /api/v1/users/register` → **UserService** handler.
+3. UserService:
+
+   * Validate request body.
+   * Hash password (bcrypt).
+   * Save user row in `users` table (GORM).
+   * Return created user (no password hash).
+4. Frontend prompts user to login (or auto-login).
+5. Frontend `POST /api/v1/users/login` → **UserService** handler.
+6. UserService:
+
+   * Lookup user by email.
+   * Compare password hash.
+   * If ok → call shared `jwtutil.GenerateToken(user.ID)` → returns JWT (claims include `user_id`, `exp`, optionally `role`, `email`).
+   * Return `{ token, user }`.
+7. Frontend stores token (e.g., in memory/secure storage) and uses it for subsequent requests:
+   `Authorization: Bearer <JWT>`
+
+---
+
+## 2) Browse products
+
+1. Frontend `GET /api/v1/products` → **ProductService**.
+2. ProductService queries `products` table and returns list (pagination optional).
+3. Frontend renders products.
+
+---
+
+## 3) Add to cart (per-product)
+
+1. User clicks add → Frontend `POST /api/v1/cart/items` with body `{ product_id, quantity }` and header `Authorization: Bearer <JWT>`.
+2. **CartService** middleware `JWTAuth()` runs:
+
+   * Read header, validate token via shared `jwtutil.ValidateToken()`.
+   * Extract `user_id` claim → `c.Set("user_id", userID)`.
+3. Cart handler:
+
+   * Read `user_id := c.GetString("user_id")`.
+   * Validate product (optional) by calling ProductService `GET /api/v1/products/:id` or using cached price.
+   * Add/update item in `cart_items` table for `user_id`.
+   * Return updated cart / success.
+
+---
+
+## 4) View / modify cart
+
+1. Frontend `GET /api/v1/cart` (with JWT) → CartService returns cart rows for `user_id`.
+2. Update quantity: `PUT /api/v1/cart/items/:id` (JWT) → CartService updates DB.
+3. Delete item: `DELETE /api/v1/cart/items/:id` (JWT) → CartService deletes row.
+
+---
+
+## 5) Checkout (Cart → Order)
+
+1. Frontend calls `POST /api/v1/cart/checkout` (JWT).
+2. CartService `Checkout(userID)`:
+
+   * Fetch cart items for `userID`.
+   * For each item, call ProductService `GET /api/v1/products/:id` to fetch current price & stock.
+   * Validate stock; compute `total_price`.
+   * Build `orderPayload { user_id, items:[{product_id, qty, price}], total_price }`.
+   * Call `POST http://orderservice:8083/api/v1/orders` with payload (internal service call).
+3. OrderService on receive:
+
+   * Validate payload, persist `orders` and `order_items` (status=`pending`), return `order_id` + order details.
+4. CartService:
+
+   * On success, clear cart rows for `userID` (or mark as checked out).
+   * Return `{ message: "checkout successful", order: <order> }` to frontend.
+
+---
+
+## 6) Payment (external gateway)
+
+1. Frontend creates payment request to payment gateway (Stripe/Razorpay) using `order_id`, `amount`, user details.
+2. Payment gateway returns payment session / redirect URL → user completes payment.
+3. Payment gateway sends webhook to your **PaymentService** (server-to-server) with payment status (signed).
+4. PaymentService:
+
+   * Verify webhook signature.
+   * Map payment to `order_id`.
+   * If success: call `OrderService` to update order status `paid`, attach payment reference.
+   * If failure: update order `payment_failed`.
+5. OrderService persists payment details and order status.
+
+---
+
+## 7) Order fulfillment / lifecycle
+
+1. After payment success, OrderService transitions order:
+
+   * `pending` → `paid` → `processing` → `shipped` → `delivered` (business driven).
+2. OrderService publishes events (optional): push to Kafka/SQS or HTTP callbacks for other services (inventory, notification).
+3. Inventory service (or ProductService) reduces stock if necessary.
+4. Notification service sends emails/SMS to user.
+
+---
+
+## 8) Payout / Settlement (merchant side)
+
+1. If your platform handles payouts to merchants:
+
+   * PaymentService or PayoutService aggregates settled payments.
+   * On settlement window, PayoutService calls external bank/APIs to transfer funds.
+   * Record payout transactions, statuses.
+2. Notify admin/merchant dashboards on payout completion.
+
+---
+
+## 9) Internal communication & reliability rules (small steps)
+
+1. Use **sync HTTP** for simple calls (Cart → Order) with timeouts and retries:
+
+   * Set short request timeout (e.g., 2s).
+   * Retry 2 times with backoff for transient errors.
+2. For critical decoupling, use **message queue** (Kafka / SQS):
+
+   * Cart publishes `order_created` event → OrderService consumes and creates order (instead of sync call).
+3. Add circuit breaker if a downstream service is failing (Hystrix-like).
+4. Validate idempotency on endpoints that may be retried (order creation should be idempotent with `client_order_id` or dedupe by payload).
+
+---
+
+## 10) Data & DB notes (small steps)
+
+1. Single Postgres DB vs per-service DB:
+
+   * For a learning project, one DB is ok; for production prefer **per-service schema or per-service DB**.
+2. Use migrations (e.g., goose, migrate) and AutoMigrate for dev only.
+3. Seed products via `seed.Products()` on start (or via Makefile) — ensure idempotent batch insert.
+4. Indexes: add indexes on `users.email`, `orders.user_id`, `cart.user_id`, `products.name`.
+
+---
+
+## 11) Observability & ops (small steps)
+
+1. Add logging (structured) via shared `pkg/logger`.
+2. Add metrics: expose Prometheus metrics from each service (latency, errors, DB pool).
+3. Tracing: add OpenTelemetry for request traces across services.
+4. Alerts: set alerts for high error rate, high latency, DB connection issues.
+
+---
+
+## 12) CI/CD & deployment (small steps)
+
+1. Local dev: run services with `docker-compose` (Postgres + services).
+2. Build: `make build-<service>` to compile binaries / produce Docker images.
+3. CI: On push, run tests, build image, run linter, create artifact.
+4. Registry: push images to container registry (DockerHub/ECR).
+5. Deploy to ECS / Kubernetes:
+
+   * Tasks/Pods per service, env vars (DATABASE_DSN, JWT_SECRET), secrets in Secret Manager.
+   * Use healthchecks and readiness probes.
+6. Post-deploy: run DB migrations, optional seed (run once).
+
+---
+
+## 13) Security small rules
+
+1. Keep `JWT_SECRET` in secrets manager (not in .env in prod).
+2. Use HTTPS for all external traffic and internal traffic if needed.
+3. Validate and sanitize all inputs.
+4. Least privilege for DB users & IAM roles.
+
+---
+
+## 14) Testing checklist (small steps)
+
+* Unit test service functions (repo/service)
+* Integration test critical flows: register → login → add to cart → checkout → order create
+* End-to-end smoke test with local Docker Compose
+
+---
+
+## Quick checklist you can follow step-by-step
+
+1. Implement register/login and verify JWT returned.
+2. Ensure `JWTAuth()` middleware extracts `user_id` for CartService; test by calling GET cart with token.
+3. Implement product listing & seeding and test.
+4. Implement add-to-cart & view cart; test with token.
+5. Implement checkout: Cart → Order sync call; test and confirm DB records.
+6. Wire PaymentService webhook to update Order status; simulate webhook.
+7. Implement payout flow (optional) and test.
+8. Add logging, metrics, error handling & retries.
+9. Add CI/CD pipeline and Docker image pushes.
+10. Deploy to ECS or k8s with secrets & health checks.
+
+---
+
+If you want, I can convert this into a compact **task list / TODO file** you can check off as you implement — or produce a visual sequence diagram for any specific step (e.g., Checkout → Payment). Which would you like next?
