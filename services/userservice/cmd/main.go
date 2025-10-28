@@ -1,6 +1,7 @@
 package main
 
 import (
+	"ecommerce-backend/pkg/db"
 	logger "ecommerce-backend/pkg/logger"
 	"ecommerce-backend/services/userservice/internal/handler"
 	"ecommerce-backend/services/userservice/internal/model"
@@ -9,17 +10,14 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"gorm.io/driver/postgres"
-	"gorm.io/gorm"
-	gormLogger "gorm.io/gorm/logger"
 )
 
 func main() {
 	// Initialize global logger
+
 	logger.Init()
 	defer logger.Sync()
 
@@ -30,24 +28,11 @@ func main() {
 
 	log.Println("Loaded DSN:", os.Getenv("DATABASE_DSN"))
 
-	// Read environment variables
 	dsn := os.Getenv("DATABASE_DSN")
 
-	// Connect to Neon PostgreSQL with GORM
-	gormDB, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
-		Logger: gormLogger.New(
-			log.New(os.Stdout, "\r\n", log.LstdFlags),
-			gormLogger.Config{
-				SlowThreshold: time.Second,
-				LogLevel:      gormLogger.Info, // change to Warn or Silent to reduce logs
-				Colorful:      true,
-			},
-		),
-	})
+	gormDB, err := db.InitDB(dsn)
 	if err != nil {
-		log.Fatalf("❌ Failed to connect to PostgreSQL: %v\nDSN: %s", err, dsn)
-	} else {
-		log.Println("✅ Successfully connected to Neon PostgreSQL database.")
+		log.Fatalf("❌ Failed to initialize database: %v", err)
 	}
 
 	// Auto migrate User model
