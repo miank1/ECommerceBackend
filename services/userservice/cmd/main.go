@@ -6,6 +6,7 @@ import (
 	"ecommerce-backend/services/userservice/internal/model"
 	"ecommerce-backend/services/userservice/internal/repository"
 	"ecommerce-backend/services/userservice/internal/service"
+	"fmt"
 	"log"
 	"os"
 	"time"
@@ -90,7 +91,7 @@ func main() {
 	api.GET("/me", h.Me)
 
 	// Start server
-	log.Println("✅ UserService running on port 8081")
+	fmt.Println("✅ UserService running on port 8081")
 	if err := r.Run(":" + "8081"); err != nil {
 		log.Fatalf("❌ Failed to start server: %v", err)
 	}

@@ -4,10 +4,12 @@ import (
 	"context"
 	"errors"
 	"log"
+	"os"
 	"time"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 )
 
 type Config struct {
@@ -73,4 +75,34 @@ func InitPostgres(cfg Config) (*gorm.DB, error) {
 		err = errors.New("failed to init db: unknown error")
 	}
 	return nil, err
+}
+
+func InitDB(dsn string) (*gorm.DB, error) {
+	newLogger := logger.New(
+		log.New(os.Stdout, "\r\n", log.LstdFlags), // standard Go logger
+		logger.Config{
+			SlowThreshold:             time.Second,   // threshold for slow queries
+			LogLevel:                  logger.Silent, // ✅ turn off all SQL logs
+			IgnoreRecordNotFoundError: true,
+			Colorful:                  false,
+		},
+	)
+
+	var db *gorm.DB
+	var err error
+
+	for i := 0; i < 10; i++ {
+		db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{Logger: newLogger})
+		if err == nil {
+			log.Println("✅ Connected to DB")
+			break
+		}
+		log.Printf("⏳ DB not ready, retrying... (%d/10)", i+1)
+		time.Sleep(3 * time.Second)
+	}
+	if db == nil {
+		log.Fatalf("❌ Could not connect to DB after 10 retries")
+	}
+
+	return db, nil
 }

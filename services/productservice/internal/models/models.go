@@ -10,4 +10,5 @@ type Product struct {
 	Stock       int       `gorm:"not null" json:"stock"`
 	CreatedAt   time.Time `gorm:"autoCreateTime" json:"created_at"`
 	UpdatedAt   time.Time `gorm:"autoUpdateTime" json:"updated_at"`
+	Category    string    `json:"category"`
 }

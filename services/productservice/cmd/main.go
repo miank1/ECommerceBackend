@@ -8,11 +8,13 @@ import (
 	model "ecommerce-backend/services/productservice/internal/models"
 	repository "ecommerce-backend/services/productservice/internal/reposotory"
 	"ecommerce-backend/services/productservice/internal/service"
+	"ecommerce-backend/services/productservice/seed"
+	"fmt"
 	"log"
 	"os"
-	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
@@ -20,22 +22,34 @@ func main() {
 	logger.Init()
 	defer logger.Sync()
 
-	// _ = godotenv.Load()
-
-	cfg := db.Config{
-		DSN:         os.Getenv("DATABASE_DSN"),
-		MaxRetries:  6,
-		RetryDelay:  2 * time.Second,
-		ConnTimeout: 5 * time.Second,
+	// Load environment variables from .env file
+	if err := godotenv.Load("../.env"); err != nil {
+		log.Println("⚠️  No .env file found, using system environment variables")
 	}
 
-	gormDB, err := db.InitPostgres(cfg)
+	log.Println("Loaded DSN:", os.Getenv("DATABASE_DSN"))
+
+	dsn := os.Getenv("DATABASE_DSN")
+
+	gormDB, err := db.InitDB(dsn)
 	if err != nil {
-		log.Fatalf("could not initialize database: %v", err)
+		log.Fatalf("❌ Failed to initialize database: %v", err)
 	}
 
 	if err = gormDB.AutoMigrate(&model.Product{}); err != nil {
 		log.Fatalf("auto migrate failed: %v", err)
+	}
+
+	var count int64
+
+	gormDB.Model(&repository.ProductRepository{}).Count(&count)
+
+	if count == 0 {
+		log.Println("Seeding products for the first time ... ")
+		seed.SeedProducts(gormDB)
+		log.Println("Products seeded successfully ")
+	} else {
+		log.Println("Products alreadys existed, skipping seed.")
 	}
 
 	// Set up HTTP server
@@ -46,7 +60,7 @@ func main() {
 		c.JSON(200, gin.H{"status": "productservice up"})
 	})
 
-	// Wire dependencies (repo → service → handler)
+	// Repository Pattern
 
 	productRepo := repository.NewProductRepository(gormDB)
 	productSvc := service.NewProductService(productRepo)
@@ -60,6 +74,6 @@ func main() {
 	api.DELETE("/products/:id", productHandler.Delete)
 
 	port := config.GetEnv("PORT", "8082")
-	log.Println("✅ ProductService running on port", port)
+	fmt.Println("✅ ProductService running on port", port)
 	r.Run(":" + port)
 }

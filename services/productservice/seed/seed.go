@@ -1,13 +1,14 @@
-package main
+package seed
 
 import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"time"
+
 	"os"
 
 	uuid "github.com/jackc/pgx/pgtype/ext/satori-uuid"
-	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
@@ -19,40 +20,46 @@ type Product struct {
 	Stock    int       `json:"stock"`
 }
 
-func main() {
-	dsn := os.Getenv("DATABASE_DSN")
-	if dsn == "" {
-		log.Fatal("DATABASE_DSN not set")
-	}
+// SeedProducts loads products.json and inserts into DB
+func SeedProducts(db *gorm.DB) {
+	start := time.Now()
 
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	data, err := os.ReadFile("../seed/products.json")
 	if err != nil {
-		log.Fatalf("failed to connect db: %v", err)
+		log.Fatalf("❌ Failed to read products.json: %v", err)
 	}
-
-	if err := db.AutoMigrate(&Product{}); err != nil {
-		log.Fatalf("migration failed: %v", err)
-	}
-
-	// clear existing
-	db.Exec("TRUNCATE TABLE products RESTART IDENTITY CASCADE")
-
-	// open JSON file
-	file, err := os.Open("/seed/products.json")
-	if err != nil {
-		log.Fatalf("failed to open JSON: %v", err)
-	}
-	defer file.Close()
 
 	var products []Product
-	if err := json.NewDecoder(file).Decode(&products); err != nil {
-		log.Fatalf("failed to decode JSON: %v", err)
+	if err := json.Unmarshal(data, &products); err != nil {
+		log.Fatalf("❌ Failed to parse products.json: %v", err)
 	}
 
-	// insert
-	if err := db.Create(&products).Error; err != nil {
-		log.Fatalf("failed to insert: %v", err)
+	// ✅ Fetch all existing product names in one query
+	var existingNames []string
+	if err := db.Model(&Product{}).Select("name").Find(&existingNames).Error; err != nil {
+		log.Fatalf("❌ Failed to fetch existing product names: %v", err)
 	}
 
-	fmt.Printf("✅ Inserted %d products\n", len(products))
+	existingSet := make(map[string]bool, len(existingNames))
+	for _, name := range existingNames {
+		existingSet[name] = true
+	}
+
+	// ✅ Collect only new products
+	var newProducts []Product
+	for _, p := range products {
+		if !existingSet[p.Name] {
+			newProducts = append(newProducts, p)
+		}
+	}
+
+	// ✅ Batch insert all new records at once
+	if len(newProducts) > 0 {
+		if err := db.CreateInBatches(newProducts, 100).Error; err != nil {
+			log.Fatalf("❌ Failed to batch insert products: %v", err)
+		}
+		fmt.Printf("✅ Inserted %d new products (%.2fs)\n", len(newProducts), time.Since(start).Seconds())
+	} else {
+		fmt.Println("ℹ️ All products already exist — nothing to insert.")
+	}
 }

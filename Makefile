@@ -10,9 +10,9 @@ run:
 	@if not exist $(LOG_DIR) mkdir $(LOG_DIR)
 	@for %%s in ($(SERVICES)) do ( \
 		echo ▶️ Starting %%s... && \
-		cd $(BASE_DIR)\%%s && \
-		start "" /B cmd /c "go run main.go >> ..\..\$(LOG_DIR)\%%s.log 2>&1" && \
-		cd ..\.. \
+		cd $(BASE_DIR)\%%s\cmd && \
+		start "" /B cmd /c "go run main.go >> ..\..\..\$(LOG_DIR)\%%s.log 2>&1" && \
+		cd ..\..\.. \
 	)
 	@echo 🪵 Tailing logs (press Ctrl+C to stop)...
 	@powershell -Command "Get-Content $(LOG_DIR)\*.log -Wait"
