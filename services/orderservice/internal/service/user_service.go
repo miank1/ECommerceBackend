@@ -4,6 +4,7 @@ import (
 	model "ecommerce-backend/services/orderservice/internal/models"
 	"ecommerce-backend/services/orderservice/internal/repository"
 	"errors"
+	"fmt"
 )
 
 type OrderService struct {
@@ -49,6 +50,8 @@ func (s *OrderService) CreateOrder(userID string, items []OrderItemInput) (*mode
 	if err := s.Repo.Create(order); err != nil {
 		return nil, err
 	}
+
+	fmt.Println("Order Details ------- ", order)
 
 	return order, nil
 }

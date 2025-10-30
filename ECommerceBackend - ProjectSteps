@@ -4,7 +4,7 @@ I'll break this into tiny actionable steps you can follow, grouped by phase. Tre
 
 ---
 
-## 1) Registration & login (Auth)
+## 1) Registration & login (Auth) - DONE
 
 1. User opens signup page → frontend collects name/email/password.
 2. Frontend `POST /api/v1/users/register` → **UserService** handler.
@@ -27,7 +27,7 @@ I'll break this into tiny actionable steps you can follow, grouped by phase. Tre
 
 ---
 
-## 2) Browse products
+## 2) Browse products - DONE
 
 1. Frontend `GET /api/v1/products` → **ProductService**.
 2. ProductService queries `products` table and returns list (pagination optional).

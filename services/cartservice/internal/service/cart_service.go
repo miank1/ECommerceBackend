@@ -5,10 +5,16 @@ import (
 	"ecommerce-backend/services/cartservice/internal/model"
 	"ecommerce-backend/services/cartservice/internal/repository"
 	"encoding/json"
+	"fmt"
+	"io"
+	"log"
 	"net/http"
+	"os"
+	"time"
 
 	"errors"
 
+	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )
 
@@ -107,7 +113,7 @@ func (s *CartService) DeleteItem(itemID string) error {
 	return s.Repo.DeleteItem(itemID)
 }
 
-func (s *CartService) Checkout(userID string) (map[string]interface{}, error) {
+func (s *CartService) Checkout(c *gin.Context, userID string) (map[string]interface{}, error) {
 	cart, err := s.Repo.GetByUserID(userID)
 	if err != nil {
 		return nil, err
@@ -116,26 +122,83 @@ func (s *CartService) Checkout(userID string) (map[string]interface{}, error) {
 		return nil, errors.New("cart is empty")
 	}
 
+	productServiceURL := os.Getenv("PRODUCT_SERVICE_URL")
+
+	totalPrice := 0.0
+
+	for i, item := range cart.Items {
+		// Fetch product details from ProductService
+		resp, err := http.Get(fmt.Sprintf("%s/api/v1/products/%s", productServiceURL, item.ProductID))
+		if err != nil {
+			log.Printf("⚠️ Failed to fetch product %s: %v", item.ProductID, err)
+			continue
+		}
+
+		if resp.StatusCode != http.StatusOK {
+			log.Printf("⚠️ Product %s not found in ProductService", item.ProductID)
+			continue
+		}
+
+		var product struct {
+			Product struct {
+				ID    string  `json:"id"`
+				Name  string  `json:"name"`
+				Price float64 `json:"price"`
+			} `json:"product"`
+		}
+
+		if err := json.NewDecoder(resp.Body).Decode(&product); err != nil {
+			resp.Body.Close()
+			log.Printf("⚠️ Error decoding product %s: %v", item.ProductID, err)
+			continue
+		}
+		resp.Body.Close()
+
+		price := product.Product.Price
+		cart.Items[i].Price = price
+		totalPrice += price * float64(item.Quantity)
+	}
+
 	// Prepare order payload
 	orderPayload := map[string]interface{}{
-		"user_id": userID,
-		"items":   cart.Items,
+		"user_id":     userID,
+		"items":       cart.Items,
+		"status":      "pending",
+		"total_price": totalPrice,
 	}
+
 	body, _ := json.Marshal(orderPayload)
 
-	// Call Order Service
-	resp, err := http.Post(s.OrderSvcURL+"/api/v1/orders", "application/json", bytes.NewBuffer(body))
+	// Call OrderService
+	req, err := http.NewRequest("POST", s.OrderSvcURL+"/api/v1/orders", bytes.NewBuffer(body))
 	if err != nil {
 		return nil, err
 	}
+
+	req.Header.Set("Content-Type", "application/json")
+
+	// Forward JWT if available
+	authHeader := c.GetHeader("Authorization")
+	if authHeader != "" {
+		req.Header.Set("Authorization", authHeader)
+	}
+
+	client := &http.Client{Timeout: 10 * time.Second}
+	resp, err := client.Do(req)
+	if err != nil {
+		return nil, fmt.Errorf("failed to call order service: %v", err)
+	}
 	defer resp.Body.Close()
+
+	bodyBytes, _ := io.ReadAll(resp.Body)
+	fmt.Println("🟢 OrderService Response:", string(bodyBytes))
 
 	if resp.StatusCode != http.StatusOK && resp.StatusCode != http.StatusCreated {
 		return nil, errors.New("failed to create order in order service")
 	}
 
 	var orderResp map[string]interface{}
-	if err := json.NewDecoder(resp.Body).Decode(&orderResp); err != nil {
+	if err := json.Unmarshal(bodyBytes, &orderResp); err != nil {
 		return nil, err
 	}
 
@@ -144,5 +207,6 @@ func (s *CartService) Checkout(userID string) (map[string]interface{}, error) {
 		return nil, err
 	}
 
+	fmt.Printf("✅ Checkout completed. Total: ₹%.2f\n", totalPrice)
 	return orderResp, nil
 }

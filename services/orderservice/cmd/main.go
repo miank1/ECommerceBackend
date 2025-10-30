@@ -10,26 +10,27 @@ import (
 	"ecommerce-backend/services/orderservice/internal/service"
 	"log"
 	"os"
-	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
-	config.LoadEnv()
+	// Initialize global logger
+
 	logger.Init()
 	defer logger.Sync()
 
-	cfg := db.Config{
-		DSN:         os.Getenv("DATABASE_DSN"),
-		MaxRetries:  6,
-		RetryDelay:  2 * time.Second,
-		ConnTimeout: 5 * time.Second,
+	// Load environment variables from .env file
+	if err := godotenv.Load("../.env"); err != nil {
+		log.Println("⚠️  No .env file found, using system environment variables")
 	}
 
-	gormDB, err := db.InitPostgres(cfg)
+	dsn := os.Getenv("DATABASE_DSN")
+
+	gormDB, err := db.InitDB(dsn)
 	if err != nil {
-		log.Fatalf("could not initialize database: %v", err)
+		log.Fatalf("❌ Failed to initialize database: %v", err)
 	}
 
 	// AutoMigrate Order + OrderItem

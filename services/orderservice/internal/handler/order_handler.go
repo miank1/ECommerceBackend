@@ -2,6 +2,7 @@ package handler
 
 import (
 	"ecommerce-backend/services/orderservice/internal/service"
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -20,23 +21,26 @@ func NewOrderHandler(s *service.OrderService) *OrderHandler {
 }
 
 type createOrderReq struct {
-	Items []service.OrderItemInput `json:"items" binding:"required"`
+	Items  []service.OrderItemInput `json:"items" binding:"required"`
+	UserID string                   `json:"user_id"`
 }
 
 func (h *OrderHandler) Create(c *gin.Context) {
-	// In real app, extract userID from JWT
-	userID := c.GetString("user_id")
-	if userID == "" {
-		// For now, fake a user until JWT is wired
-		userID = "dummy-user-id"
-	}
-
+	fmt.Println("Hello 2 ----------------------")
 	var req createOrderReq
+	// In real app, extract userID from JWT
+
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
+	userID := req.UserID
+
+	if userID == "" {
+		// For now, fake a user until JWT is wired
+		userID = "dummy-user-id"
+	}
 	order, err := h.Svc.CreateOrder(userID, req.Items)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})

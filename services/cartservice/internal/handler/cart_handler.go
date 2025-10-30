@@ -107,7 +107,7 @@ func (h *CartHandler) Checkout(c *gin.Context) {
 		userID = "dummy-user-id"
 	}
 
-	orderResp, err := h.Svc.Checkout(userID)
+	orderResp, err := h.Svc.Checkout(c, userID)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
