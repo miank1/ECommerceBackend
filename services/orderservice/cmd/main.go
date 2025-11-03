@@ -1,14 +1,14 @@
 package main
 
 import (
-	"ecommerce-backend/pkg/config"
 	"ecommerce-backend/pkg/db"
 	"ecommerce-backend/pkg/logger"
 	"ecommerce-backend/services/orderservice/internal/handler"
-	model "ecommerce-backend/services/orderservice/internal/models"
+	"ecommerce-backend/services/orderservice/internal/models"
 	"ecommerce-backend/services/orderservice/internal/repository"
 	"ecommerce-backend/services/orderservice/internal/service"
 	"log"
+
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -16,8 +16,8 @@ import (
 )
 
 func main() {
-	// Initialize global logger
 
+	// Get database configuration from environment
 	logger.Init()
 	defer logger.Sync()
 
@@ -25,7 +25,6 @@ func main() {
 	if err := godotenv.Load("../.env"); err != nil {
 		log.Println("⚠️  No .env file found, using system environment variables")
 	}
-
 	dsn := os.Getenv("DATABASE_DSN")
 
 	gormDB, err := db.InitDB(dsn)
@@ -33,32 +32,27 @@ func main() {
 		log.Fatalf("❌ Failed to initialize database: %v", err)
 	}
 
-	// AutoMigrate Order + OrderItem
-	if err := gormDB.AutoMigrate(&model.Order{}, &model.OrderItem{}); err != nil {
-		log.Fatalf("❌ auto migrate failed: %v", err)
+	if err := gormDB.AutoMigrate(&models.Order{}, &models.OrderItem{}); err != nil {
+		log.Fatalf("Migration failed: %v", err)
 	}
 
-	// Gin setup
+	repo := repository.NewOrderRepository(gormDB)
+	svc := service.NewOrderService(repo)
+	h := handler.NewOrderHandler(svc)
+
 	r := gin.Default()
-	r.GET("/health", func(c *gin.Context) {
-		c.JSON(200, gin.H{"status": "orderservice up"})
-	})
 
-	// after AutoMigrate
-	orderRepo := repository.NewOrderRepository(gormDB)
-	orderSvc := service.NewOrderService(orderRepo)
-	orderHandler := handler.NewOrderHandler(orderSvc)
+	api := r.Group("/api/v1/orders")
+	{
+		api.POST("", h.Create)
+		api.GET("/:id", h.GetOrder)
+		api.PATCH("/:id/status", h.UpdateStatus)
+	}
 
-	// routes
-
-	api := r.Group("/api/v1")
-	api.POST("/orders", orderHandler.Create)
-	api.GET("/orders", orderHandler.List)
-	api.GET("/orders/:id", orderHandler.GetByID)
-	api.PUT("/orders/:id", orderHandler.Update)
-	api.DELETE("/orders/:id", orderHandler.Delete)
-
-	port := config.GetEnv("PORT", "8083")
-	log.Println("✅ OrderService running on port", port)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8083"
+	}
+	log.Printf("✅ OrderService running on port %s", port)
 	r.Run(":" + port)
 }

@@ -2,7 +2,6 @@ package handler
 
 import (
 	"ecommerce-backend/services/orderservice/internal/service"
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -12,75 +11,47 @@ type OrderHandler struct {
 	Svc *service.OrderService
 }
 
-type updateOrderReq struct {
-	Status string `json:"status" binding:"required"`
+func NewOrderHandler(svc *service.OrderService) *OrderHandler {
+	return &OrderHandler{Svc: svc}
 }
 
-func NewOrderHandler(s *service.OrderService) *OrderHandler {
-	return &OrderHandler{Svc: s}
+type CreateOrderRequest struct {
+	UserID string                 `json:"user_id"`
+	Items  []service.OrderItemReq `json:"items"`
 }
 
-type createOrderReq struct {
-	Items  []service.OrderItemInput `json:"items" binding:"required"`
-	UserID string                   `json:"user_id"`
-}
-
+// POST /api/v1/orders
 func (h *OrderHandler) Create(c *gin.Context) {
-	fmt.Println("Hello 2 ----------------------")
-	var req createOrderReq
-	// In real app, extract userID from JWT
-
+	var req CreateOrderRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
-	userID := req.UserID
-
-	if userID == "" {
-		// For now, fake a user until JWT is wired
-		userID = "dummy-user-id"
+	if req.UserID == "" || len(req.Items) == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid order payload"})
+		return
 	}
-	order, err := h.Svc.CreateOrder(userID, req.Items)
+
+	order, err := h.Svc.CreateOrder(req.UserID, req.Items)
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
 
 	c.JSON(http.StatusCreated, gin.H{"order": order})
 }
 
-// List orders for current user
-func (h *OrderHandler) List(c *gin.Context) {
-	// In real app, extract user_id from JWT
-	userID := c.GetString("user_id")
-	if userID == "" {
-		userID = "dummy-user-id"
+// GET /api/v1/orders/:id
+func (h *OrderHandler) GetOrder(c *gin.Context) {
+	orderID := c.Param("id")
+	if orderID == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "order id required"})
+		return
 	}
 
-	orders, err := h.Svc.GetOrdersByUser(userID)
+	order, err := h.Svc.GetOrderByID(orderID)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to fetch orders"})
-		return
-	}
-
-	c.JSON(http.StatusOK, gin.H{"orders": orders})
-}
-
-// Get a single order by ID
-func (h *OrderHandler) GetByID(c *gin.Context) {
-	id := c.Param("id")
-	if id == "" {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "missing order id"})
-		return
-	}
-
-	order, err := h.Svc.GetOrderByID(id)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to fetch order"})
-		return
-	}
-	if order == nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "order not found"})
 		return
 	}
@@ -88,31 +59,32 @@ func (h *OrderHandler) GetByID(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"order": order})
 }
 
-// Update order status
-func (h *OrderHandler) Update(c *gin.Context) {
-	id := c.Param("id")
-	var req updateOrderReq
+// PATCH /api/v1/orders/:id/status
+func (h *OrderHandler) UpdateStatus(c *gin.Context) {
+	orderID := c.Param("id")
+
+	var req struct {
+		Status string `json:"status"`
+	}
+
 	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid request body"})
 		return
 	}
 
-	order, err := h.Svc.UpdateOrderStatus(id, req.Status)
+	if req.Status == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "status is required"})
+		return
+	}
+
+	order, err := h.Svc.UpdateStatus(orderID, req.Status)
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-		return
-	}
-
-	c.JSON(http.StatusOK, gin.H{"order": order})
-}
-
-// Delete order
-func (h *OrderHandler) Delete(c *gin.Context) {
-	id := c.Param("id")
-	if err := h.Svc.DeleteOrder(id); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"message": "order deleted"})
+	c.JSON(http.StatusOK, gin.H{
+		"message": "order status updated successfully",
+		"order":   order,
+	})
 }
