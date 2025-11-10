@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"ecommerce-backend/services/cartservice/internal/model"
 	"ecommerce-backend/services/cartservice/internal/repository"
+	"ecommerce-backend/services/searchservice/internals/models"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -15,6 +16,7 @@ import (
 	"errors"
 
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
 	"gorm.io/gorm"
 )
 
@@ -36,16 +38,73 @@ func (s *CartService) AddItem(userID, productID string, qty int) (*model.Cart, e
 		return nil, errors.New("quantity must be greater than 0")
 	}
 
-	// Get existing cart
+	// Step 1: Get existing cart
 	cart, err := s.Repo.GetByUserID(userID)
 	if err != nil {
 		return nil, err
 	}
 
-	// If no cart, create one
+	// Step 2: Fetch product info from ProductService
+	productServiceURL := os.Getenv("PRODUCT_SERVICE_URL")
+	if productServiceURL == "" {
+		return nil, errors.New("PRODUCT_SERVICE_URL not configured")
+	}
+
+	resp, err := http.Get(fmt.Sprintf("%s/api/v1/products/%s", productServiceURL, productID))
+	if err != nil {
+		return nil, fmt.Errorf("failed to fetch product info: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("product %s not found in product service", productID)
+	}
+
+	var respObj map[string]interface{}
+	if err := json.NewDecoder(resp.Body).Decode(&respObj); err != nil {
+		return nil, fmt.Errorf("invalid product response: %w", err)
+	}
+
+	// ✅ Extract product details
+	prod, ok := respObj["product"].(map[string]interface{})
+	if !ok {
+		return nil, fmt.Errorf("unexpected product payload")
+	}
+
+	actualProductID, _ := prod["id"].(string)
+	name, _ := prod["name"].(string)
+	price, _ := prod["price"].(float64)
+	category, _ := prod["category"].(string)
+	stock := 0
+	if v, ok := prod["stock"].(float64); ok {
+		stock = int(v)
+	}
+
+	if actualProductID == "" {
+		return nil, fmt.Errorf("invalid product ID in ProductService response")
+	}
+
+	productUUID := uuid.MustParse(actualProductID)
+
+	// ✅ Step 3: Check stock
+	existingQty := 0
+	if cart != nil {
+		for _, it := range cart.Items {
+			if it.ProductID == productUUID {
+				existingQty = it.Quantity
+				break
+			}
+		}
+	}
+
+	if existingQty+qty > stock {
+		return nil, fmt.Errorf("not enough stock for product %s: available %d, requested %d", actualProductID, stock, existingQty+qty)
+	}
+
+	// ✅ Step 4: If no cart, create one
 	if cart == nil {
 		cart = &model.Cart{
-			UserID: userID,
+			UserID: uuid.MustParse(userID),
 			Items:  []model.CartItem{},
 		}
 		if err := s.Repo.Create(cart); err != nil {
@@ -53,24 +112,48 @@ func (s *CartService) AddItem(userID, productID string, qty int) (*model.Cart, e
 		}
 	}
 
-	// Check if product already exists in cart
+	// ✅ Step 5: Update or Add product in cart
 	for i := range cart.Items {
-		if cart.Items[i].ProductID == productID {
+		if cart.Items[i].ProductID == productUUID {
 			cart.Items[i].Quantity += qty
+			cart.Items[i].Price = price
+			cart.Items[i].Product = &models.Product{
+				ID:       productUUID,
+				Name:     name,
+				Price:    price,
+				Stock:    stock,
+				Category: category,
+			}
 			return cart, s.Repo.Save(cart)
 		}
 	}
 
-	// Add new product
+	// ✅ Step 6: Add new item
 	cart.Items = append(cart.Items, model.CartItem{
-		ProductID: productID,
+		ProductID: productUUID,
 		Quantity:  qty,
+		Price:     price,
+		Product: &models.Product{
+			ID:       productUUID,
+			Name:     name,
+			Price:    price,
+			Stock:    stock,
+			Category: category,
+		},
 	})
 
+	// Debugging info
+	fmt.Println("🧾 Cart Items:")
+	for _, item := range cart.Items {
+		fmt.Printf("👉 ProductID: %s | Qty: %d | Price: %.2f\n", item.ProductID, item.Quantity, item.Price)
+	}
+
+	// ✅ Step 7: Save cart
 	if err := s.Repo.Save(cart); err != nil {
 		return nil, err
 	}
 
+	fmt.Printf("✅ Added product '%s' (%s) x%d to cart\n", name, actualProductID, qty)
 	return cart, nil
 }
 

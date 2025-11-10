@@ -3,6 +3,7 @@ package repository
 import (
 	"ecommerce-backend/services/cartservice/internal/model"
 
+	uuid "github.com/google/uuid"
 	"gorm.io/gorm"
 )
 
@@ -64,7 +65,7 @@ func (r *CartRepository) DeleteCart(cartID string) error {
 }
 
 // ClearCart deletes all items and the cart itself
-func (r *CartRepository) ClearCart(cartID string) error {
+func (r *CartRepository) ClearCart(cartID uuid.UUID) error {
 	// Order of delete is important because of foreign key constraint
 	if err := r.DB.Delete(&model.CartItem{}, "cart_id = ?", cartID).Error; err != nil {
 		return err

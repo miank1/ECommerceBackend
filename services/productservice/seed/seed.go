@@ -8,7 +8,7 @@ import (
 
 	"os"
 
-	uuid "github.com/jackc/pgx/pgtype/ext/satori-uuid"
+	uuid "github.com/google/uuid"
 	"gorm.io/gorm"
 )
 

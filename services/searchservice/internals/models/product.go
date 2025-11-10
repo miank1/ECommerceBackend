@@ -1,6 +1,6 @@
 package models
 
-import uuid "github.com/jackc/pgx/pgtype/ext/satori-uuid"
+import uuid "github.com/google/uuid"
 
 type Product struct {
 	ID       uuid.UUID `json:"id" gorm:"type:uuid;default:gen_random_uuid();primaryKey"`

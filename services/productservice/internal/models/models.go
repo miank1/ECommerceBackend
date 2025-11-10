@@ -1,9 +1,13 @@
 package model
 
-import "time"
+import (
+	"time"
+
+	uuid "github.com/google/uuid"
+)
 
 type Product struct {
-	ID          string    `gorm:"type:uuid;default:gen_random_uuid();primaryKey" json:"id"`
+	ID          uuid.UUID `gorm:"type:uuid;default:gen_random_uuid();primaryKey" json:"id"`
 	Name        string    `gorm:"not null" json:"name"`
 	Description string    `json:"description"`
 	Price       float64   `gorm:"not null" json:"price"`
