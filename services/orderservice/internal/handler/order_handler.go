@@ -61,30 +61,26 @@ func (h *OrderHandler) GetOrder(c *gin.Context) {
 
 // PATCH /api/v1/orders/:id/status
 func (h *OrderHandler) UpdateStatus(c *gin.Context) {
-	orderID := c.Param("id")
+	id := c.Param("id")
 
 	var req struct {
 		Status string `json:"status"`
 	}
 
 	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid request body"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid payload"})
 		return
 	}
 
-	if req.Status == "" {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "status is required"})
-		return
-	}
-
-	order, err := h.Svc.UpdateStatus(orderID, req.Status)
+	order, err := h.Svc.UpdateStatus(id, req.Status)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"message": "order status updated successfully",
-		"order":   order,
+		"message":    "Order status updated successfully",
+		"order_id":   id,
+		"new_status": order.Status,
 	})
 }

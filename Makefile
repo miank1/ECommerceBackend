@@ -1,5 +1,5 @@
 SHELL := cmd
-SERVICES = userservice productservice orderservice cartservice searchservice
+SERVICES = userservice productservice orderservice cartservice searchservice paymentservice
 BASE_DIR = services
 LOG_DIR = logs
 
@@ -14,6 +14,9 @@ run:
 		start "" /B cmd /c "go run main.go >> ..\..\..\$(LOG_DIR)\%%s.log 2>&1" && \
 		cd ..\..\.. \
 	)
+	@echo 🪵 Waiting for services to initialize...
+	@powershell -Command "Start-Sleep -Seconds 5"
+	@echo ✅ All services are up and running!
 	@echo 🪵 Tailing logs (press Ctrl+C to stop)...
 	@powershell -Command "Get-Content $(LOG_DIR)\*.log -Wait"
 

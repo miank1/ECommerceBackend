@@ -46,7 +46,7 @@ func main() {
 	{
 		api.POST("", h.Create)
 		api.GET("/:id", h.GetOrder)
-		api.PATCH("/:id/status", h.UpdateStatus)
+		api.POST("/:id/update-status", h.UpdateStatus)
 	}
 
 	port := os.Getenv("PORT")
