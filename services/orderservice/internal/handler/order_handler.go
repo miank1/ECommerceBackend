@@ -2,6 +2,7 @@ package handler
 
 import (
 	"ecommerce-backend/services/orderservice/internal/service"
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -61,7 +62,7 @@ func (h *OrderHandler) GetOrder(c *gin.Context) {
 
 // PATCH /api/v1/orders/:id/status
 func (h *OrderHandler) UpdateStatus(c *gin.Context) {
-	id := c.Param("id")
+	orderID := c.Param("id")
 
 	var req struct {
 		Status string `json:"status"`
@@ -72,15 +73,26 @@ func (h *OrderHandler) UpdateStatus(c *gin.Context) {
 		return
 	}
 
-	order, err := h.Svc.UpdateStatus(id, req.Status)
+	order, err := h.Svc.UpdateStatus(orderID, req.Status)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
 
+	// ✅ Trigger inventory update when payment succeeded
+	if req.Status == "paid" {
+		go func() {
+			if err := h.Svc.UpdateInventory(orderID); err != nil {
+				fmt.Println("⚠️ Inventory update failed:", err)
+			} else {
+				fmt.Println("✅ Inventory updated for order:", orderID)
+			}
+		}()
+	}
+
 	c.JSON(http.StatusOK, gin.H{
 		"message":    "Order status updated successfully",
-		"order_id":   id,
+		"order_id":   orderID,
 		"new_status": order.Status,
 	})
 }

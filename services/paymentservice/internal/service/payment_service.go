@@ -70,7 +70,7 @@ func (s *PaymentService) NotifyOrderService(orderID, newStatus string) error {
 	}
 
 	body, _ := json.Marshal(payload)
-	//url := fmt.Sprintf("%s/api/v1/orders/status", orderServiceURL)
+
 	url := fmt.Sprintf("%s/api/v1/orders/%s/update-status", orderServiceURL, orderID)
 
 	resp, err := http.Post(url, "application/json", bytes.NewBuffer(body))

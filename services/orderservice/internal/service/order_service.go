@@ -1,9 +1,13 @@
 package service
 
 import (
+	"bytes"
 	"ecommerce-backend/services/orderservice/internal/models"
 	"ecommerce-backend/services/orderservice/internal/repository"
+	"encoding/json"
 	"fmt"
+	"net/http"
+	"os"
 )
 
 type OrderService struct {
@@ -63,4 +67,44 @@ func (s *OrderService) UpdateStatus(orderID, status string) (*models.Order, erro
 	}
 
 	return order, nil
+}
+
+func (s *OrderService) UpdateInventory(orderID string) error {
+	order, err := s.Repo.GetByID(orderID)
+	if err != nil {
+		return err
+	}
+	if order == nil {
+		return fmt.Errorf("order not found")
+	}
+
+	productServiceURL := os.Getenv("PRODUCT_SERVICE_URL")
+	if productServiceURL == "" {
+		return fmt.Errorf("PRODUCT_SERVICE_URL not configured")
+	}
+
+	for _, item := range order.Items {
+		payload := map[string]interface{}{
+			"product_id": item.ProductID,
+			"quantity":   item.Quantity,
+		}
+
+		body, _ := json.Marshal(payload)
+
+		resp, err := http.Post(fmt.Sprintf("%s/api/v1/products/reduce-stock", productServiceURL),
+			"application/json", bytes.NewBuffer(body))
+		if err != nil {
+			fmt.Printf(" Failed to update stock for %s: %v\n", item.ProductID, err)
+			continue
+		}
+		defer resp.Body.Close()
+
+		if resp.StatusCode != http.StatusOK {
+			fmt.Printf(" Stock update failed for product %s (status %d)\n", item.ProductID, resp.StatusCode)
+		} else {
+			fmt.Printf(" Stock updated for product %s\n", item.ProductID)
+		}
+	}
+
+	return nil
 }

@@ -4,6 +4,7 @@ import (
 	model "ecommerce-backend/services/productservice/internal/models"
 	repository "ecommerce-backend/services/productservice/internal/reposotory"
 	"errors"
+	"fmt"
 	"time"
 )
 
@@ -77,4 +78,26 @@ func (s *ProductService) UpdateProduct(id, name, desc string, price float64, sto
 // Delete a product
 func (s *ProductService) DeleteProduct(id string) error {
 	return s.Repo.Delete(id)
+}
+
+func (s *ProductService) ReduceStock(productID string, qty int) error {
+	product, err := s.Repo.GetByID(productID)
+	if err != nil {
+		return fmt.Errorf("failed to fetch product: %w", err)
+	}
+	if product == nil {
+		return fmt.Errorf("product not found")
+	}
+
+	if product.Stock < qty {
+		return fmt.Errorf("insufficient stock: available %d, requested %d", product.Stock, qty)
+	}
+
+	product.Stock -= qty
+
+	if err := s.Repo.Update(product); err != nil {
+		return fmt.Errorf("failed to update stock: %w", err)
+	}
+
+	return nil
 }

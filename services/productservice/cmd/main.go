@@ -72,6 +72,7 @@ func main() {
 	api.GET("/products/:id", productHandler.GetByID)
 	api.PUT("/products/:id", productHandler.Update)
 	api.DELETE("/products/:id", productHandler.Delete)
+	api.PATCH("/products/:id/reduce-stock", productHandler.ReduceStock)
 
 	port := config.GetEnv("PORT", "8082")
 	fmt.Println("✅ ProductService running on port", port)
