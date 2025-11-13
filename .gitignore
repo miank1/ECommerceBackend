@@ -974,3 +974,5 @@ deployments/db/pg_subtrans/0000
 deployments/db/pg_wal/000000010000000000000001
 deployments/db/pg_xact/0000
 *.log
+*.json
+*.bru
