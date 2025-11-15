@@ -6,6 +6,7 @@ import (
 	"ecommerce-backend/services/orderservice/internal/repository"
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 )
@@ -64,11 +65,12 @@ func (s *OrderService) UpdateStatus(orderID, status string) (*models.Order, erro
 
 	if err := s.Repo.Save(order); err != nil {
 		return nil, fmt.Errorf("failed to update order status: %v", err)
+	} else {
+		log.Println("Order status updated.")
 	}
 
 	return order, nil
 }
-
 func (s *OrderService) UpdateInventory(orderID string) error {
 	order, err := s.Repo.GetByID(orderID)
 	if err != nil {
@@ -84,26 +86,43 @@ func (s *OrderService) UpdateInventory(orderID string) error {
 	}
 
 	for _, item := range order.Items {
+
+		// Correct endpoint with product_id in URL
+		url := fmt.Sprintf("%s/api/v1/products/%s/reduce-stock",
+			productServiceURL, item.ProductID)
+
 		payload := map[string]interface{}{
-			"product_id": item.ProductID,
-			"quantity":   item.Quantity,
+			"quantity": item.Quantity,
 		}
+
+		fmt.Println("Payload is ************* ", payload)
 
 		body, _ := json.Marshal(payload)
 
-		resp, err := http.Post(fmt.Sprintf("%s/api/v1/products/reduce-stock", productServiceURL),
-			"application/json", bytes.NewBuffer(body))
+		req, err := http.NewRequest(http.MethodPatch, url, bytes.NewBuffer(body))
 		if err != nil {
-			fmt.Printf(" Failed to update stock for %s: %v\n", item.ProductID, err)
+			fmt.Printf("❌ Failed creating request: %v\n", err)
 			continue
 		}
-		defer resp.Body.Close()
+		req.Header.Set("Content-Type", "application/json")
+
+		client := &http.Client{}
+		resp, err := client.Do(req)
+
+		log.Println("response is --------------- ", resp)
+		if err != nil {
+			fmt.Printf("❌ Failed to reduce stock for %s: %v\n", item.ProductID, err)
+			continue
+		}
 
 		if resp.StatusCode != http.StatusOK {
-			fmt.Printf(" Stock update failed for product %s (status %d)\n", item.ProductID, resp.StatusCode)
+			fmt.Printf("⚠️ Stock update failed for product %s (status %d)\n",
+				item.ProductID, resp.StatusCode)
 		} else {
-			fmt.Printf(" Stock updated for product %s\n", item.ProductID)
+			fmt.Printf("✅ Stock updated for product %s\n", item.ProductID)
 		}
+
+		resp.Body.Close()
 	}
 
 	return nil

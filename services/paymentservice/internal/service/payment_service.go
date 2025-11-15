@@ -6,6 +6,7 @@ import (
 	"ecommerce-backend/services/paymentservice/internal/repository"
 	"encoding/json"
 	"fmt"
+	"log"
 	"math/rand"
 	"net/http"
 	"os"
@@ -48,9 +49,9 @@ func (s *PaymentService) ProcessPayment(orderID, userID string, amount float64, 
 	if status == "success" {
 		go func() {
 			if err := s.NotifyOrderService(orderID, "paid"); err != nil {
-				fmt.Println("❌ Failed to notify OrderService:", err)
+				log.Println("❌ Failed to notify OrderService:", err)
 			} else {
-				fmt.Println("✅ OrderService notified: order marked as paid")
+				log.Println("✅ OrderService notified: order marked as paid")
 			}
 		}()
 	}
@@ -71,18 +72,30 @@ func (s *PaymentService) NotifyOrderService(orderID, newStatus string) error {
 
 	body, _ := json.Marshal(payload)
 
+	// ✅ Correct endpoint
 	url := fmt.Sprintf("%s/api/v1/orders/%s/update-status", orderServiceURL, orderID)
 
-	resp, err := http.Post(url, "application/json", bytes.NewBuffer(body))
+	log.Println("Order URL is -----------------", url)
+
+	// Create request
+	req, err := http.NewRequest(http.MethodPatch, url, bytes.NewBuffer(body))
+	if err != nil {
+		return fmt.Errorf("failed to create request: %v", err)
+	}
+	req.Header.Set("Content-Type", "application/json")
+
+	// ✅ Send request
+	client := &http.Client{}
+	resp, err := client.Do(req)
 	if err != nil {
 		return fmt.Errorf("failed to call OrderService: %v", err)
 	}
 	defer resp.Body.Close()
 
+	// Check response
 	if resp.StatusCode != http.StatusOK {
 		return fmt.Errorf("OrderService returned non-OK status: %d", resp.StatusCode)
 	}
 
 	return nil
-
 }

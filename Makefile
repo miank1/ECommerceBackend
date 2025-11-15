@@ -3,47 +3,84 @@ SERVICES = userservice productservice orderservice cartservice searchservice pay
 BASE_DIR = services
 LOG_DIR = logs
 
-.PHONY: run stop clean build seed
+GREEN = echo [✔]
+RED = echo [✘]
+BLUE = echo [➜]
 
+.PHONY: run debug stop clean build seed logs
+
+# -------------------------------
+# 🟢 Run all services (with logs)
+# -------------------------------
 run:
-	@echo 🚀 Starting all Go services (showing real-time logs)...
+	@$(BLUE) "Starting all Go services..."
 	@if not exist $(LOG_DIR) mkdir $(LOG_DIR)
 	@for %%s in ($(SERVICES)) do ( \
-		echo ▶️ Starting %%s... && \
+		$(BLUE) "Starting %%s..." && \
 		cd $(BASE_DIR)\%%s\cmd && \
-		start "" /B cmd /c "go run main.go >> ..\..\..\$(LOG_DIR)\%%s.log 2>&1" && \
+		start "" /B powershell -Command "go run main.go 2>&1 | Tee-Object -Append ..\..\..\$(LOG_DIR)\%%s.log" && \
 		cd ..\..\.. \
 	)
-	@echo 🪵 Waiting for services to initialize...
-	@powershell -Command "Start-Sleep -Seconds 5"
-	@echo ✅ All services are up and running!
-	@echo 🪵 Tailing logs (press Ctrl+C to stop)...
-	@powershell -Command "Get-Content $(LOG_DIR)\*.log -Wait"
+	@$(GREEN) "All services started."
+	@$(BLUE) "Streaming logs (Ctrl+C to exit)..."
+	@powershell -Command "Get-Content $(LOG_DIR)\*.log -Wait -Tail 50"
 
+# -------------------------------------
+# 🟡 Debug mode: Run ONE service directly
+# Usage: make debug service=orderservice
+# -------------------------------------
+debug:
+	@if "$(service)"=="" ( \
+		$(RED) "Usage: make debug service=orderservice" \
+	) else ( \
+		$(BLUE) "Debugging $(service)..." && \
+		cd $(BASE_DIR)\$(service)\cmd && \
+		go run main.go \
+	)
+
+# ---------------------------------
+# 🟠 Build all services (production)
+# ---------------------------------
 build:
-	@echo 🏗️ Building all services...
+	@$(BLUE) "Building all services..."
 	@if not exist bin mkdir bin
 	@for %%s in ($(SERVICES)) do ( \
-		echo 🔨 Building %%s... && \
+		$(BLUE) "Building %%s..." && \
 		cd $(BASE_DIR)\%%s && \
 		go build -o ..\..\bin\%%s.exe main.go && \
 		cd ..\.. \
 	)
-	@echo ✅ Build complete!
+	@$(GREEN) "Build completed!"
 
+# ------------------------
+# 🟣 Seed initial database
+# ------------------------
 seed:
-	@echo 🌱 Running seeders...
+	@$(BLUE) "Running seeders..."
 	@cd $(BASE_DIR)\userseeder && go run main.go
 	@cd $(BASE_DIR)\productseeder && go run main.go
-	@echo ✅ Seeding done!
+	@$(GREEN) "Seeding done."
 
+# ------------------------------------
+# 🔴 Stop all Go processes cleanly
+# ------------------------------------
 stop:
-	@echo 🛑 Stopping all Go service processes...
+	@$(BLUE) "Stopping Go processes..."
 	taskkill /FI "IMAGENAME eq go.exe" /T /F >nul 2>&1 || exit 0
-	@echo ✅ All Go services stopped.
+	@$(GREEN) "All services stopped."
 
+# -------------------------
+# 🧹 Clean logs + builds
+# -------------------------
 clean:
-	@echo 🧹 Cleaning up build and log files...
+	@$(BLUE) "Cleaning build and log files..."
 	@if exist bin rmdir /s /q bin
 	@if exist $(LOG_DIR) rmdir /s /q $(LOG_DIR)
-	@echo ✅ Clean complete!
+	@$(GREEN) "Clean completed."
+
+# -------------------------
+# 📜 Tail all logs manually
+# -------------------------
+logs:
+	@$(BLUE) "Tailing logs (Ctrl+C to stop)..."
+	@powershell -Command "Get-Content $(LOG_DIR)\*.log -Wait -Tail 50"

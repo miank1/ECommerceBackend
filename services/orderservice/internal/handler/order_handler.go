@@ -2,7 +2,7 @@ package handler
 
 import (
 	"ecommerce-backend/services/orderservice/internal/service"
-	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -79,13 +79,15 @@ func (h *OrderHandler) UpdateStatus(c *gin.Context) {
 		return
 	}
 
+	log.Println("✅ Order status updated: ****************", orderID, "to", req.Status)
+
 	// ✅ Trigger inventory update when payment succeeded
 	if req.Status == "paid" {
 		go func() {
 			if err := h.Svc.UpdateInventory(orderID); err != nil {
-				fmt.Println("⚠️ Inventory update failed:", err)
+				log.Println("⚠️ Inventory update failed:", err)
 			} else {
-				fmt.Println("✅ Inventory updated for order:", orderID)
+				log.Println("✅ Inventory updated for order:", orderID)
 			}
 		}()
 	}
