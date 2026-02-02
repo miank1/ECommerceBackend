@@ -2,9 +2,9 @@ package service
 
 import (
 	"bytes"
-	"ecommerce-backend/services/cartservice/internal/model"
+	"ecommerce-backend/services/cartservice/internal/models"
 	"ecommerce-backend/services/cartservice/internal/repository"
-	"ecommerce-backend/services/searchservice/internals/models"
+
 	"encoding/json"
 	"fmt"
 	"io"
@@ -33,7 +33,7 @@ func NewCartService(repo *repository.CartRepository, orderSvcURL string) *CartSe
 	return &CartService{Repo: repo, OrderSvcURL: orderSvcURL}
 }
 
-func (s *CartService) AddItem(userID, productID string, qty int) (*model.Cart, error) {
+func (s *CartService) AddItem(userID, productID string, qty int) (*models.Cart, error) {
 	if qty <= 0 {
 		return nil, errors.New("quantity must be greater than 0")
 	}
@@ -103,9 +103,9 @@ func (s *CartService) AddItem(userID, productID string, qty int) (*model.Cart, e
 
 	// ✅ Step 4: If no cart, create one
 	if cart == nil {
-		cart = &model.Cart{
+		cart = &models.Cart{
 			UserID: uuid.MustParse(userID),
-			Items:  []model.CartItem{},
+			Items:  []models.CartItem{},
 		}
 		if err := s.Repo.Create(cart); err != nil {
 			return nil, err
@@ -129,7 +129,7 @@ func (s *CartService) AddItem(userID, productID string, qty int) (*model.Cart, e
 	}
 
 	// ✅ Step 6: Add new item
-	cart.Items = append(cart.Items, model.CartItem{
+	cart.Items = append(cart.Items, models.CartItem{
 		ProductID: productUUID,
 		Quantity:  qty,
 		Price:     price,
@@ -158,12 +158,12 @@ func (s *CartService) AddItem(userID, productID string, qty int) (*model.Cart, e
 }
 
 // GetCart returns the current user's cart with items
-func (s *CartService) GetCart(userID string) (*model.Cart, error) {
+func (s *CartService) GetCart(userID string) (*models.Cart, error) {
 	return s.Repo.GetByUserID(userID)
 }
 
 // UpdateItemQuantity updates the quantity of a cart item
-func (s *CartService) UpdateItemQuantity(itemID string, qty int) (*model.CartItem, error) {
+func (s *CartService) UpdateItemQuantity(itemID string, qty int) (*models.CartItem, error) {
 	if qty <= 0 {
 		return nil, errors.New("quantity must be greater than 0")
 	}
@@ -292,4 +292,14 @@ func (s *CartService) Checkout(c *gin.Context, userID string) (map[string]interf
 
 	fmt.Printf("✅ Checkout completed. Total: ₹%.2f\n", totalPrice)
 	return orderResp, nil
+}
+
+func (s *CartService) CalculateTotal(items []models.CartItem) float64 {
+	var total float64
+	for _, item := range items {
+		// You may fetch actual product price from Product Service later
+		// For now assume price is stored inside CartItem or default = 0
+		total += float64(item.Quantity) * item.Price
+	}
+	return total
 }
