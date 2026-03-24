@@ -8,10 +8,8 @@ import (
 	"ecommerce-backend/pkg/db"
 	"ecommerce-backend/pkg/logger"
 	"ecommerce-backend/pkg/middleware"
-
 	"ecommerce-backend/services/cartservice/internal/handler"
 	"ecommerce-backend/services/cartservice/internal/models"
-	"ecommerce-backend/services/cartservice/internal/publisher"
 	"ecommerce-backend/services/cartservice/internal/repository"
 	"ecommerce-backend/services/cartservice/internal/service"
 
@@ -53,22 +51,11 @@ func main() {
 	}
 
 	// -----------------------------------------
-	// 4. RabbitMQ Setup
-	// -----------------------------------------
-	rabbitURL := config.GetEnv("RABBITMQ_URL", "amqp://guest:guest@localhost:5672/")
-
-	publisher, err := publisher.NewPublisher(rabbitURL)
-	if err != nil {
-		log.Fatalf("❌ Failed to connect RabbitMQ: %v", err)
-	}
-	defer publisher.Close()
-
-	// -----------------------------------------
 	// 5. Dependency Injection
 	// -----------------------------------------
 	repo := repository.NewCartRepository(dbConn)
 	cartService := service.NewCartService(repo, config.GetEnv("ORDER_SERVICE_URL", "http://localhost:8083"))
-	cartHandler := handler.NewCartHandler(cartService, publisher)
+	cartHandler := handler.NewCartHandler(cartService)
 
 	// -----------------------------------------
 	// 6. Router Setup

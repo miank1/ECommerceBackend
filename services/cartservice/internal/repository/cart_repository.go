@@ -34,7 +34,7 @@ func (r *CartRepository) Create(cart *models.Cart) error {
 
 // Save cart (with items)
 func (r *CartRepository) Save(cart *models.Cart) error {
-	return r.DB.Save(cart).Error
+	return r.DB.Session(&gorm.Session{FullSaveAssociations: true}).Save(cart).Error
 }
 
 // GetItemByID finds a cart item by ID

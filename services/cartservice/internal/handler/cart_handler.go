@@ -1,8 +1,9 @@
 package handler
 
 import (
-	"ecommerce-backend/services/cartservice/internal/service"
 	"net/http"
+
+	"ecommerce-backend/services/cartservice/internal/service"
 
 	"github.com/gin-gonic/gin"
 )
@@ -25,10 +26,9 @@ type updateItemReq struct {
 }
 
 func (h *CartHandler) AddItem(c *gin.Context) {
-	// In real app, userID comes from JWT
-	userID := c.GetString("user_id")
-	if userID == "" {
-		userID = "dummy-user-id"
+	userID, ok := currentUserID(c)
+	if !ok {
+		return
 	}
 
 	var req addItemReq
@@ -39,37 +39,33 @@ func (h *CartHandler) AddItem(c *gin.Context) {
 
 	cart, err := h.Svc.AddItem(userID, req.ProductID, req.Quantity)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "item added to cart", "cart": cart})
 }
 
-// GetCart handler
 func (h *CartHandler) GetCart(c *gin.Context) {
-	// In real app, userID comes from JWT
-	userID := c.GetString("user_id")
-	if userID == "" {
-		userID = "dummy-user-id"
+	userID, ok := currentUserID(c)
+	if !ok {
+		return
 	}
 
 	cart, err := h.Svc.GetCart(userID)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
-	// If no cart exists, return empty cart
 	if cart == nil {
-		c.JSON(http.StatusOK, gin.H{"cart": gin.H{"id": "", "items": []string{}}})
+		c.JSON(http.StatusOK, gin.H{"cart": gin.H{"id": "", "items": []interface{}{}}})
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{"cart": cart})
 }
 
-// UpdateItem handler
 func (h *CartHandler) UpdateItem(c *gin.Context) {
 	itemID := c.Param("id")
 
@@ -88,7 +84,6 @@ func (h *CartHandler) UpdateItem(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "item updated", "item": item})
 }
 
-// DeleteItem handler
 func (h *CartHandler) DeleteItem(c *gin.Context) {
 	itemID := c.Param("id")
 
@@ -100,11 +95,10 @@ func (h *CartHandler) DeleteItem(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "item removed from cart"})
 }
 
-// Checkout handler
 func (h *CartHandler) Checkout(c *gin.Context) {
-	userID := c.GetString("user_id")
-	if userID == "" {
-		userID = "dummy-user-id"
+	userID, ok := currentUserID(c)
+	if !ok {
+		return
 	}
 
 	orderResp, err := h.Svc.Checkout(c, userID)
@@ -117,4 +111,14 @@ func (h *CartHandler) Checkout(c *gin.Context) {
 		"message": "checkout successful",
 		"order":   orderResp,
 	})
+}
+
+func currentUserID(c *gin.Context) (string, bool) {
+	userID := c.GetString("user_id")
+	if userID == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "missing authenticated user"})
+		return "", false
+	}
+
+	return userID, true
 }
