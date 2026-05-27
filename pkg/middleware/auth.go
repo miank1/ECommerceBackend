@@ -40,9 +40,6 @@ func JWTAuth() gin.HandlerFunc {
 			return
 		}
 
-		// ✅ Debug print to confirm what secret CartService is using
-		log.Println("🔐 CartService secret:", secret)
-
 		// Parse token
 		token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
 
