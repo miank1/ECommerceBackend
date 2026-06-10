@@ -1,231 +1,173 @@
-Userservice → port 8081
+# E-Commerce Backend (Microservices Architecture)
 
-Productservice → port 8082
+A scalable E-Commerce backend built using Go (Golang), PostgreSQL, JWT Authentication, Docker, RabbitMQ, and Microservices Architecture.
 
-Orderservice → port 8083
+## Services
 
-Cartservice → port 8084
+Each service is maintained in its own repository and can be developed, deployed, and scaled independently.
 
-Each has its own Dockerfile (same pattern).
+| Service              | Port    | Repository                                | Responsibility                             |
+| -------------------- | ------- | ----------------------------------------- | ------------------------------------------ |
+| User Service         | 8081    | https://github.com/miank1/user_service    | Authentication, Registration, User Profile |
+| Product Service      | 8082    | https://github.com/miank1/product_service | Product Management, Inventory Metadata     |
+| Order Service        | 8083    | https://github.com/miank1/order_service   | Order Lifecycle Management                 |
+| Cart Service         | 8084    | https://github.com/miank1/cart_service    | Shopping Cart Operations                   |
+| Payment Service      | 8085    | https://github.com/miank1/payment_service | Payment Processing                         |
+| Search Service       | Planned | Coming Soon                               | Catalog Search & Recommendations           |
+| Notification Service | Planned | Coming Soon                               | Email, SMS & Push Notifications            |
 
-Then docker-compose.yml can build all services separately.
+---
 
-                           ┌──────────────────────────┐
-                           │        Clients           │
-                           │ (Web, Mobile, Postman)   │
-                           └───────────┬─────────────┘
-                                       │
-                                HTTPS / API Gateway (Optional)
-                                       │
-                                ┌──────┴───────┐
-                                │   ALB (Load  │
-                                │ Balancer)    │
-                                └──────┬───────┘
-                                       │
-                 ┌─────────────────────┼───────────────────────┐
-                 │                     │                       │
-        ┌────────▼─────────┐  ┌────────▼─────────┐   ┌────────▼─────────┐
-        │   User Service   │  │ Product Service  │   │  Order Service   │
-        │  (ECS Task/Farg.)│  │  (ECS Task)      │   │  (ECS Task)      │
-        │ Port 8081        │  │ Port 8082        │   │ Port 8083        │
-        └────────┬─────────┘  └────────┬─────────┘   └────────┬─────────┘
-                 │                     │                       │
-                 │                     │                       │
-                 │                     │                       │
-        ┌────────▼─────────┐  ┌────────▼─────────┐   ┌────────▼─────────┐
-        │  Cart Service    │  │ Payment Service   │   │ Notification Svc │
-        │  (ECS Task)      │  │  (ECS Task)       │   │  (ECS Task)      │
-        │  Port 8084       │  │  Port 8085        │   │  Port 8086       │
-        └────────┬─────────┘  └────────┬─────────┘   └────────┬─────────┘
-                 │                     │                       │
-                 └─────────────────────┼───────────────────────┘
-                                       │
-                             ┌─────────▼─────────┐
-                             │   RDS Proxy (Opt) │
-                             │ Connection Pooling│
-                             └─────────┬─────────┘
-                                       │
-                             ┌─────────▼─────────┐
-                             │  AWS RDS (Postgres)│
-                             │  ecommerce DB      │
-                             └────────────────────┘
+## Architecture
 
+```text
+Clients
+   │
+   ▼
+API Gateway / Load Balancer
+   │
+   ├───────────────┬───────────────┬───────────────┐
+   ▼               ▼               ▼               ▼
 
-🔹 Sequence Explanation
+User Service   Product Service  Cart Service  Order Service
+                                        │
+                                        ▼
+                                  RabbitMQ
+                                        │
+                                        ▼
+                                 Payment Service
+                                        │
+                                        ▼
+                              Notification Service
+```
 
-Client sends order request through API Gateway.
+---
 
-API Gateway checks with User Service that the user is valid.
+## Technology Stack
 
-Gateway forwards the request to Order Service.
+### Backend
 
-Order Service calls Product Service to check stock.
+* Golang
+* Gin Framework
+* PostgreSQL
+* GORM
 
-If stock is available, it calls Payment Service.
+### Authentication
 
-After payment success, Order Service saves the order in Order DB.
+* JWT Authentication
+* Middleware-based Authorization
 
-Order Service publishes an OrderCreated event to the Broker.
+### Messaging
 
-Inventory Service consumes it and updates stock.
+* RabbitMQ
+* Event Driven Communication
 
-Notification Service consumes it and sends an email/SMS.
+### Infrastructure
 
-Client gets back the confirmation response.
+* Docker
+* Docker Compose
+* AWS ECS / Fargate (Planned)
+* AWS RDS PostgreSQL (Planned)
 
--------------------------------------------------------------------------------------------
+### Monitoring
 
-🔹 Core Services
+* Prometheus (Planned)
+* Grafana (Planned)
 
-User Service → authentication, registration, profile, addresses.
+---
 
-Product Service → product CRUD, details, metadata.
+## Design Patterns Used
 
-Catalog / Search Service → full-text search, filtering, recommendations (often backed by ElasticSearch).
+### Service Layer Pattern
 
-Cart Service → add/remove/view cart, backed by Redis/DB.
+Business logic separated from transport layer.
 
-Order Service → create/track orders, orchestrates checkout.
+### Repository Pattern
 
-Payment Service → integrates with external payment gateways (Stripe, Razorpay, PayPal).
+Database access abstracted behind repositories.
 
-Inventory Service → stock management, reserve/release items.
+### Dependency Injection
 
-Notification Service → emails, SMS, push notifications (confirmation, updates).
+Repository → Service → Handler dependency flow.
 
-🔹 Optional but Common Services
+### Middleware Pattern
 
-Review & Rating Service → product reviews, ratings, moderation.
+Authentication, Logging, and Cross-Cutting Concerns.
 
-Recommendation Service → personalized product suggestions (could be ML based).
+### Event Driven Architecture
 
-Shipping/Logistics Service → shipping options, tracking, integration with courier APIs.
+RabbitMQ based asynchronous service communication.
 
-Analytics Service → events, monitoring, sales reports.
+---
 
-Admin/Backoffice Service → for sellers/admins to manage products, orders, discounts.
+## Current Features
 
-Promotion/Coupon Service → handle promo codes, discounts, campaigns.
+### User Service
 
-🔹 Infrastructure Components (not “services” but needed)
+* User Registration
+* User Login
+* JWT Generation
+* Profile APIs
 
-API Gateway → single entry point (NGINX, Kong, Traefik, AWS API Gateway).
+### Product Service
 
-Message Broker / Event Bus → Kafka, RabbitMQ, AWS SQS/SNS for async communication.
+* Product CRUD
+* Inventory Management
 
-Databases → each service has its own DB (Postgres, MySQL, Mongo, Redis, Elastic).
+### Cart Service
 
-Monitoring/Logging → Prometheus, Grafana, ELK, OpenTelemetry.
+* Add to Cart
+* Update Cart
+* Remove Items
+* Checkout
 
-🔹 Total Count
+### Order Service
 
-Mandatory core services: 8
+* Create Order
+* Track Order Status
+* Update Order Status
 
-Optional services (common in real-world): +6
-👉 So anywhere from 8 (MVP) to 14+ (full-blown system) depending on how deep you want to go.
+### Payment Service
 
-✅ If you are following the roadmap.sh Ecommerce API project, you need at least these 8 core services:
+* Create Payment
+* Update Payment Status
+* Payment Tracking
 
-User
+---
 
-Product
+## Roadmap
 
-Catalog/Search
+### Phase 1 (Completed)
 
-Cart
+* User Service
+* Product Service
+* Cart Service
+* Order Service
+* Payment Service
+* JWT Authentication
 
-Order
+### Phase 2 (In Progress)
 
-Payment
+* RabbitMQ Integration
+* Event Driven Checkout Flow
 
-Inventory
+### Phase 3
 
-Notification
+* Search Service
+* Notification Service
 
+### Phase 4
 
-My Guidance
+* Docker Compose
+* CI/CD Pipeline
+* AWS Deployment
 
-Since you’re building step by step, do this roadmap:
+### Phase 5
 
-Now (Phase 2, MVP) → Build Catalog/Search Service as a separate service.
+* Kafka
+* Distributed Tracing
+* Observability Stack
+* Production Scale Architecture
 
-Keep it cleanly separated from Product Service (don’t merge).
-
-But for speed, fetch data directly from Product DB.
-
-Next (Phase 3/4) → Refactor Catalog/Search to consume Product Service APIs or Product events.
-
-This keeps microservice boundaries clean.
-
-Later (Production scale) → Add ElasticSearch + Event-driven sync for high-performance search.
-
-
-UserService - API
-
-GET - http://localhost:8081/health
-
-✅ That’s the complete flow for userservice:
-health → register → login → fetch profile
-
-
-┌────────────────────────────────────────────────────────────────────────────┐
-│                           API Gateway / ALB (Optional)                     │
-│                   ──────────────────────────────────────                   │
-│     Handles routing, load balancing, SSL termination, auth (future)        │
-│     🟢 Pattern: API Gateway / Reverse Proxy                                 │
-└────────────────────────────────────────────────────────────────────────────┘
-                                       │
-                                       ▼
-        ┌────────────────────────────────────────────────────────┐
-        │                 Application Services                   │
-        └────────────────────────────────────────────────────────┘
-                 │              │              │              │
-                 │              │              │              │
- ┌───────────────▼────────────┐ ┌──────────────▼────────────┐ ┌──────────────▼────────────┐ ┌──────────────▼────────────┐
- │     User Service           │ │    Product Service         │ │    Order Service          │ │    Cart Service            │
- │  (port 8081 / ECS Task)    │ │ (port 8082 / ECS Task)     │ │ (port 8083 / ECS Task)    │ │ (port 8084 / ECS Task)     │
- │────────────────────────────│ │────────────────────────────│ │────────────────────────────│ │────────────────────────────│
- │ 🧩 Layers inside each svc: │ │                            │ │                            │ │                            │
- │                            │ │                            │ │                            │ │                            │
- │ Handler Layer (Gin)        │ │ Handler Layer (Gin)        │ │ Handler Layer (Gin)        │ │ Handler Layer (Gin)        │
- │  - REST endpoints          │ │  - REST endpoints          │ │  - REST endpoints          │ │  - REST endpoints          │
- │  🟢 Pattern: Controller     │ │  🟢 Pattern: Controller     │ │  🟢 Pattern: Controller     │ │  🟢 Pattern: Controller     │
- │                            │ │                            │ │                            │ │                            │
- │ Service Layer              │ │ Service Layer              │ │ Service Layer              │ │ Service Layer              │
- │  - Business logic          │ │  - Business logic          │ │  - Business logic          │ │  - Aggregates Products +   │
- │  🟢 Pattern: Service/Use-Case│ │  🟢 Pattern: Service/Use-Case│ │  🟢 Pattern: Service/Use-Case│ │    Orders (Aggregator)     │
- │                            │ │                            │ │                            │ │  🟢 Pattern: Aggregator     │
- │ Repository Layer           │ │ Repository Layer           │ │ Repository Layer           │ │ Repository Layer           │
- │  - CRUD / DB ops           │ │  - CRUD / DB ops           │ │  - CRUD / DB ops           │ │  - CRUD / DB ops           │
- │  🟢 Pattern: Repository     │ │  🟢 Pattern: Repository     │ │  🟢 Pattern: Repository     │ │  🟢 Pattern: Repository     │
- │                            │ │                            │ │                            │ │                            │
- │ DB Connection              │ │ DB Connection              │ │ DB Connection              │ │ DB Connection              │
- │  🟢 Pattern: Singleton      │ │  🟢 Pattern: Singleton      │ │  🟢 Pattern: Singleton      │ │  🟢 Pattern: Singleton      │
- │  🟢 Retry & Backoff logic   │ │  🟢 Retry & Backoff logic   │ │  🟢 Retry & Backoff logic   │ │  🟢 Retry & Backoff logic   │
- │                            │ │                            │ │                            │ │                            │
- │ DI (Repo → Service → Hdlr) │ │ DI (Repo → Service → Hdlr) │ │ DI (Repo → Service → Hdlr) │ │ DI (Repo → Service → Hdlr) │
- │  🟢 Pattern: Dependency Inj │ │  🟢 Pattern: Dependency Inj │ │  🟢 Pattern: Dependency Inj │ │  🟢 Pattern: Dependency Inj │
- │                            │ │                            │ │                            │ │                            │
- └───────────────┬────────────┘ └──────────────┬────────────┘ └──────────────┬────────────┘ └──────────────┬────────────┘
-                 │                             │                             │                             │
-                 │  Internal REST Calls (via Docker DNS / ECS Service DNS)    │
-                 │────────────────────────────────────────────────────────────│
-                 │
-                 ▼
-       ┌──────────────────────────────────────────────────────┐
-       │                   Shared Packages                    │
-       ├──────────────────────────────────────────────────────┤
-       │ pkg/config  → 🟢 Config Pattern                      │
-       │ pkg/logger  → 🟢 Singleton + Adapter Pattern          │
-       │ pkg/jwt     → 🟢 Utility/Strategy (token signing)     │
-       │ pkg/db      → 🟢 Retry + Singleton + Factory          │
-       │ pkg/middleware → 🟢 Cross-Cutting Concerns Pattern    │
-       └──────────────────────────────────────────────────────┘
-                 │
-                 ▼
-       ┌──────────────────────────────────────────────────────┐
-       │           AWS RDS (PostgreSQL Database)              │
-       │  🟢 Pattern: Shared Persistent Store / Singleton DB   │
-       │  Managed via RDS Proxy + Secrets Manager              │
-       └──────────────────────────────────────────────────────┘
-
+```
+```
