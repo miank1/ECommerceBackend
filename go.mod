@@ -1,4 +1,4 @@
-module github.com/miank1/ecommerce-backend
+module github.com/miank1/ecommerce_backend
 
 go 1.25.0
 
