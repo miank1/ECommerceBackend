@@ -98,11 +98,31 @@ func InitDB(dsn string) (*gorm.DB, error) {
 			break
 		}
 		log.Printf("⏳ DB not ready, retrying... (%d/10)", i+1)
+
 		time.Sleep(3 * time.Second)
 	}
 	if db == nil {
 		log.Fatalf("❌ Could not connect to DB after 10 retries")
 	}
+
+	// Get the underlying *sql.DB
+	sqlDB, err := db.DB()
+	if err != nil {
+		return nil, err
+	}
+
+	// Connection Pool Configuration
+	sqlDB.SetMaxOpenConns(25)
+	sqlDB.SetMaxIdleConns(10)
+	sqlDB.SetConnMaxLifetime(time.Hour)
+	sqlDB.SetConnMaxIdleTime(10 * time.Minute)
+
+	stats := sqlDB.Stats()
+
+	log.Printf("Open Connections : %d", stats.OpenConnections)
+	log.Printf("In Use           : %d", stats.InUse)
+	log.Printf("Idle             : %d", stats.Idle)
+	log.Printf("Wait Count       : %d", stats.WaitCount)
 
 	return db, nil
 }

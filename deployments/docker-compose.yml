@@ -1,107 +1,48 @@
-version: "3.9"
-
 services:
-  postgres:
-    image: postgres:15
-    environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: secret
-      POSTGRES_DB: ecommerce
-    ports:
-      - "5432:5432"
-    healthcheck:
-      test: ["CMD", "pg_isready", "-U", "root"]
-      interval: 5s
-      retries: 5
-
-  productservice:
+  user-service:
     build:
-      context: ../
-      dockerfile: services/productservice/Dockerfile
-    ports:
-      - "8082:8082"
+      context: ../../user_service
     env_file:
-      - ../services/productservice/.env
-    depends_on:
-      postgres:
-        condition: service_healthy
-
-  productseeder:
-    build:
-      context: ../
-      dockerfile: services/productservice/Dockerfile.seed
-    env_file:
-      - ../services/productservice/.env
-    depends_on:
-      postgres:
-        condition: service_healthy
-    restart: "on-failure"
-
-  userservice:
-    build:
-      context: ../
-      dockerfile: services/userservice/Dockerfile
+      - ../../user_service/.env
     ports:
       - "8081:8081"
-    env_file:
-      - ../services/userservice/.env
-    environment:
-      - JWT_SECRET=supersecret
-    depends_on:
-      postgres:
-        condition: service_healthy
 
-  userseeder:
+  product-service:
     build:
-      context: ../
-      dockerfile: services/userservice/Dockerfile.seed
+      context: ../../product_service
     env_file:
-      - ../services/userservice/.env
-    depends_on:
-      postgres:
-        condition: service_healthy
-    restart: "on-failure"
+      - ../../product_service/.env
+    ports:
+      - "8082:8082"
 
-  orderservice:
+  cart-service:
     build:
-      context: ../
-      dockerfile: services/orderservice/Dockerfile
+      context: ../../cart_service
+    env_file:
+      - ../../cart_service/.env
     ports:
       - "8083:8083"
-    env_file:
-      - ../services/orderservice/.env
-    depends_on:
-      postgres:
-        condition: service_healthy
 
-  cartservice:
+  order-service:
     build:
-      context: ../
-      dockerfile: services/cartservice/Dockerfile
-    ports:
-      - "8085:8085"
+      context: ../../order_service
     env_file:
-      - ../services/cartservice/.env
-    environment:
-      - JWT_SECRET=supersecret
-    depends_on:
-      postgres:
-        condition: service_healthy
-      orderservice:
-        condition: service_started
-
-  searchservice:
-    build:
-      context: ../
-      dockerfile: services/searchservice/Dockerfile
+      - ../../order_service/.env
     ports:
       - "8084:8084"
+
+  payment-service:
+    build:
+      context: ../../payment_service
     env_file:
-      - ../services/searchservice/.env
-    environment:
-      - DATABASE_DSN=host=postgres user=root password=secret dbname=ecommerce port=5432 sslmode=disable
-    depends_on:
-      postgres:
-        condition: service_healthy
-      orderservice:
-        condition: service_started
+      - ../../payment_service/.env
+    ports:
+      - "8085:8085"
+
+  # notification-service:
+  #   build:
+  #     context: ../../notification_service
+  #   env_file:
+  #     - ../../notification_service/.env
+  #   ports:
+  #     - "8086:8086"
