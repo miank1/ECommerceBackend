@@ -171,3 +171,18 @@ RabbitMQ based asynchronous service communication.
 
 ```
 ```
+
+██████████████████░░░░░░░░░░ 75%
+
+✅ Core Microservices
+✅ Authentication
+✅ REST APIs
+✅ PostgreSQL
+✅ Docker
+✅ Service-to-Service Communication
+✅ Performance Basics
+🚧 gRPC
+❌ Kafka
+❌ Kubernetes
+❌ Observability
+❌ Production Hardening
