@@ -182,7 +182,31 @@ RabbitMQ based asynchronous service communication.
 ✅ Service-to-Service Communication
 ✅ Performance Basics
 🚧 gRPC
-❌ Kafka
+✅ Kafka
 ❌ Kubernetes
 ❌ Observability
 ❌ Production Hardening
+
+Create Product
+      ↓
+Save product_id
+      ↓
+Register User
+      ↓
+Save user_id
+      ↓
+Login
+      ↓
+Save JWT
+      ↓
+Add Item
+      ↓
+Checkout
+      ↓
+Order
+      ↓
+Kafka
+      ↓
+Payment
+      ↓
+Reduce Stock
